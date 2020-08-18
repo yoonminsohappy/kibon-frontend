@@ -1,0 +1,41 @@
+.myPageContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.myPage {
+  font-size: 42px;
+  font-weight: 400;
+  padding-top: 42px;
+}
+
+.myPageInfo {
+  border: 1px solid black;
+  width: 904px;
+  height: 151px;
+  margin-top: 60px;
+}
+
+.userContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 226px;
+  height: 100%;
+  background-color: #ddd;
+}
+
+.myPageInfoContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.user {
+  margin-top: 8px;
+  font-size: 20px;
+}
+
+.myPageBottomBar {
+    border-bottom: 
+}
