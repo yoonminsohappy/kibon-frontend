@@ -21,13 +21,27 @@ https://trello.com/b/EpdX6Zqf/kibon
 
 
 ## 사용한 기술
+1. 프론트
 - HTML / CSS
 - JavaScript
-- React (Class)
+- React
 - React-Router-DOM
-- React-DOM
 - SASS
+
+2. 백앤드
+- Python
 - Django
+- Selenium
+- Beautiful Soup
+- MySQL
+- Bcrypt, jwt
+- pandas
+
+3. 공통
+- JSON
+- Git
+- Linux
+- HTTP
 
 
 ## 깃 주의사항
