@@ -7,7 +7,7 @@ import {
 
 import Main from './Pages/Main/Main';
 import Menu from './Pages/Menu/Menu';
-import MenuDetail from './Pages/Menu/MeunDetail/MeunDetail';
+import MenuDetail from './Pages/Menu/MenuDetail/MenuDetail';
 import Login from './Pages/Login/Login';
 import SignUp from './Pages/SignUp/SignUp';
 import MyPage from './Pages/MyPage/MyPage';
@@ -22,7 +22,7 @@ class Routes extends React.Component {
           <Route exact path='/my-page' component={MyPage} />
           <Route exact path='/' component={Main} />
           <Route exact path='/menu' component={Menu} />
-          <Route exact path='/menu/menu-Detail' component={MenuDetail} />
+          <Route exact path='/menu/menu-detail' component={MenuDetail} />
         </Switch>
       </Router>
     );
