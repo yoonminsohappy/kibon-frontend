@@ -1,12 +1,12 @@
-@import '../../Styles/common.scss';
+@import "../../Styles/common.scss";
 
-.login{
+.login {
   width: 100%;
   height: 100vh;
   @include center;
   flex-direction: column;
 
-  .title{
+  .title {
     font-size: 42px;
     font-weight: 400;
     text-align: center;
@@ -14,26 +14,26 @@
     margin-bottom: 30px;
   }
 
-  .loginWrap{
+  .loginWrap {
     width: 560px;
     margin: 0 auto;
 
-    .menu{
+    .menu {
       text-align: center;
 
-      .memberOn{
+      .memberOn {
         width: 50%;
         display: inline-block;
         float: left;
         border-bottom: 1px solid #ddd;
         font-size: 20px;
-        color:#222222;
+        color: #222222;
         font-weight: 500;
         line-height: 50px;
         position: relative;
         cursor: pointer;
 
-        &::after{
+        &::after {
           content: "";
           width: 100%;
           height: 3px;
@@ -45,31 +45,31 @@
         }
       }
 
-      .member{
+      .member {
         width: 50%;
         display: inline-block;
         float: left;
         border-bottom: 1px solid #ddd;
         font-size: 20px;
-        color:#666666;
+        color: #666666;
         font-weight: 500;
         line-height: 50px;
         position: relative;
         cursor: pointer;
       }
 
-      .noMemberOn{
+      .noMemberOn {
         width: 50%;
         display: inline-block;
         border-bottom: 1px solid #ddd;
         font-size: 20px;
-        color:#222222;
+        color: #222222;
         font-weight: 500;
         line-height: 50px;
         position: relative;
         cursor: pointer;
 
-        &::after{
+        &::after {
           content: "";
           width: 100%;
           height: 3px;
@@ -81,12 +81,12 @@
         }
       }
 
-      .noMember{
+      .noMember {
         width: 50%;
         display: inline-block;
         border-bottom: 1px solid #ddd;
         font-size: 20px;
-        color:#666666;
+        color: #666666;
         font-weight: 500;
         line-height: 50px;
         cursor: pointer;
@@ -94,5 +94,3 @@
     }
   }
 }
-
-

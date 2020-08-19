@@ -25,7 +25,11 @@ class NoMemberForm extends Component {
         </div>
 
         <div className="inputBox">
-          <input type="text" className="inputtext"placeholder="이름을 입력해주세요." />
+          <input
+            type="text"
+            className="inputtext"
+            placeholder="이름을 입력해주세요."
+          />
         </div>
 
         <div className="inputBox inputPhone">

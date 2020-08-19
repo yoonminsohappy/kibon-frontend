@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './MemberForm.scss';
+import "./MemberForm.scss";
 
 class memberForm extends Component {
   render() {
