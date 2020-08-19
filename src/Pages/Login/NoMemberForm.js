@@ -16,14 +16,12 @@ class NoMemberForm extends Component {
             <span className="signUpBtn">회원가입</span>
           </p>
         </div>
-
         <div className="joinRule">
           <div className="ruletext">
             <input type="checkbox" className="check" />
             <label for="idCheck">비회원 이용약관 동의</label>
           </div>
         </div>
-
         <div className="inputBox">
           <input
             type="text"
@@ -31,7 +29,6 @@ class NoMemberForm extends Component {
             placeholder="이름을 입력해주세요."
           />
         </div>
-
         <div className="inputBox inputPhone">
           <ul>
             <li>
@@ -53,12 +50,10 @@ class NoMemberForm extends Component {
           </ul>
           <button className="sendBtn">인증번호 발송</button>
         </div>
-
         <div className="inputBox inputName">
           <input className="userName" type="text" />
           <button className="checkBtn">확인</button>
         </div>
-
         <button className="submit">확인</button>
       </div>
     );
