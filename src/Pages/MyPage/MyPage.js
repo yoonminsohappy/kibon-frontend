@@ -12,7 +12,7 @@ class MyPage extends Component {
         <div className="myPageInfoContainer">
          <div className="myPageInfo">
           <div className="userContainer">
-           <img alt="user" src={require("../../../src/Images/user_mypage.png")}/>
+           <img alt="user" src="/Images/user_mypage.png" />
            <div className="user">위코드 님</div>
           </div>
           <div className="giftCardContainer">

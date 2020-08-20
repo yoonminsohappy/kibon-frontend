@@ -1,0 +1,390 @@
+@import "../../../Styles/common.scss";
+
+.detailContainer {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .infoContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 1132px;
+    height: 552px;
+    border: 1px solid red;
+    position: relative;
+
+    .menu {
+      width: 552px;
+      height: 552px;
+      margin-right: 100px;
+    }
+    .wholeContainer {
+      width: 480px;
+      height: 552px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid black;
+      .name {
+        font-size: 42px;
+        font-weight: 500;
+        margin-bottom: 15px;
+      }
+      .intro {
+        font-size: 18px;
+        color: #666;
+      }
+      .priceContainer {
+        padding-top: 25px;
+        .price {
+          font-size: 34px;
+          font-weight: 700;
+          color: #962639;
+        }
+        .unit {
+          font-size: 22px;
+          color: #222222;
+        }
+      }
+      .btnContainer {
+        border: 1px solid green;
+        display: flex;
+        flex-direction: row-reverse;
+
+        .btn {
+          width: 260px;
+          border: 1px solid blue;
+          display: flex;
+          justify-content: space-between;
+
+          .myMenu {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 22px;
+            width: 124px;
+            height: 41px;
+            font-size: 16px;
+            background-color: white;
+            border: 1px solid #ddd;
+
+            .likeIcon {
+              background: url("/Images/heart_icon.png") left top no-repeat;
+              width: 20px;
+              height: 20px;
+              background-position: 0px 2px;
+            }
+          }
+          .origin {
+            width: 124px;
+            height: 41px;
+            font-size: 16px;
+            background-color: white;
+            border: 1px solid #ddd;
+          }
+        }
+      }
+      .bar {
+        border-bottom: solid 2px #222;
+        padding-bottom: 22px;
+      }
+      .summary {
+        width: 480px;
+        height: 81px;
+        color: #666;
+        font-size: 18px;
+        font-weight: 350;
+        padding-top: 24px;
+      }
+      .previewImage {
+        width: 140px;
+        height: 65px;
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        justify-content: space-between;
+        .subImage1 {
+          width: 65px;
+          height: 65px;
+        }
+        .subImage2 {
+          width: 65px;
+          height: 65px;
+        }
+      }
+    }
+    .shareContainer {
+      width: 115.2px;
+      height: 55px;
+      position: absolute;
+      right: 0;
+      bottom: 7px;
+      display: flex;
+      justify-content: space-around;
+
+      .fbContainer {
+        width: 50px;
+        height: 50px;
+        border: solid 1px #9a9a9a;
+        border-radius: 100%;
+        .facebook {
+          background: url("/Images/share_icon.png") left top no-repeat;
+          background-size: 130px;
+          overflow: hidden;
+          background-position-x: 8px;
+          background-position-y: 8px;
+          width: 35px;
+          height: 35px;
+          left: -150%;
+          top: -10%;
+        }
+      }
+
+      .linkContainer {
+        width: 50px;
+        height: 50px;
+        border: solid 1px #9a9a9a;
+        border-radius: 100%;
+        display: flex;
+        justify-content: center;
+        padding-left: 10px;
+        padding-top: 2px;
+        .link {
+          background: url("/Images/share_icon.png") left top no-repeat;
+          background-size: 120px;
+          overflow: hidden;
+          background-position-x: -63px;
+          background-position-y: 7px;
+          width: 35px;
+          height: 35px;
+          left: -150%;
+          top: -10%;
+        }
+      }
+    }
+  }
+}
+
+.productDetail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f8f3ef;
+  padding-top: 80px;
+  padding-bottom: 73px;
+
+  .headText {
+    color: #8f172b;
+    font-size: 20px;
+    font-style: italic;
+    padding-bottom: 35px;
+  }
+  .menuText {
+    font-size: 24px;
+    font-weight: 500;
+    padding-bottom: 17px;
+  }
+  .underBar {
+    width: 30px;
+    height: 3px;
+    background: #962639;
+    margin-bottom: 40px;
+  }
+  .productImage {
+    width: 1132px;
+    height: 780px;
+  }
+  .introText {
+    font-size: 38px;
+    font-weight: 350;
+    line-height: 50px;
+    margin-top: 30px;
+  }
+  .menuText {
+    font-weight: 500;
+    font-size: 38px;
+  }
+  .explanation {
+    font-size: 18px;
+    color: #666;
+    line-height: 30px;
+    text-align: center;
+  }
+}
+
+.aboutIngredients {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .ingreText {
+    font-size: 24px;
+    font-weight: 500;
+    color: #222222;
+    padding-top: 80px;
+    padding-bottom: 17px;
+  }
+  .ingreUnderBar {
+    border: 1px solid #962639;
+    width: 30px;
+    height: 3px;
+    background: #962639;
+    margin-bottom: 40px;
+  }
+  .ingredient1 {
+    display: flex;
+    width: 1132px;
+    height: 650px;
+    .ingre1Image {
+      width: 632px;
+      height: 650px;
+    }
+    .ingreContents1 {
+      display: flex;
+      flex-direction: column;
+
+      width: 446.58px;
+      height: 397.97px;
+      padding-top: 70px;
+      padding-left: 50px;
+      .contentsHead {
+        width: 396.582px;
+        height: 116px;
+        padding-bottom: 24px;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        .taurinAndVitamin {
+          font-size: 38px;
+          font-weight: 350;
+          line-height: 50px;
+        }
+        .ingre1Text {
+          font-size: 38px;
+          color: #222222;
+        }
+      }
+      .underLine {
+        border: 1px solid #222;
+        width: 30px;
+        height: 1px;
+      }
+      .ingre1Detail {
+        font-size: 18px;
+        color: #666;
+        line-height: 30px;
+        width: 396.582px;
+        height: 150px;
+        margin-top: 24px;
+      }
+    }
+  }
+
+  .ingredient2 {
+    display: flex;
+    justify-content: space-between;
+    width: 1132px;
+    height: 730px;
+    padding-top: 80px;
+    .ingreContents2 {
+      display: flex;
+      flex-direction: column;
+      padding-top: 70px;
+      padding-left: 50px;
+      width: 459.12px;
+      height: 427.97px;
+      padding-top: 70px;
+      padding-left: 50px;
+      .contentsHead {
+        width: 396.582px;
+        height: 116px;
+        padding-bottom: 24px;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        .soft {
+          font-size: 38px;
+          font-weight: 350;
+          line-height: 50px;
+        }
+        .ingre2Text {
+          font-size: 38px;
+          color: #222222;
+        }
+      }
+      .underLine {
+        border: 1px solid #222;
+        width: 30px;
+        height: 1px;
+      }
+      .ingre2Detail {
+        font-size: 18px;
+        color: #666;
+        line-height: 30px;
+        width: 409.12px;
+        height: 180px;
+        margin-top: 24px;
+      }
+    }
+    .ingre2Image {
+      width: 632px;
+      height: 650px;
+    }
+  }
+
+  .ingredient3 {
+    display: flex;
+    justify-content: space-between;
+    width: 1132px;
+    height: 730px;
+    padding-top: 80px;
+    margin-bottom: 73px;
+    .ingre3Image {
+      width: 632px;
+      height: 650px;
+    }
+    .ingreContents3 {
+      display: flex;
+      flex-direction: column;
+      width: 455px;
+      height: 415px;
+      padding-top: 70px;
+      padding-left: 50px;
+
+      .contentsHead {
+        width: 396.582px;
+        height: 116px;
+        padding-bottom: 24px;
+        margin-top: 30px;
+        display: flex;
+        flex-direction: column;
+        .taurinAndVitamin {
+          font-size: 38px;
+          font-weight: 350;
+          line-height: 50px;
+        }
+        .ingre3Text {
+          font-size: 38px;
+          color: #222222;
+        }
+      }
+      .underLine {
+        border: 1px solid #222;
+        width: 30px;
+        height: 1px;
+      }
+      .ingre3Detail {
+        font-size: 18px;
+        color: #666;
+        line-height: 30px;
+        width: 408.15px;
+        height: 180px;
+        margin-top: 24px;
+      }
+    }
+  }
+}
+
+.recommendSection {
+  .recommendInfo {
+  }
+}
