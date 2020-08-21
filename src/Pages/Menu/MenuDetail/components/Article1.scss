@@ -64,8 +64,28 @@
             .likeIcon {
               background: url("/Images/heart_icon.png") left top no-repeat;
               width: 20px;
-              height: 20px;
+              height: 18px;
               background-position: 0px 2px;
+            }
+          }
+          .activeMyMenu {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 22px;
+            width: 124px;
+            height: 41px;
+            font-size: 16px;
+            color: white;
+            background-color: #444444;
+            border: 1px solid #444444;
+            outline: none;
+            .likeIcon {
+              background: url("/Images/heart_icon.png") left top no-repeat;
+              width: 20px;
+              height: 18px;
+              background-size: 50px;
+              background-position: 80% 50%;
             }
           }
           .origin {
@@ -107,13 +127,16 @@
         bottom: 0;
         display: flex;
         justify-content: space-between;
-        .subImage1 {
+        img{
           width: 65px;
           height: 65px;
         }
+        .subImage1 {
+         border: solid 2px #962639;
+          
+        }
         .subImage2 {
-          width: 65px;
-          height: 65px;
+          border: solid 2px #962639;
         }
       }
     }
