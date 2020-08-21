@@ -1,31 +1,47 @@
 import React, { Component } from 'react';
-import './Nav.scss';
 import { Link } from "react-router-dom";
+import './Nav.scss';
+import SubMenu1 from './SubMenu/SubMenu1';
+import SubMenu2 from './SubMenu/SubMenu2';
+import SubMenu3 from './SubMenu/SubMenu3';
+import SubMenu4 from "./SubMenu/SubMenu4";
+import SubMenu5 from "./SubMenu/SubMenu5";
+
+
+const obj = {
+  0: <SubMenu1 />,
+  1: <SubMenu2 />,
+  2: <SubMenu2 />,
+  3: <SubMenu2 />,
+  4: <SubMenu2 />,
+  5: <SubMenu3 />,
+  6: <SubMenu4 />,
+  7: <SubMenu5 />,
+};
+
+const arr = ["본아이에프", "본죽", "본죽&비빔밥cafe","본도시락","본설","베이비본죽","본몰","창업안내"];
+
+
 
 class Nav extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      display : "none"
-
-
+      activeTab: -1,
+      display: "none"
     };
   }
 
-  mouseOver=()=>{
-    this.setState({display: "flex"})
+  mouseOver=(id)=>{
+    this.setState({activeTab: id})
+    this.setState({display:"block"})
   }
 
   mouseLeave=()=>{
     this.setState({display: "none"})
   }
 
-
-
   render() {
-    const SUBMENUCONTENTS = SUB_MENU_CONTENTS;
-
-
     return (
       <div className="Nav">
         <nav className="mainNav">
@@ -37,42 +53,11 @@ class Nav extends Component {
 
           <div className="mainCategory">
             <ul>
-              <li>
-                <Link
-                  to="#"
-                  onMouseEnter={this.mouseOver}
-                  onMouseLeave={this.mouseLeave}
-                >
-                  본아이에프
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="#"
-                  onMouseEnter={this.mouseOver}
-                  onMouseLeave={this.mouseLeave}
-                >
-                  본죽
-                </Link>
-              </li>
-              <li>
-                <Link to="#">본죽&비빔밥cafe</Link>
-              </li>
-              <li>
-                <Link to="#">본도시락</Link>
-              </li>
-              <li>
-                <Link to="#">본설</Link>
-              </li>
-              <li>
-                <Link to="#">베이비본죽</Link>
-              </li>
-              <li>
-                <Link to="#">본몰</Link>
-              </li>
-              <li>
-                <Link to="#">창업안내</Link>
-              </li>
+              {arr.map((str,idx)=>{
+                return(
+                <li><Link to="#" onMouseEnter={()=>this.mouseOver(idx)}>{str}</Link></li>
+                )
+              })}
             </ul>
           </div>
 
@@ -86,18 +71,8 @@ class Nav extends Component {
             <Link to="#" className="menuImg"></Link>
           </div>
         </nav>
-
-        <div className="subMainContainer">
-          <div className="subIFMenu">
-            <ul style={{ display: this.state.display }}>
-              <li>회사소개</li>
-              <li>경영이념</li>
-              <li>소식보기</li>
-              <li>사회공헌</li>
-              <li>인재채용</li>
-              <li>윤리경영</li>
-            </ul>
-          </div>
+        <div>
+          {obj[this.state.activeTab]}
         </div>
       </div>
     );
@@ -105,20 +80,3 @@ class Nav extends Component {
 }
 
 export default Nav;
-
-const SUB_MENU_CONTENTS ={
-  "1":{
-      "content1" : "회사소개",
-      "content2" : "경영이념",                 
-  },
-  "2":{
-    "content1" : 2
-  },
-  "3":{
-    "content1" : 3
-  },
-  "4":{
-    "content1" : 4
-  }
-
-}

@@ -1,6 +1,46 @@
 .Banner {
-  img {
+  .BannerImageSize {
+    margin: 0 auto;
     width: 100%;
     height: 780px;
+  }
+
+  .mainOrderBox {
+    display: flex;
+    position: relative;
+    width: 1140.99px;
+    height: 84px;
+    margin: 0 auto;
+    margin-top: -42px;
+    z-index: 1;
+    background-color: #6e0000;
+
+    div {
+      width: 381.33px;
+      height: 100%;
+      border-left: solid 1px rgba(255, 255, 255, 0.2);
+      background-color: wheat;
+    }
+    dl {
+      display: flex;
+      align-items: center;
+    }
+    dt {
+      height: 100%;
+      line-height: 84px;
+      padding-left: 20px;
+      font-weight: 500;
+      font-size: 16px;
+    }
+
+    dd {
+      height: 100%;
+      padding-left: 20px;
+      font-size: inherit;
+    }
+    img {
+      width: 25px;
+      height: 14px;
+    }
   }
 }

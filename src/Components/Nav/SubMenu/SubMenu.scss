@@ -1,0 +1,25 @@
+.subMainContainer {
+  position: absolute;
+  top: 96px;
+  width: 100%;
+  height: 50px;
+  background-color: yellow;
+  z-index: 10;
+}
+
+.subIFMenu {
+  margin: 0 auto;
+  width: 1280px;
+  height: 100%;
+
+  ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  li {
+    margin: 0px 35px;
+  }
+}

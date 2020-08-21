@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import '../../Styles/reset.scss';
 import './Footer.scss'
 
 class Footer extends Component {
