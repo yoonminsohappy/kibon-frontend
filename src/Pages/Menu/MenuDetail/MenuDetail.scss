@@ -11,9 +11,7 @@
     align-items: center;
     width: 1132px;
     height: 552px;
-    border: 1px solid red;
     position: relative;
-
     .menu {
       width: 552px;
       height: 552px;
@@ -24,7 +22,6 @@
       height: 552px;
       display: flex;
       flex-direction: column;
-      border: 1px solid black;
       .name {
         font-size: 42px;
         font-weight: 500;
@@ -33,6 +30,8 @@
       .intro {
         font-size: 18px;
         color: #666;
+        font-weight: 450;
+        padding-top: 4px;
       }
       .priceContainer {
         padding-top: 25px;
@@ -47,13 +46,11 @@
         }
       }
       .btnContainer {
-        border: 1px solid green;
         display: flex;
         flex-direction: row-reverse;
 
         .btn {
           width: 260px;
-          border: 1px solid blue;
           display: flex;
           justify-content: space-between;
 
@@ -67,6 +64,7 @@
             font-size: 16px;
             background-color: white;
             border: 1px solid #ddd;
+            outline: none;
 
             .likeIcon {
               background: url("/Images/heart_icon.png") left top no-repeat;
@@ -81,6 +79,7 @@
             font-size: 16px;
             background-color: white;
             border: 1px solid #ddd;
+            outline: none;
           }
         }
       }
@@ -88,13 +87,23 @@
         border-bottom: solid 2px #222;
         padding-bottom: 22px;
       }
-      .summary {
-        width: 480px;
-        height: 81px;
+      .summary1 {
         color: #666;
         font-size: 18px;
-        font-weight: 350;
+        font-weight: 450;
         padding-top: 24px;
+      }
+      .summary2 {
+        color: #666;
+        font-size: 18px;
+        font-weight: 450;
+        padding-top: 7px;
+      }
+      .summary3 {
+        color: #666;
+        font-size: 18px;
+        font-weight: 450;
+        padding-top: 7px;
       }
       .previewImage {
         width: 140px;
@@ -178,8 +187,9 @@
     font-size: 20px;
     font-style: italic;
     padding-bottom: 35px;
+    font-family: $serif;
   }
-  .menuText {
+  .menuName {
     font-size: 24px;
     font-weight: 500;
     padding-bottom: 17px;
@@ -195,20 +205,23 @@
     height: 780px;
   }
   .introText {
-    font-size: 38px;
-    font-weight: 350;
+    font-size: 35px;
+    font-weight: 400;
     line-height: 50px;
     margin-top: 30px;
   }
   .menuText {
-    font-weight: 500;
-    font-size: 38px;
+    font-weight: 550;
+    font-size: 35px;
+    padding-top: 10px;
   }
   .explanation {
     font-size: 18px;
     color: #666;
     line-height: 30px;
     text-align: center;
+    margin-top: 17px;
+    font-weight: 450;
   }
 }
 
@@ -224,9 +237,8 @@
     padding-bottom: 17px;
   }
   .ingreUnderBar {
-    border: 1px solid #962639;
     width: 30px;
-    height: 3px;
+    height: 4px;
     background: #962639;
     margin-bottom: 40px;
   }
@@ -255,12 +267,14 @@
         flex-direction: column;
         .taurinAndVitamin {
           font-size: 38px;
-          font-weight: 350;
+          font-weight: 400;
           line-height: 50px;
         }
         .ingre1Text {
+          font-weight: 500;
           font-size: 38px;
           color: #222222;
+          padding-top: 5px;
         }
       }
       .underLine {
@@ -272,8 +286,8 @@
         font-size: 18px;
         color: #666;
         line-height: 30px;
-        width: 396.582px;
-        height: 150px;
+        width: 410px;
+        height: 250px;
         margin-top: 24px;
       }
     }
@@ -303,12 +317,14 @@
         flex-direction: column;
         .soft {
           font-size: 38px;
-          font-weight: 350;
+          font-weight: 400;
           line-height: 50px;
         }
         .ingre2Text {
           font-size: 38px;
+          font-weight: 500;
           color: #222222;
+          padding-top: 5px;
         }
       }
       .underLine {
@@ -320,7 +336,7 @@
         font-size: 18px;
         color: #666;
         line-height: 30px;
-        width: 409.12px;
+        width: 425px;
         height: 180px;
         margin-top: 24px;
       }
@@ -357,14 +373,16 @@
         margin-top: 30px;
         display: flex;
         flex-direction: column;
-        .taurinAndVitamin {
+        .vitality {
           font-size: 38px;
-          font-weight: 350;
+          font-weight: 400;
           line-height: 50px;
         }
         .ingre3Text {
           font-size: 38px;
+          font-weight: 500;
           color: #222222;
+          padding-top: 5px;
         }
       }
       .underLine {
@@ -376,7 +394,7 @@
         font-size: 18px;
         color: #666;
         line-height: 30px;
-        width: 408.15px;
+        width: 425px;
         height: 180px;
         margin-top: 24px;
       }
@@ -385,6 +403,168 @@
 }
 
 .recommendSection {
-  .recommendInfo {
+  width: 1600px;
+  height: 577px;
+  background-color: #faf9f7;
+  .recommendIntroBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .recommendIntro {
+      font-size: 24px;
+      font-weight: 500;
+      padding-top: 80px;
+      padding-bottom: 14px;
+    }
+    .underBar {
+      width: 30px;
+      height: 4px;
+      background: #962639;
+      margin-bottom: 40px;
+    }
+    .recommendText {
+      display: flex;
+      font-size: 38px;
+      font-weight: 350;
+      line-height: 50px;
+      .recommendMenu {
+        font-weight: 400;
+      }
+      .recommend {
+        font-weight: 500;
+        padding-left: 9px;
+      }
+    }
+  }
+  .eachRecommendBox {
+    display: flex;
+    justify-content: center;
+    .eachRecommend {
+      width: 1132px;
+      height: 211px;
+      background-color: white;
+      margin-top: 85px;
+      display: flex;
+      .recommendForHealth {
+        width: 377.324px;
+        height: 211px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 70px;
+        padding-bottom: 35px;
+        position: relative;
+        .forHealthImg {
+          position: absolute;
+          top: -27%;
+        }
+        .forHealth {
+          padding-bottom: 22px;
+          font-weight: 500;
+        }
+        .recommendUnderBar {
+          width: 16px;
+          height: 1px;
+          background-color: #ddcbc1;
+          margin-bottom: 14px;
+        }
+        .aboutHealth1 {
+          font-size: 16px;
+          color: #666666;
+          padding-bottom: 8px;
+        }
+        .aboutHealth2 {
+          font-size: 16px;
+          color: #666666;
+        }
+      }
+      .sideBarContainer {
+        display: flex;
+        align-items: center;
+        .sideBar {
+          height: 150px;
+          border: 1px solid #faf9f7;
+        }
+      }
+
+      .recommendForBreakfast {
+        width: 377.324px;
+        height: 211px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 70px;
+        padding-bottom: 35px;
+        position: relative;
+        .forBreakfastImg {
+          position: absolute;
+          top: -27%;
+        }
+        .forBreakfast {
+          padding-bottom: 22px;
+          font-weight: 500;
+        }
+        .recommendUnderBar {
+          width: 16px;
+          height: 1px;
+          background-color: #ddcbc1;
+          margin-bottom: 14px;
+        }
+        .aboutBreakfast1 {
+          font-size: 16px;
+          color: #666666;
+          padding-bottom: 8px;
+        }
+        .aboutBreakfast2 {
+          font-size: 16px;
+          color: #666666;
+        }
+      }
+      .sideBarContainer {
+        display: flex;
+        align-items: center;
+        .sideBar {
+          height: 150px;
+          border: 1px solid #faf9f7;
+        }
+      }
+
+      .recommendForPresent {
+        width: 377.324px;
+        height: 211px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 70px;
+        padding-bottom: 35px;
+        position: relative;
+        .forPresentImg {
+          position: absolute;
+          top: -27%;
+        }
+        .forPresent {
+          padding-bottom: 22px;
+          font-weight: 500;
+        }
+        .recommendUnderBar {
+          width: 16px;
+          height: 1px;
+          background-color: #ddcbc1;
+          margin-bottom: 14px;
+        }
+        .aboutPresent1 {
+          font-size: 16px;
+          color: #666666;
+          padding-bottom: 8px;
+        }
+        .aboutPresent2 {
+          font-size: 16px;
+          color: #666666;
+        }
+      }
+    }
   }
 }
