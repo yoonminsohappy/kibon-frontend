@@ -6,6 +6,8 @@ $labelBur: #962639;
 $footerGray: #333337;
 $textContent: #666;
 $labelGreen: #87af0f;
+$grayBackground: #f4f4f4;
+$serif: "Noto Serif";
 @mixin center {
   display: flex;
   justify-content: center;
@@ -13,7 +15,7 @@ $labelGreen: #87af0f;
 }
 * {
   box-sizing: border-box;
-  font-family: "Noto Sans KR", "Noto Serif", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   text-decoration: none;
 }
 body {
@@ -22,4 +24,11 @@ body {
   min-width: 1280px;
   color: #222;
   background-color: #fff;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  &:active {
+    color: inherit;
+  }
 }
