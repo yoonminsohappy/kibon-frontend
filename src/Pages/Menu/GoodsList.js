@@ -27,33 +27,31 @@ class GoodsList extends Component {
       7: <Category7 />,
     };
     return (
-      <div className="Menu">
-        <div className="contentWrap">
-          <div className="contentWrapVisual">
-            <div className="innerWrapIn">
-              <h2 className="contentTitle">메뉴소개</h2>
+      <div className="contentWrap">
+        <div className="contentWrapVisual">
+          <div className="innerWrapIn">
+            <h2 className="contentTitle">{this.props.title}</h2>
+          </div>
+        </div>
+        <div className="subContents">
+          <div className="tabBrand">
+            <div className="tabRow">
+              <li
+                className={this.state.categoryBar ? "on" : "off"}
+                onClick={() => this.handleClick(1)}
+              >
+                모든메뉴
+              </li>
+              <li onClick={() => this.handleClick(2)}>보양죽</li>
+              <li onClick={() => this.handleClick(3)}>영양죽</li>
+              <li onClick={() => this.handleClick(4)}>별미죽</li>
+              <li onClick={() => this.handleClick(5)}>전통죽</li>
+              <li onClick={() => this.handleClick(6)}>곁들임/음료</li>
+              <li onClick={() => this.handleClick(7)}>간편식</li>
             </div>
           </div>
-          <div className="subContents">
-            <div className="tabBrand">
-              <div className="tabRow">
-                <li
-                  className={this.state.categoryBar ? "on" : "off"}
-                  onClick={() => this.handleClick(1)}
-                >
-                  모든메뉴
-                </li>
-                <li onClick={() => this.handleClick(2)}>보양죽</li>
-                <li onClick={() => this.handleClick(3)}>영양죽</li>
-                <li onClick={() => this.handleClick(4)}>별미죽</li>
-                <li onClick={() => this.handleClick(5)}>전통죽</li>
-                <li onClick={() => this.handleClick(6)}>곁들임/음료</li>
-                <li onClick={() => this.handleClick(7)}>간편식</li>
-              </div>
-            </div>
-            <div className="menuMapList">
-              <ul className="menuList">{obj[this.state.activeTab]}</ul>
-            </div>
+          <div className="menuMapList">
+            <ul className="menuList">{obj[this.state.activeTab]}</ul>
           </div>
         </div>
       </div>

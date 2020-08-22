@@ -1,32 +1,17 @@
 @import "../../Styles/common.scss";
 
+@keyframes moveImg {
+  from {
+    opacity: 0;
+  }
+}
+
 .Menu {
   * {
     box-sizing: border-box;
     color: inherit;
     font-family: "Noto Sans KR";
     letter-spacing: -0.025em;
-  }
-  .contentWrapVisual {
-    height: 390px;
-    margin-bottom: 50px;
-    background: url("https://www.bonif.co.kr/resources/web/css/images/v/sub_visual_bonjuk.jpg")
-      center no-repeat;
-    background-size: cover;
-    .innerWrapIn {
-      width: 1132px;
-      margin: 0 auto;
-      .contentTitle {
-        position: relative;
-        padding-top: 245px;
-        padding-bottom: 30px;
-        font-size: 42px;
-        font-weight: 400;
-        text-align: center;
-        line-height: 1em;
-        color: white;
-      }
-    }
   }
   .subContents {
     position: relative;
@@ -90,6 +75,10 @@
         position: relative;
         height: 350px;
 
+        .active {
+          animation: 1s;
+        }
+
         .goods-icon {
           position: absolute;
           top: 0;
@@ -129,8 +118,7 @@
       .goods-opt-selectbox {
         position: absolute;
         bottom: 0;
-        background-color: black;
-        opacity: 0.6;
+        background: rgba(0, 0, 0, 0.6);
         width: 260.5px;
         height: 50px;
         line-height: 50px;
@@ -154,8 +142,7 @@
       .goods-opt-selectbox-fill {
         position: absolute;
         bottom: 0;
-        background-color: black;
-        opacity: 0.6;
+        background: rgba(0, 0, 0, 0.6);
         width: 260.5px;
         height: 50px;
         line-height: 50px;

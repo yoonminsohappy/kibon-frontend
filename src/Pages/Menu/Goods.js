@@ -25,7 +25,7 @@ class Goods extends Component {
 
   render() {
     return (
-      <li dataCate="2">
+      <li>
         <div
           className="goods-block"
           onMouseEnter={this.handleMouseOver}
