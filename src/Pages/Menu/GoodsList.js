@@ -17,7 +17,7 @@ class GoodsList extends Component {
     this.setState({ activeTab: id, categoryBar: id });
   };
   render() {
-    // console.log(this.props.imgData);
+    console.log(this.props.imgData);
     const obj = {
       1: <Category1 imgSrc={this.props.imgData} />,
       2: <Category2 />,
