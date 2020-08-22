@@ -24,6 +24,7 @@ class Goods extends Component {
   };
 
   render() {
+    console.log(this.props);
     return (
       <li>
         <div
@@ -41,7 +42,7 @@ class Goods extends Component {
               <a href="/#">
                 <img
                   alt="goodsDetail"
-                  src={this.props.src}
+                  src={this.props.img}
                   className="goods-detail-view"
                 />
               </a>
@@ -63,7 +64,7 @@ class Goods extends Component {
           <div className="goods-name">
             <p className="name">{this.props.name}</p>
             <p className="price">
-              <span>{this.props.price}</span> 원
+              <span>{`${this.props.price}`}</span> 원
             </p>
           </div>
         </div>

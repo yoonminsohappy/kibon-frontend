@@ -17,8 +17,9 @@ class GoodsList extends Component {
     this.setState({ activeTab: id, categoryBar: id });
   };
   render() {
+    // console.log(this.props.imgData);
     const obj = {
-      1: <Category1 />,
+      1: <Category1 imgSrc={this.props.imgData} />,
       2: <Category2 />,
       3: <Category3 />,
       4: <Category4 />,
@@ -37,6 +38,7 @@ class GoodsList extends Component {
           <div className="tabBrand">
             <div className="tabRow">
               <li
+                name="all"
                 className={this.state.categoryBar ? "on" : "off"}
                 onClick={() => this.handleClick(1)}
               >

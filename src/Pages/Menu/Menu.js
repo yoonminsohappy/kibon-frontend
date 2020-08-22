@@ -9,39 +9,35 @@ import TitleSection from "../../Components/TitleSection/TitleSection";
 class Menu extends Component {
   constructor() {
     super();
-
-    console.log("constructor");
+    console.log("생성자");
     this.state = {
-      isCategoryClicked: false,
       data: [],
     };
   }
 
-  componentDidMount() {
-    console.log("componentDidMount");
-    fetch("http://localhost:3000/data/menu.json")
-      .then((res) => {
-        return res.json();
-      })
-      .then((res) => {
-        console.log("API 호출 끝났다!");
-        this.setState({ data: res.data });
+  componentDidMount = () => {
+    fetch("http://10.58.3.99:8000/product/product")
+      .then((res) => res.json())
+      .then((json) => {
+        this.setState({ data: json });
       });
-  }
+    console.log("컴디마");
+  };
 
   handleClick = (id) => {
     this.setState({ activeTab: id });
   };
 
   render() {
-    console.log("render");
+    console.log("렌더");
+    // console.log(this.state.data);
     return (
       <div className="Menu">
         <TitleSection
           title={"메뉴소개"}
           img={"/Images/sub_visual_bonjuk.jpg"}
         />
-        <GoodsList /> <MenuFooter />
+        <GoodsList imgData={this.state.data.products} /> <MenuFooter />
       </div>
     );
   }

@@ -1,0 +1,40 @@
+@import "../../Styles/common.scss";
+
+.TitleSection {
+  * {
+    box-sizing: border-box;
+    color: inherit;
+    font-family: "Noto Sans KR";
+    letter-spacing: -0.025em;
+  }
+  .contentWrapVisual {
+    height: 390px;
+    margin-bottom: 50px;
+    background: center no-repeat;
+    background-size: cover;
+    .innerWrapIn {
+      width: 1132px;
+      margin: 0 auto;
+      .contentTitle {
+        position: relative;
+        padding-top: 245px;
+        padding-bottom: 30px;
+        font-size: 42px;
+        font-weight: 400;
+        text-align: center;
+        line-height: 1em;
+        color: white;
+      }
+    }
+  }
+
+  .totalTabBox {
+    margin-bottom: 50px;
+
+    .innerWrapIn {
+      position: relative;
+      width: 1132px;
+      margin: 0 auto;
+    }
+  }
+}
