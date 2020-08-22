@@ -7,7 +7,6 @@ import MenuDetail from "./Pages/Menu/MeunDetail/MeunDetail";
 import Login from "./Pages/Login/Login";
 import SignUp from "./Pages/SignUp/SignUp";
 import MyPage from "./Pages/MyPage/MyPage";
-import Store from "./Pages/Store/Store";
 
 class Routes extends React.Component {
   render() {
@@ -20,7 +19,6 @@ class Routes extends React.Component {
           <Route exact path="/" component={Main} />
           <Route exact path="/menu" component={Menu} />
           <Route exact path="/menu/menu-detail" component={MenuDetail} />
-          <Route exact path="/store" component={Store} />
         </Switch>
       </Router>
     );
