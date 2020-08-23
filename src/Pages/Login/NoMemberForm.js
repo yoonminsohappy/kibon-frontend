@@ -18,8 +18,7 @@ class NoMemberForm extends Component {
         </div>
         <div className="joinRule">
           <div className="ruletext">
-            <input type="checkbox" className="check" />
-            <label for="idCheck">비회원 이용약관 동의</label>
+            <label><input type="checkbox" className="check" />비회원 이용약관 동의</label>
           </div>
         </div>
         <div className="inputBox">
@@ -54,7 +53,7 @@ class NoMemberForm extends Component {
           <input className="userName" type="text" />
           <button className="checkBtn">확인</button>
         </div>
-        <button className="submit">확인</button>
+        <button className="loginBtn">확인</button>
       </div>
     );
   }
