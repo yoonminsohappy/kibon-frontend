@@ -6,6 +6,7 @@ class SubMenu4 extends Component {
   render() {
     return (
       <div className="subMainContainer">
+        <div className="downin"></div>
         <div className="subIFMenu">
           <ul style={{ display: this.state.display }}>
             <li>브랜드 소개</li>

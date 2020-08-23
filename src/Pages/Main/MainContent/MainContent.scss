@@ -1,66 +1,161 @@
 @import "../../../Styles/common.scss";
 
 .MainContent {
-  margin-top: 110px;
+  .image1 {
+    width: 650px;
+    height: 480px;
+    margin-top: -35px;
+  }
 
-  .mainContentContainer {
-    width: 100%;
-    height: 375px;
-    background-color: pink;
+  .image2 {
+    width: 650px;
+    height: 460px;
+    margin-top: -33px;
+    z-index: 1;
+  }
 
-    .mainContentArticle {
-      display: flex;
-      width: 1130px;
+  .image3 {
+    width: 650px;
+    height: 515px;
+    margin-top: -70px;
+  }
+  .image4 {
+    width: 650px;
+    height: 515px;
+    margin-top: -41px;
+  }
+
+  .left {
+    margin-top: 110px;
+
+    .mainContentCardContainer {
+      width: 100%;
       height: 375px;
-      margin: 0 auto;
-      background-color: plum;
-    }
 
-    img {
-      width: 650px;
-      height: 480px;
-      margin-top: -30px;
-    }
+      .mainContentArticle {
+        display: flex;
+        width: 1130px;
+        height: 375px;
+        margin: 0 auto;
+      }
 
-    span {
-      font-size: 18px;
-      line-height: 30px;
-    }
+      span {
+        font-size: 18px;
+        line-height: 30px;
+      }
 
-    .mainContentText {
-      width: 480px;
-      height: 100%;
-      padding: 25px 0px 0px 30px;
-      background-color: gray;
-    }
-    .textTitle {
-      font-size: 34px;
-      padding: 2px 0px 6px;
-      line-height: 40px;
-    }
+      .mainContentText {
+        width: 480px;
+        height: 100%;
+        padding: 25px 0px 0px 30px;
+      }
 
-    hr {
-      width: 27px;
-      height: 2px;
-      border: 0;
-      background-color: #222;
-      margin: 20px 0 23px 0;
-    }
+      .leftCard {
+        position: absolute;
+        width: 50%;
+        height: 325px;
+        right: 0;
+        z-index: -1;
+        background-color: #f4f4f4;
+      }
 
-    .mainText {
-      font-size: 16px;
-      padding-bottom: 4px;
-      line-height: 25px;
-    }
+      .textTitle {
+        font-size: 34px;
+        padding: 2px 0px 6px;
+        line-height: 40px;
+      }
 
-    button {
-      width: 170px;
-      height: 52px;
-      margin: 30px 0px 0px;
-      font-size: 18px;
-      outline: none;
-      border: none;
-      background-color: $bur;
+      hr {
+        width: 27px;
+        height: 2px;
+        border: 0;
+        background-color: #222;
+        margin: 20px 0 23px 0;
+      }
+
+      .mainText {
+        font-size: 16px;
+        padding-bottom: 4px;
+        line-height: 25px;
+      }
+
+      button {
+        width: 170px;
+        height: 52px;
+        margin: 30px 0px 0px;
+        font-size: 18px;
+        outline: none;
+        border: none;
+        color: white;
+        background-color: $bur;
+      }
+    }
+  }
+
+  .right {
+    margin-top: 110px;
+
+    .mainContentCardContainer {
+      width: 100%;
+      height: 375px;
+
+      .mainContentArticle {
+        display: flex;
+        width: 1130px;
+        height: 375px;
+        margin: 0 auto;
+      }
+
+      span {
+        font-size: 18px;
+        line-height: 30px;
+      }
+
+      .mainContentText {
+        width: 480px;
+        height: 100%;
+        padding: 25px 0px 0px 30px;
+      }
+
+      .rightCard {
+        position: absolute;
+        width: 50%;
+        height: 325px;
+        left: 0;
+        z-index: -1;
+        background-color: #f4f4f4;
+      }
+
+      .textTitle {
+        font-size: 34px;
+        padding: 2px 0px 6px;
+        line-height: 40px;
+      }
+
+      hr {
+        width: 27px;
+        height: 2px;
+        border: 0;
+        background-color: #222;
+        margin: 20px 0 23px 0;
+      }
+
+      .mainText {
+        font-size: 16px;
+        padding-bottom: 4px;
+        line-height: 25px;
+      }
+
+      button {
+        width: 170px;
+        height: 52px;
+        margin: 30px 0px 0px;
+        font-size: 18px;
+        outline: none;
+        border: none;
+        color: white;
+        background-color: $bur;
+      }
     }
   }
 }

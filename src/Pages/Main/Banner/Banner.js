@@ -10,7 +10,7 @@ import "./Banner.scss"
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,
-      autoplaySpeed: 4000
+      autoplaySpeed: 3000
     };
 
 class Banner extends Component {
@@ -43,12 +43,15 @@ class Banner extends Component {
         <div className="mainOrderBox">
           {MAIN_ORDER_CONTENTS.map((v) => {
             return (
-              <div>
+              <div className="selectCard">
                 <Link to="#">
                   <dl>
-                    <dt>{v.title}</dt>
-                    <dd>{v.mainContent}</dd>
-                    <img src="./Images/main_arrow.png"></img>
+                    <div className="orderText">
+                      <dt>{v.title}</dt>
+                      <dd>{v.mainContent}</dd>
+                    </div>
+                    <div className="arrowImage"></div>
+                    {/* <img alt="화살표 이미지" src="./Images/main_arrow.png" /> */}
                   </dl>
                 </Link>
               </div>
@@ -62,7 +65,7 @@ class Banner extends Component {
 
 const MAIN_ORDER_CONTENTS =[
   {
-  title:"주문하기",
+  title: "주문하기",
   mainContent: "간편한 결제와 신속한 배달"
   },
   {

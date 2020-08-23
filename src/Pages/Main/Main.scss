@@ -1,17 +1,28 @@
-.mainContentTitle {
-  padding: 70px 0px 110px;
-  width: 100%;
-  height: 1976px;
-  background-color: orange;
-  width: 100%;
-  height: 96px;
-  text-align: center;
+@import "../../Styles/common.scss";
 
-  span {
-    font-size: 20px;
+.Main {
+  width: 100%;
+  .mainContentTitle {
+    padding: 70px 0px 110px;
+    width: 100%;
+    height: 1976px;
+    width: 100%;
+    height: 96px;
+    text-align: center;
+
+    span {
+      font-family: $serif;
+      color: #8f172b;
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 48px;
+      line-height: 60px;
+    }
   }
 
-  p {
-    font-size: 48px;
+  .mainContentContainer {
+    padding: 70px 0px 110px;
   }
 }
