@@ -5,15 +5,32 @@ import { Link } from "react-router-dom";
 
 class GoodsList extends Component {
   state = {
-    categoryBar: 1,
+    showUnderBar: true,
+    hideUnderBar: false,
+    activeTab: 0,
   };
 
+  // clickUnderbar = () => {
+  //   this.setState(() => ({
+  //     showUnderBar: true,
+  //   }));
+  //   console.log("hi", this.state.showUnderBar);
+  //   console.log("hi", this.state.hideUnderBar);
+  // };
+
   handleClick = (id) => {
-    this.setState({
-      categoryBar: id,
-    });
+    this.setState({ activeTab: id });
   };
   render() {
+    const arr = [
+      "모든메뉴",
+      "보양죽",
+      "영양죽",
+      "별미죽",
+      "전통죽",
+      "곁들임/음료",
+      "간편식",
+    ];
     // console.log(this.props.goods);
     return (
       <div className="contentWrap">
@@ -25,25 +42,23 @@ class GoodsList extends Component {
         <div className="subContents">
           <div className="tabBrand">
             <div className="tabRow">
-              <li
-                name="all"
-                className={this.state.categoryBar ? "on" : "off"}
-                onClick={this.handleClick}
-              >
-                모든메뉴
-              </li>
-              <li onClick={this.handleClick}>보양죽</li>
-              <li onClick={this.handleClick}>영양죽</li>
-              <li onClick={this.handleClick}>별미죽</li>
-              <li onClick={this.handleClick}>전통죽</li>
-              <li onClick={this.handleClick}>곁들임/음료</li>
-              <li onClick={this.handleClick}>간편식</li>
+              {arr.map((str, idx) => {
+                return (
+                  <li
+                    key={str}
+                    onClick={() => this.handleClick(idx)}
+                    className={this.state.activeTab === idx ? "on" : ""}
+                  >
+                    {str}
+                  </li>
+                );
+              })}
             </div>
           </div>
           <div className="menuMapList">
             <ul className="menuList">
-              {this.props.goods &&
-                this.props.goods.map((el, idx) => {
+              {this.props.boyang &&
+                this.props.boyang.map((el, idx) => {
                   return (
                     <Link to={`/menu/${idx}`} key={idx}>
                       <Goods

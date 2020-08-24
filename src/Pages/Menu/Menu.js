@@ -20,7 +20,7 @@ class Menu extends Component {
       .then((res) => res.json())
       .then((json) =>
         this.setState({
-          menu: json.products,
+          menu1: json.products,
           num: this.state.num + 1,
         })
       );
@@ -42,7 +42,7 @@ class Menu extends Component {
         .then((res) => res.json())
         .then((json) => {
           this.setState({
-            menu: json.products,
+            [`menu${this.state.num}`]: json.products,
             num: this.state.num + 1,
           });
         });
@@ -56,7 +56,7 @@ class Menu extends Component {
   };
 
   render() {
-    console.log(this.state.menu);
+    // console.log(this.state.menu2);
     // console.log("렌더");
     // console.log(this.state.data);
     // console.log(typeof this.state.data);
@@ -66,7 +66,12 @@ class Menu extends Component {
           title={"메뉴소개"}
           img={"/Images/sub_visual_bonjuk.jpg"}
         />
-        <GoodsList goods={this.state.menu} />
+        <GoodsList
+          boyang={this.state.menu1}
+          youngyang={this.state.menu2}
+          byeolmi={this.state.menu3}
+          jeontong={this.state.menu4}
+        />
         <MenuFooter />
       </div>
     );

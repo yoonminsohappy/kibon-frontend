@@ -30,25 +30,11 @@
           line-height: 50px;
           color: #666;
           cursor: pointer;
-
-          &::after {
-            content: "";
-            position: absolute;
-            top: 50px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background-color: $bur;
-            z-index: 1;
-          }
         }
-        &::after {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 3px;
-          color: $bur;
+        .on {
+          width: 161px;
+          // height: 3px;
+          border-bottom: 3px solid $bur;
           z-index: 1;
         }
       }
