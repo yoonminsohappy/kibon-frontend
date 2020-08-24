@@ -36,7 +36,6 @@ class Nav extends Component {
 
   render() {
     const {show, activeTab, scrollPos} = this.state;
-    console.log(this.state.show)
     return (
       <div className="Nav">
         <nav className="mainNav">
@@ -78,7 +77,7 @@ class Nav extends Component {
           </div>
         </nav>
         <div>
-          <SubMenu submenu={SUBMENU[activeTab]} hover={activeTab} />
+          <SubMenu submenu={SUB_MENU[activeTab]} hover={activeTab} />
         </div>
       </div>
     );
@@ -98,7 +97,7 @@ const arr = [
   "창업안내",
 ];
 
-const SUBMENU = [
+const SUB_MENU = [
   ["회사소개", "경영이념", "소식보기", "사회공헌", "인재채용", "윤리경영"],
   ["브랜드 소개", "메뉴 소개", "매장 찾기", "이벤트", "주문하기", "창업"],
   ["브랜드 소개", "메뉴 소개", "매장 찾기", "이벤트", "주문하기", "창업"],

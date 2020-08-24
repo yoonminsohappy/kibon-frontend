@@ -6,12 +6,13 @@ class SubMenu extends Component {
     
    }
 
+
   render() { 
-    console.log(this.props.hover)
+    console.log(this.props.hover )
 
     return (
       <div className="SubMainContainer">
-        <div className="downin"></div>
+        <div className={this.props.hover >= 0 ? "downin" : ""}></div>
         <div className="subIFMenu">
           <ul>
             {this.props.submenu && this.props.submenu.map((v=>{
