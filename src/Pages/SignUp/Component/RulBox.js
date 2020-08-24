@@ -1,24 +1,21 @@
 import React, { Component } from "react";
 import "./RulBox.scss";
-
-// handleChecked = (e) => {
-  //   this.setState({
-  //     ...this.state,
-  //     [e.target.name]: !this.state[e.target.name],
-  //   });
-
-
+ 
 class RulBox extends Component {
+
   render() {
+    const { contents , checked, onClick } = this.props;
     return (
       <div className="RuleBox">
+        <label className="ruleText">
         <input
-          name="firstChecked"
           className="check"
           type="checkbox"
+          checked={checked}
+          onClick={onClick} 
+          name={checked}
         />
-        <label className="ruleText" for="check">
-    <span className="textPoint">[필수]</span>{this.props.contents}
+         <span className="textPoint">[필수]</span>{contents}
         </label>
       </div>
     );
