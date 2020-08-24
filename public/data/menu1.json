@@ -1,0 +1,96 @@
+{
+  "products": [
+    {
+      "image": ["https://files.bonif.co.kr/upload/cmdt/BF101_pic_4BpzCLaw.jpg"],
+      "name": "해물김치해장죽",
+      "price": "10000.00"
+    },
+    {
+      "image": ["https://files.bonif.co.kr/upload/cmdt/BF101_pic_cz9RK5DA.jpg"],
+      "name": "냉이바지락죽",
+      "price": "9000.00"
+    },
+    {
+      "image": [
+        "https://files.bonif.co.kr/upload/cmdt/BF101_thum_10001798.jpg"
+      ],
+      "name": "쇠고기야채죽",
+      "price": "9000.00"
+    },
+    {
+      "image": [
+        "https://files.bonif.co.kr/upload/cmdt/BF101_thum_10000276.jpg"
+      ],
+      "name": "쇠고기버섯죽",
+      "price": "9000.00"
+    },
+    {
+      "image": [
+        "https://files.bonif.co.kr/upload/cmdt/BF101_thum_10000772.jpg"
+      ],
+      "name": "쇠고기미역죽",
+      "price": "8500.00"
+    },
+    {
+      "image": [
+        "https://files.bonif.co.kr/upload/cmdt/BF101_thum_10000271.jpg"
+      ],
+      "name": "참치야채죽",
+      "price": "8500.00"
+    },
+    {
+      "image": [
+        "https://files.bonif.co.kr/upload/cmdt/BF101_thum_10000275.jpg"
+      ],
+      "name": "야채죽",
+      "price": "8000.00"
+    },
+    {
+      "image": [
+        "https://files.bonif.co.kr/upload/cmdt/BF101_thum_10000270.jpg"
+      ],
+      "name": "해물죽",
+      "price": "10000.00"
+    },
+    {
+      "image": [
+        "https://files.bonif.co.kr/upload/cmdt/BF101_thum_10005670.jpg"
+      ],
+      "name": "특해물죽",
+      "price": "13000.00"
+    },
+    {
+      "image": [
+        "https://files.bonif.co.kr/upload/cmdt/BF101_thum_10000278.jpg"
+      ],
+      "name": "새우죽",
+      "price": "9000.00"
+    },
+    {
+      "image": [
+        "https://files.bonif.co.kr/upload/cmdt/BF101_thum_10005671.jpg"
+      ],
+      "name": "특새우죽",
+      "price": "12000.00"
+    },
+    {
+      "image": [
+        "https://files.bonif.co.kr/upload/cmdt/BF101_thum_10000280.jpg"
+      ],
+      "name": "버섯굴죽",
+      "price": "9000.00"
+    },
+    {
+      "image": [
+        "https://files.bonif.co.kr/upload/cmdt/BF101_thum_10005669.jpg"
+      ],
+      "name": "특버섯굴죽",
+      "price": "12000.00"
+    },
+    {
+      "image": ["https://files.bonif.co.kr/upload/cmdt/BF101_pic_A7qJoyXl.jpg"],
+      "name": "흰죽",
+      "price": "6000.00"
+    }
+  ]
+}

@@ -8,36 +8,47 @@ import TitleSection from "../../Components/TitleSection/TitleSection";
 import url from "../../Config";
 
 class Menu extends Component {
-  constructor() {
-    super();
-    console.log("생성자");
+  constructor(props) {
+    super(props);
     this.state = {
-      data: [],
+      menu: [],
       num: 1,
     };
   }
-
   componentDidMount = () => {
-    fetch(url + "/product/category/" + this.state.num)
+    fetch(`/data/menu${this.state.num}.json`)
       .then((res) => res.json())
       .then((json) =>
-        this.setState({ data: json.products, num: this.state.num + 1 })
+        this.setState({
+          menu: json.products,
+          num: this.state.num + 1,
+        })
       );
-    console.log("컴디마1");
+    console.log("componentDidMount");
   };
 
+  // componentDidMount = () => {
+  //   fetch(url + "/product/category/" + this.state.num)
+  //     .then((res) => res.json())
+  //     .then((json) =>
+  //       this.setState({ data: json.products, num: this.state.num + 1 })
+  //     );
+  //   console.log("컴디마1");
+  // };
+
   componentDidUpdate = () => {
-    fetch(url + "/product/category/" + this.state.num)
-      .then((res) => res.json())
-      .then((json) => {
-        if (this.state.num < 4) {
+    if (this.state.num < 5) {
+      fetch(`/data/menu${this.state.num}.json`)
+        .then((res) => res.json())
+        .then((json) => {
           this.setState({
-            data: json.products,
+            menu: json.products,
             num: this.state.num + 1,
           });
-        }
-      });
-    console.log("컴디마2");
+        });
+      console.log("componentDidUpdate");
+      // console.log(this.state.menu);
+    }
   };
 
   handleClick = (id) => {
@@ -45,8 +56,9 @@ class Menu extends Component {
   };
 
   render() {
+    console.log(this.state.menu);
     // console.log("렌더");
-    console.log(this.state.data);
+    // console.log(this.state.data);
     // console.log(typeof this.state.data);
     return (
       <div className="Menu">
@@ -54,11 +66,7 @@ class Menu extends Component {
           title={"메뉴소개"}
           img={"/Images/sub_visual_bonjuk.jpg"}
         />
-        {/* {this.state.data &&
-          this.state.data.map((el, idx) => {
-            return <GoodsList key={idx} data={el} />;
-          })} */}
-        <GoodsList data={this.state.data} />
+        <GoodsList goods={this.state.menu} />
         <MenuFooter />
       </div>
     );

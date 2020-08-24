@@ -1,10 +1,11 @@
 import React, { Component } from "react";
 import Goods from "./../Goods";
+import url from "../../../Config";
+import { withRouter } from "react-router-dom";
 
-class Category3 extends Component {
+class Category extends Component {
   render() {
     // console.log(this.props.src);
-    // console.log(this.props.category);
     return (
       <ul className="menuList">
         {this.props.src &&
@@ -16,7 +17,7 @@ class Category3 extends Component {
                 name={el.name}
                 price={el.price}
                 category={el.category}
-                img={el.image}
+                img={el.imgSrc}
                 best={el.best}
                 new={el.new}
               />
@@ -36,10 +37,42 @@ class Category3 extends Component {
 //     best: "NEW",
 //   },
 //   {
+//     id: 2,
+//     imgSrc: "https://files.bonif.co.kr/upload/cmdt/BF101_pic_RtJtR825.jpg",
+//     name: "삼계전복죽",
+//     price: "15,000",
+//   },
+//   {
+//     id: 3,
+//     imgSrc: "https://files.bonif.co.kr/upload/cmdt/BF101_pic_RtJtR825.jpg",
+//     name: "전복죽",
+//     price: "15,000",
+//     best: "BEST",
+//   },
+//   {
+//     id: 4,
+//     imgSrc: "https://files.bonif.co.kr/upload/cmdt/BF101_pic_RtJtR825.jpg",
+//     name: "진전복중",
+//     price: "19,000",
+//   },
+//   {
+//     id: 5,
+//     imgSrc: "https://files.bonif.co.kr/upload/cmdt/BF101_pic_RtJtR825.jpg",
+//     name: "특전복죽",
+//     price: "15,000",
+//   },
+//   {
+//     id: 6,
+//     imgSrc: "https://files.bonif.co.kr/upload/cmdt/BF101_pic_RtJtR825.jpg",
+//     name: "해물김치해장죽",
+//     price: "15,000",
+//     new: "NEW",
+//   },
+//   {
 //     id: 7,
-//     imgSrc: "https://files.bonif.co.kr/upload/cmdt/BF101_pic_cz9RK5DA.jpg",
+//     imgSrc: "https://files.bonif.co.kr/upload/cmdt/BF101_pic_RtJtR825.jpg",
 //     name: "냉이바지락죽",
-//     price: "9,000",
+//     price: "15,000",
 //     best: "BEST",
 //     new: "NEW",
 //   },
@@ -47,72 +80,72 @@ class Category3 extends Component {
 //     id: 8,
 //     imgSrc: "https://files.bonif.co.kr/upload/cmdt/BF101_pic_RtJtR825.jpg",
 //     name: "쇠고기야채죽",
-//     price: "9,000",
+//     price: "15,000",
 //     best: "BEST",
 //   },
 //   {
 //     id: 9,
-//     imgSrc: "https://files.bonif.co.kr/upload/cmdt/BF101_thum_10000276.jpg",
-//     name: "쇠고기버섯죽",
-//     price: "9,000",
+//     imgSrc: "https://files.bonif.co.kr/upload/cmdt/BF101_pic_RtJtR825.jpg",
+//     name: "전복죽",
+//     price: "15,000",
 //   },
 //   {
 //     id: 10,
 //     imgSrc: "https://files.bonif.co.kr/upload/cmdt/BF101_pic_RtJtR825.jpg",
-//     name: "쇠고기미역죽",
-//     price: "12,000",
+//     name: "전복죽",
+//     price: "15,000",
 //     best: "BEST",
 //   },
 //   {
 //     id: 11,
 //     imgSrc: "https://files.bonif.co.kr/upload/cmdt/BF101_pic_RtJtR825.jpg",
-//     name: "참치야채죽",
-//     price: "12,000",
+//     name: "전복죽",
+//     price: "15,000",
 //     best: "BEST",
 //   },
 //   {
 //     id: 12,
 //     imgSrc: "https://files.bonif.co.kr/upload/cmdt/BF101_pic_RtJtR825.jpg",
-//     name: "야채죽",
-//     price: "12,000",
+//     name: "전복죽",
+//     price: "15,000",
 //     best: "BEST",
 //   },
 //   {
 //     id: 13,
 //     imgSrc: "https://files.bonif.co.kr/upload/cmdt/BF101_pic_RtJtR825.jpg",
-//     name: "해물죽",
-//     price: "12,000",
+//     name: "전복죽",
+//     price: "15,000",
 //   },
 //   {
 //     id: 14,
 //     imgSrc: "https://files.bonif.co.kr/upload/cmdt/BF101_pic_RtJtR825.jpg",
-//     name: "특해물죽",
-//     price: "12,000",
+//     name: "전복죽",
+//     price: "15,000",
 //   },
 //   {
 //     id: 15,
 //     imgSrc: "https://files.bonif.co.kr/upload/cmdt/BF101_pic_RtJtR825.jpg",
-//     name: "새우죽",
-//     price: "12,000",
+//     name: "전복죽",
+//     price: "15,000",
 //   },
 //   {
 //     id: 16,
 //     imgSrc: "https://files.bonif.co.kr/upload/cmdt/BF101_pic_RtJtR825.jpg",
-//     name: "특새우죽",
-//     price: "12,000",
+//     name: "전복죽",
+//     price: "15,000",
 //   },
 //   {
 //     id: 17,
 //     imgSrc: "https://files.bonif.co.kr/upload/cmdt/BF101_pic_RtJtR825.jpg",
-//     name: "버섯굴죽",
-//     price: "12,000",
+//     name: "전복죽",
+//     price: "15,000",
 //   },
 //   {
 //     id: 18,
 //     imgSrc: "https://files.bonif.co.kr/upload/cmdt/BF101_pic_RtJtR825.jpg",
-//     name: "특버섯죽",
-//     price: "12,000",
+//     name: "전복죽",
+//     price: "15,000",
 //   },
 // ];
 
-export default Category3;
+export default withRouter(Category);

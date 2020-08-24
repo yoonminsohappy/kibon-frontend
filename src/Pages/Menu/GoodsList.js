@@ -1,35 +1,20 @@
 import React, { Component } from "react";
-import Category1 from "./Category/Category1";
-import Category2 from "./Category/Category2";
-import Category3 from "./Category/Category3";
-import Category4 from "./Category/Category4";
-import Category5 from "./Category/Category5";
-import Category6 from "./Category/Category6";
-import Category7 from "./Category/Category7";
+// import Category from "./Category/Category";
+import Goods from "./Goods";
+import { Link } from "react-router-dom";
 
 class GoodsList extends Component {
   state = {
-    activeTab: 1,
     categoryBar: 1,
   };
 
   handleClick = (id) => {
     this.setState({
-      activeTab: id,
       categoryBar: id,
     });
   };
   render() {
-    console.log(this.state.categoryData);
-    const obj = {
-      1: <Category1 src={this.props.data} />,
-      2: <Category2 src={this.props.data} />,
-      3: <Category3 src={this.props.data} />,
-      4: <Category4 src={this.props.data} />,
-      5: <Category5 src={this.props.data} />,
-      6: <Category6 src={this.props.data} />,
-      7: <Category7 src={this.props.data} />,
-    };
+    // console.log(this.props.goods);
     return (
       <div className="contentWrap">
         <div className="contentWrapVisual">
@@ -43,20 +28,38 @@ class GoodsList extends Component {
               <li
                 name="all"
                 className={this.state.categoryBar ? "on" : "off"}
-                onClick={() => this.handleClick(1)}
+                onClick={this.handleClick}
               >
                 모든메뉴
               </li>
-              <li onClick={() => this.handleClick(2)}>보양죽</li>
-              <li onClick={() => this.handleClick(3)}>영양죽</li>
-              <li onClick={() => this.handleClick(4)}>별미죽</li>
-              <li onClick={() => this.handleClick(5)}>전통죽</li>
-              <li onClick={() => this.handleClick(6)}>곁들임/음료</li>
-              <li onClick={() => this.handleClick(7)}>간편식</li>
+              <li onClick={this.handleClick}>보양죽</li>
+              <li onClick={this.handleClick}>영양죽</li>
+              <li onClick={this.handleClick}>별미죽</li>
+              <li onClick={this.handleClick}>전통죽</li>
+              <li onClick={this.handleClick}>곁들임/음료</li>
+              <li onClick={this.handleClick}>간편식</li>
             </div>
           </div>
           <div className="menuMapList">
-            <ul className="menuList">{obj[this.state.activeTab]}</ul>
+            <ul className="menuList">
+              {this.props.goods &&
+                this.props.goods.map((el, idx) => {
+                  return (
+                    <Link to={`/menu/${idx}`} key={idx}>
+                      <Goods
+                        key={idx}
+                        id={el.id}
+                        name={el.name}
+                        price={el.price}
+                        category={el.category}
+                        img={el.image}
+                        best={el.best}
+                        new={el.new}
+                      />
+                    </Link>
+                  );
+                })}
+            </ul>
           </div>
         </div>
       </div>
