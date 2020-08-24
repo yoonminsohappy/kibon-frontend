@@ -1,52 +1,133 @@
 import React, { Component } from "react";
-import "./MenuDetail.scss";
-import Article1 from "../MenuDetail/components/Article1";
-import Article2 from "../MenuDetail/components/Article2";
-import Article3 from "../MenuDetail/components/Article3";
-import Article4 from "../MenuDetail/components/Article4";
-import Article5 from "../MenuDetail/components/Article5";
 import MenuFooter from "../MenuFooter";
+import Introduction from "../MenuDetail/components/Introduction";
+import ProductDetail from "./components/ProductDetail";
+import FirstIngredient from "./components/FirstIngredient";
+import SecondInredient from "./components/SecondInredient";
+import ThirdIngredient from "./components/ThirdIngredient";
+import Recommend from "../MenuDetail/components/Recommend";
+import "./MenuDetail.scss";
 
 class MenuDetail extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: [],
+      num: props.match.params.id,
+    };
+  }
+
+  componentDidMount = () => {
+    console.log("props :", this.props);
+    fetch(`http://10.58.5.219:8000/product/detail/${this.state.num}`)
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          data: [res],
+          num: this.state.num + 1,
+        });
+      });
+  };
+
+  // componentDidUpdate = (prevProps, prevState) => {
+  //   // console.log(this.state.data);
+  //   const { num, data } = this.state;
+  //   fetch(`http://10.58.5.219:8000/product/detail/${num}`)
+  //     .then((res) => res.json())
+  //     .then((res) => {
+  //       if (num < 38) {
+  //         this.setState({
+  //           data: [...data, res],
+  //           num: num + 1,
+  //         });
+  //       }
+  //     });
+  // };
+
   render() {
+    // console.log(this.state.data);
     return (
       <div className="MenuDetail">
-        <Article1 />
-        <Article2 />
-        <div className="aboutIngredients">
+        {this.state.data[0] &&
+          this.state.data.map((product, idx) => {
+            const { name, price, image_list, text_list } = product.detail[0];
+            // console.log(image_list);
+            return (
+              <>
+                <Introduction
+                  key={idx}
+                  name={name}
+                  price={price}
+                  image1={image_list[0]}
+                  image2={image_list[1]}
+                  introText={text_list[0]}
+                  introSummary={text_list[1]}
+                />
+
+                <ProductDetail
+                  productDetail={text_list[2]}
+                  productDetailKor={text_list[3]}
+                  detailImage={image_list[2]}
+                  introText={text_list[4]}
+                  detailText={text_list[5]}
+                />
+
+                <div className="aboutIngredients">
+                  <span className="ingreText">식재료 이야기</span>
+                  {/* {text_list[6]} */}
+                  <span className="ingreUnderBar" />
+
+                  <FirstIngredient
+                    image={image_list[4]}
+                    point={text_list[7]}
+                    detail={text_list[8]}
+                  />
+
+                  <SecondInredient
+                    image={image_list[5]}
+                    point={text_list[9]}
+                    // detail={text_list[10]}
+                  />
+
+                  <ThirdIngredient
+                    image={image_list[6]}
+                    point={text_list[10]}
+                    detail={text_list[11]}
+                  />
+                </div>
+              </>
+            );
+          })}
+
+        {/* {this.state.data &&
+          this.state.data.map((product, idx) => {
+            return <ProductDetail />;
+          })} */}
+
+        {/* <div className="aboutIngredients">
           <span className="ingreText">식재료 이야기</span>
-          <span className="ingreUnderBar"></span>
-          <Article3 />
-          <Article4 />
-          <div className="ingredient3">
-            <img
-              alt="ingredient3"
-              class="ingre3Image"
-              src="/Images/ingre3.png"
-            />
-            <div className="ingreContents3">
-              <div className="contentsHead">
-                <span className="vitality">지친 몸에 활력을</span>
-                <span className="ingre3Text">수삼, 대추</span>
-              </div>
-              <span className="underLine"></span>
-              <span className="ingre3Detail">
-                원기 보강 대표 한약재, 국내산 수삼 한 뿌리가 통째로!
-                <br />
-                대추와 함께 풍부한 영양을 더했습니다.
-                <br />
-                활력과 입맛을 돋우는 영양식 재료의 탁월한 궁합으로
-                <br />
-                활기찬 하루를 맞이해보세요.
-                <br />
-                지치는 삼복더위에도 으슬으슬 힘 빠지는 매서운 추위에도
-                <br />
-                든든한 온기를 전합니다.
-              </span>
-            </div>
-          </div>
-          <Article5 />
+          <span className="ingreUnderBar" /> */}
+
+        {/* {this.state.data &&
+            this.state.data.map((product, idx) => {
+              return <FirstIngredient />;
+            })}
+
+          {this.state.data &&
+            this.state.data.map((product, idx) => {
+              return <SecondInredient />;
+            })}
+
+          {this.state.data &&
+            this.state.data.map((product, idx) => {
+              return <ThirdIngredient />;
+            })}
         </div>
+        {this.state.data &&
+          this.state.data.map((product, idx) => {
+            return <Recommend />;
+          })} */}
+
         <MenuFooter />
       </div>
     );

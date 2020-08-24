@@ -3,6 +3,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
   .infoContainer {
     display: flex;
     justify-content: space-around;
@@ -10,46 +11,56 @@
     width: 1132px;
     height: 552px;
     position: relative;
+
     .menu {
       width: 552px;
       height: 552px;
       margin-right: 100px;
     }
+
     .wholeContainer {
       width: 480px;
       height: 552px;
       display: flex;
       flex-direction: column;
+
       .name {
         font-size: 42px;
         font-weight: 500;
         margin-bottom: 15px;
       }
+
       .intro {
         font-size: 18px;
         color: #666;
         font-weight: 450;
         padding-top: 4px;
       }
+
       .priceContainer {
         padding-top: 25px;
+
         .price {
           font-size: 34px;
           font-weight: 700;
           color: #962639;
         }
+
         .unit {
           font-size: 22px;
           color: #222222;
         }
       }
+
       .btnContainer {
         display: flex;
         flex-direction: row-reverse;
+
         .btn {
           width: 260px;
           display: flex;
           justify-content: space-between;
+
           .myMenu {
             display: flex;
             align-items: center;
@@ -61,6 +72,8 @@
             background-color: white;
             border: 1px solid #ddd;
             outline: none;
+            cursor: pointer;
+
             .likeIcon {
               background: url("/Images/heart_icon.png") left top no-repeat;
               width: 20px;
@@ -68,6 +81,7 @@
               background-position: 0px 2px;
             }
           }
+
           .activeMyMenu {
             display: flex;
             align-items: center;
@@ -80,6 +94,8 @@
             background-color: #444444;
             border: 1px solid #444444;
             outline: none;
+            cursor: pointer;
+
             .likeIcon {
               background: url("/Images/heart_icon.png") left top no-repeat;
               width: 20px;
@@ -88,6 +104,7 @@
               background-position: 80% 50%;
             }
           }
+
           .origin {
             width: 124px;
             height: 41px;
@@ -95,31 +112,24 @@
             background-color: white;
             border: 1px solid #ddd;
             outline: none;
+            cursor: pointer;
           }
         }
       }
+
       .bar {
         border-bottom: solid 2px #222;
         padding-bottom: 22px;
       }
-      .summary1 {
+
+      .summary {
         color: #666;
         font-size: 18px;
-        font-weight: 450;
+        font-weight: 430;
         padding-top: 24px;
+        line-height: 25px;
       }
-      .summary2 {
-        color: #666;
-        font-size: 18px;
-        font-weight: 450;
-        padding-top: 7px;
-      }
-      .summary3 {
-        color: #666;
-        font-size: 18px;
-        font-weight: 450;
-        padding-top: 7px;
-      }
+
       .previewImage {
         width: 140px;
         height: 65px;
@@ -127,19 +137,23 @@
         bottom: 0;
         display: flex;
         justify-content: space-between;
-        img{
+
+        img {
           width: 65px;
           height: 65px;
+          cursor: pointer;
         }
+
         .subImage1 {
-         border: solid 2px #962639;
-          
+          border: solid 2px #962639;
         }
+
         .subImage2 {
           border: solid 2px #962639;
         }
       }
     }
+
     .shareContainer {
       width: 115.2px;
       height: 55px;
@@ -148,11 +162,14 @@
       bottom: 7px;
       display: flex;
       justify-content: space-around;
+
       .fbContainer {
         width: 50px;
         height: 50px;
         border: solid 1px #9a9a9a;
         border-radius: 100%;
+        cursor: pointer;
+
         .facebook {
           background: url("/Images/share_icon.png") left top no-repeat;
           background-size: 130px;
@@ -165,6 +182,7 @@
           top: -10%;
         }
       }
+
       .linkContainer {
         width: 50px;
         height: 50px;
@@ -174,6 +192,8 @@
         justify-content: center;
         padding-left: 10px;
         padding-top: 2px;
+        cursor: pointer;
+
         .link {
           background: url("/Images/share_icon.png") left top no-repeat;
           background-size: 120px;

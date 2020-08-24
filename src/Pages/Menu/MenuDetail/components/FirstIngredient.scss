@@ -1,18 +1,21 @@
-.ingredient2 {
+.ingredient1 {
   display: flex;
-  justify-content: space-between;
   width: 1132px;
-  height: 730px;
-  padding-top: 80px;
-  .ingreContents2 {
+  height: 650px;
+
+  .ingre1Image {
+    width: 632px;
+    height: 650px;
+  }
+
+  .ingreContents1 {
     display: flex;
     flex-direction: column;
+    width: 446.58px;
+    height: 397.97px;
     padding-top: 70px;
     padding-left: 50px;
-    width: 459.12px;
-    height: 427.97px;
-    padding-top: 70px;
-    padding-left: 50px;
+
     .contentsHead {
       width: 396.582px;
       height: 116px;
@@ -20,34 +23,34 @@
       margin-top: 30px;
       display: flex;
       flex-direction: column;
-      .soft {
+
+      .taurinAndVitamin {
         font-size: 38px;
         font-weight: 400;
         line-height: 50px;
       }
-      .ingre2Text {
-        font-size: 38px;
+
+      .ingre1Text {
         font-weight: 500;
+        font-size: 38px;
         color: #222222;
         padding-top: 5px;
       }
     }
+
     .underLine {
       border: 1px solid #222;
       width: 30px;
       height: 1px;
     }
-    .ingre2Detail {
+
+    .ingre1Detail {
       font-size: 18px;
       color: #666;
       line-height: 30px;
-      width: 425px;
-      height: 180px;
+      width: 410px;
+      height: 250px;
       margin-top: 24px;
     }
-  }
-  .ingre2Image {
-    width: 632px;
-    height: 650px;
   }
 }

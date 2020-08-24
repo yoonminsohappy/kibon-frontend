@@ -1,19 +1,20 @@
 import React, { Component } from "react";
-import "./Article4.scss";
+import "./SecondInredient.scss";
 
-class Article4 extends Component {
+class SecondInredient extends Component {
   render() {
     return (
-      <div className="Article4">
+      <div className="SecondInredient">
         <div className="ingredient2">
           <div className="ingreContents2">
             <div className="contentsHead">
-              <span className="soft">부드러운</span>
-              <span className="ingre2Text">국내산 닭고기</span>
+              <span className="soft">{this.props.point}</span>
+              {/* <span className="ingre2Text">국내산 닭고기</span> */}
             </div>
             <span className="underLine"></span>
             <span className="ingre2Detail">
-              푹 고아 부드럽고 진한 국내산 닭고기는 <br />
+              {this.props.detail}
+              {/* 푹 고아 부드럽고 진한 국내산 닭고기는 <br />
               깊은 맛의 비결입니다.
               <br />
               특히 단백질이 풍부한 닭 가슴살 부위를 사용해
@@ -22,14 +23,14 @@ class Article4 extends Component {
               <br />
               속 깊은 곳까지 편안히,
               <br />
-              포근하고 따뜻한 맛을 즐겨보세요.
+              포근하고 따뜻한 맛을 즐겨보세요. */}
             </span>
           </div>
-          <img alt="ingredient2" class="ingre2Image" src="/Images/ingre2.png" />
+          <img alt="ingredient2" class="ingre2Image" src={this.props.image} />
         </div>
       </div>
     );
   }
 }
 
-export default Article4;
+export default SecondInredient;

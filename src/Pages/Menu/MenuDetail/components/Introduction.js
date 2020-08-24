@@ -1,93 +1,112 @@
 import React, { Component } from "react";
-import "./Article1.scss";
+import Origin from "./Origin";
+import "./Introduction.scss";
 
-class Article1 extends Component {
+class Introduction extends Component {
   constructor() {
     super();
     this.state = {
-      className: "myMenu",
-      menuImage: "/Images/menu.png",
+      menuClass: "myMenu",
+      menuImage: "{this.props.image1}",
       borderColor: "",
+      originClass: "Origin",
     };
   }
 
   handleBtnColor = () => {
     this.setState({
-      className: this.state.className === "myMenu" ? "activeMyMenu" : "myMenu",
+      menuClass: this.state.menuClass === "myMenu" ? "activeMyMenu" : "myMenu",
     });
   };
 
   handleImg1 = () => {
+    console.log("hello");
     this.setState({
-      menuImage: "/Images/menu.png",
+      menuImage: this.props.image1,
     });
   };
 
   handleImg2 = () => {
+    console.log("hi");
     this.setState({
-      menuImage: "/Images/menu_subimage.png",
+      menuImage: this.props.image2,
+    });
+  };
+
+  handleOriginClass = () => {
+    this.setState({
+      originClass: "activeOrigin",
+    });
+  };
+
+  closeOriginProps = () => {
+    this.setState({
+      originClass: "Origin",
     });
   };
 
   render() {
     return (
-      <div className="Article1">
+      <div className="Introduction">
         <div className="detailContainer">
           <div className="infoContainer">
-            <img alt="menu" className="menu" src={this.state.menuImage} />
+            <img alt="menu" className="menu" src={this.props.image1} />
             <div className="wholeContainer">
-              <p className="name">삼계전복죽</p>
-              <p className="intro">
-                삼복 더위 이기는 영양 가득 최고의 보양 한 그릇
-              </p>
+              <p className="name">{this.props.name}</p>
+              <p className="intro">{this.props.introText}</p>
               <div className="priceContainer">
-                <strong className="price">15,000</strong>
+                <strong className="price">{this.props.price}</strong>
                 <span className="unit">원</span>
               </div>
               <div className="btnContainer">
                 <div className="btn">
                   <button
                     onClick={this.handleBtnColor}
-                    className={this.state.className}
+                    className={this.state.menuClass}
                     type="button"
                   >
                     <div className="likeIcon" alt="like-icon" />
                     MY메뉴
                   </button>
-                  <button className="origin" type="button">
+                  <button
+                    onClick={this.handleOriginClass}
+                    className="origin"
+                    type="button"
+                  >
                     원산지정보
                   </button>
                 </div>
               </div>
               <div className="bar"></div>
-              <p className="summary1">
-                푹 고아 부드럽고 진한 닭고기에 전복까지 더해진 최고의 보양식!
-              </p>
-              <p className="summary2">
+              <p className="summary">
+                {this.props.introSummary}
+                {/* 푹 고아 부드럽고 진한 닭고기에 전복까지 더해진 최고의 보양식!
+                <br />
                 국내산 수삼 한 뿌리까지 통째로 들어간 완벽한 영양 한 그릇으로
+                <br />
+                깊고 진한 진짜 보양식을 만나보세요. */}
               </p>
-              <p className="summary3"> 깊고 진한 진짜 보양식을 만나보세요.</p>
 
               <div className="previewImage">
                 <img
                   onClick={this.handleImg1}
                   alt="subimage1"
                   className={
-                    this.state.menuImage === "/Images/menu.png"
+                    this.state.menuImage === "{this.props.image1}"
                       ? "subImage1"
                       : ""
                   }
-                  src="/Images/menu.png"
+                  src={this.props.image1}
                 />
                 <img
                   onClick={this.handleImg2}
                   alt="subimage2"
                   className={
-                    this.state.menuImage === "/Images/menu_subimage.png"
+                    this.state.menuImage === "{this.props.image2}"
                       ? "subImage2"
                       : ""
                   }
-                  src="/Images/menu_subimage.png"
+                  src={this.props.image2}
                 />
               </div>
             </div>
@@ -103,9 +122,13 @@ class Article1 extends Component {
             </div>
           </div>
         </div>
+        <Origin
+          originClass={this.state.originClass}
+          closeOriginProps={this.closeOriginProps}
+        />
       </div>
     );
   }
 }
 
-export default Article1;
+export default Introduction;
