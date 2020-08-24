@@ -14,18 +14,21 @@ class GoodsList extends Component {
   };
 
   handleClick = (id) => {
-    this.setState({ activeTab: id, categoryBar: id });
+    this.setState({
+      activeTab: id,
+      categoryBar: id,
+    });
   };
   render() {
-    console.log(this.props.imgData);
+    console.log(this.state.categoryData);
     const obj = {
-      1: <Category1 imgSrc={this.props.imgData} />,
-      2: <Category2 />,
-      3: <Category3 />,
-      4: <Category4 />,
-      5: <Category5 />,
-      6: <Category6 />,
-      7: <Category7 />,
+      1: <Category1 src={this.props.data} />,
+      2: <Category2 src={this.props.data} />,
+      3: <Category3 src={this.props.data} />,
+      4: <Category4 src={this.props.data} />,
+      5: <Category5 src={this.props.data} />,
+      6: <Category6 src={this.props.data} />,
+      7: <Category7 src={this.props.data} />,
     };
     return (
       <div className="contentWrap">
