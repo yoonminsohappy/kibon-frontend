@@ -1,63 +1,75 @@
 import React, { Component } from 'react';
+import { Link } from "react-router-dom";
 import './Footer.scss'
 
 class Footer extends Component {
   render() {
     return (
       <footer className="Footer">
-        <div className="footerPosition">
-          <div className="footerUtilBox">
-            <div className="footerUtilInnerBox">
+        <div className="position">
+          <div className="utilBox">
+            <div className="utilInnerBox">
               <dl>
-                <dt className="footerImage"></dt>
-                <dt className="footerPhoneNumberInfoText">
+                <dt className="image"></dt>
+                <dt className="phoneNumberInfoText">
                   본오더(온라인 주문)전용 콜센터
                 </dt>
                 <dd className="footerBar">|</dd>
-                <dd className="footerPhoneNumber">1668-3944</dd>
-
+                <dd className="phoneNumber">1668-3944</dd>
                 <dt className="footerImage1"></dt>
                 <dt className="mainNumberText">대표번호</dt>
                 <dd className="footerBar">|</dd>
-                <dd className="footerPhoneNumber">1644-6288</dd>
+                <dd className="phoneNumber">1644-6288</dd>
 
                 <dt className="footerImage2"></dt>
-                <dt className="footerFoundedNumberText">창업문의</dt>
+                <dt className="foundedNumberText">창업문의</dt>
                 <dd className="footerBar">|</dd>
-                <dd className="footerPhoneNumber">1668-3007</dd>
+                <dd className="phoneNumber">1668-3007</dd>
               </dl>
               <div className="familySite">
-                <a href="#familysite">FAMILY SITE</a>
+                <Link to="#familysite">FAMILY SITE</Link>
               </div>
             </div>
           </div>
           <div className="footerContents">
             <div className="footerSns">
               <div className="snsIn">
-                <div className="insta"></div>
+                <div className="insta" />
               </div>
               <div className="snsIn">
-                <div className="youtube"></div>
+                <div className="youtube" />
               </div>
               <div className="snsIn">
-                <div className="facebook"></div>
+                <div className="facebook" />
               </div>
               <div className="snsIn">
-                <div className="blog"></div>
+                <div className="blog" />
               </div>
             </div>
-            <ul className="footerLinkList">
-              <li><a href="#">이용약관</a></li>
+            <ul className="linkList">
+              <li>
+                <Link to="#">이용약관</Link>
+              </li>
               <li>|</li>
-              <li><a href="#">개인정보처리방침</a></li>
+              <li>
+                <Link to="#">개인정보처리방침</Link>
+              </li>
               <li>|</li>
-              <li><a href="#">이메일 무단수집거부</a></li>
+              <li>
+                <Link to="#">이메일 무단수집거부</Link>
+              </li>
               <li>|</li>
-              <li><a href="#">법적고지</a></li>
+              <li>
+                <Link to="#">법적고지</Link>
+              </li>
               <li>|</li>
-              <li><a href="#">협력업체 모집</a></li>
+              <li>
+                <Link to="#">협력업체 모집</Link>
+              </li>
               <li>|</li>
-              <li><a href="#">고객센터</a></li>
+              <li>
+                <Link to="#">고객센터</Link>
+              </li>
             </ul>
             <p className="companyInfo">
               <span>본아이에프(주)</span>

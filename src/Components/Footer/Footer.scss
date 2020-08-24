@@ -1,23 +1,22 @@
 @import "../../Styles/common.scss";
 
 .Footer {
-  .footerPosition {
+  .position {
     position: relative;
-    display: block;
     left: 0;
     bottom: 0;
     margin-bottom: -1px;
     width: 100%;
   }
 
-  .footerUtilBox {
+  .utilBox {
     height: 50px;
     border-top: solid 1px #46464a;
     border-bottom: solid 1px #4d4d50;
     background-color: $footerGray;
   }
 
-  .footerUtilInnerBox {
+  .utilInnerBox {
     display: flex;
     position: relative;
     align-items: center;
@@ -27,7 +26,7 @@
     background-color: $footerGray;
   }
 
-  .footerImage {
+  .image {
     width: 31px;
     height: 20px;
     top: 24px;
@@ -42,13 +41,13 @@
     height: 100%;
   }
 
-  .footerPhoneNumberInfoText {
+  .phoneNumberInfoText {
     padding: 0px 10px 0px 5px;
     color: #999999;
     font-size: 16px;
   }
 
-  .footerPhoneNumber {
+  .phoneNumber {
     @include center;
     color: white;
     width: 89.38px;
@@ -92,7 +91,7 @@
     margin-left: 50px;
   }
 
-  .footerFoundedNumberText {
+  .foundedNumberText {
     color: #999999;
     padding: 0px 10px 0px 5px;
   }
@@ -190,22 +189,22 @@
     height: 45px;
   }
 
-  .footerLinkList {
+  .linkList {
     display: flex;
     justify-content: center;
   }
 
-  .footerLinkList li {
+  .linkList li {
     padding: 0px 10px;
     color: #8f8f91;
   }
 
-  .footerLinkList a {
+  .linkList a {
     text-decoration: none;
     color: #8f8f91;
   }
 
-  .footerLinkList:nth-child(3) {
+  .linkList:nth-child(3) {
     color: white;
   }
 

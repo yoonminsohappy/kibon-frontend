@@ -59,6 +59,26 @@
         background-color: #f4f4f4;
       }
 
+      .leftCardActive {
+        position: absolute;
+        width: 50%;
+        height: 325px;
+        right: 0;
+        z-index: -1;
+        background-color: #f4f4f4;
+        animation-name: first;
+        animation-duration: 2s;
+      }
+
+      @keyframes first {
+        0% {
+          right: -50%;
+        }
+        100% {
+          right: 0px;
+        }
+      }
+
       .textTitle {
         font-size: 34px;
         padding: 2px 0px 6px;

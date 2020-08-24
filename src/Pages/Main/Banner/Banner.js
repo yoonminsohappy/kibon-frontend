@@ -21,22 +21,22 @@ class Banner extends Component {
         <div className="BannerImageSize">
           <Slider {...params}>
             <div>
-              <img src="./Images/banner1.png"></img>
+              <img alt="2000원 할인 사진" src="./Images/banner1.png" />
             </div>
             <div>
-              <img src="./Images/banner2.png"></img>
+              <img alt="바싹한 어워드 사진" src="./Images/banner2.png" />
             </div>
             <div>
-              <img src="./Images/banner3.png"></img>
+              <img alt="기프트 카드" src="./Images/banner3.png" />
             </div>
             <div>
-              <img src="./Images/banner4.png"></img>
+              <img alt="가맹점 수수료" src="./Images/banner4.png" />
             </div>
             <div>
-              <img src="./Images/banner5.png"></img>
+              <img alt="바싹 불고기와 오징어" src="./Images/banner5.png" />
             </div>
             <div>
-              <img src="./Images/banner6.png"></img>
+              <img alt="전복낙지활력설" src="./Images/banner6.png" />
             </div>
           </Slider>
         </div>

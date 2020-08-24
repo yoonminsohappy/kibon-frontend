@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import './Nav.scss';
-import SubMenu1 from './SubMenu/SubMenu1';
-import SubMenu2 from './SubMenu/SubMenu2';
-import SubMenu3 from './SubMenu/SubMenu3';
-import SubMenu4 from "./SubMenu/SubMenu4";
-import SubMenu5 from "./SubMenu/SubMenu5";
+import SubMenu from './SubMenu/SubMenu';
 
 class Nav extends Component {
   constructor(props) {
@@ -14,7 +10,7 @@ class Nav extends Component {
       activeTab: -1,
       display: "none",
       show: false,
-      scrollPos: 0
+      scrollPos: 0,
     };
   }
 
@@ -56,7 +52,12 @@ class Nav extends Component {
               {arr.map((str, idx) => {
                 return (
                   <li>
-                    <Link to="#" id="testing" onMouseEnter={() => this.mouseOver(idx)} top={scrollPos}>
+                    <Link
+                      to="#"
+                      id="testing"
+                      onMouseEnter={() => this.mouseOver(idx)}
+                      top={scrollPos}
+                    >
                       {str}
                     </Link>
                   </li>
@@ -76,24 +77,15 @@ class Nav extends Component {
             <Link to="#" className="menuImg"></Link>
           </div>
         </nav>
-        <div>{obj[activeTab]}</div>
+        <div>
+          <SubMenu submenu={SUBMENU[activeTab]} hover={activeTab} />
+        </div>
       </div>
     );
   }
 }
 
 export default Nav;
-
-const obj = {
-  0: <SubMenu1 />,
-  1: <SubMenu2 />,
-  2: <SubMenu2 />,
-  3: <SubMenu2 />,
-  4: <SubMenu2 />,
-  5: <SubMenu3 />,
-  6: <SubMenu4 />,
-  7: <SubMenu5 />,
-};
 
 const arr = [
   "본아이에프",
@@ -104,4 +96,15 @@ const arr = [
   "베이비본죽",
   "본몰",
   "창업안내",
+];
+
+const SUBMENU = [
+  ["회사소개", "경영이념", "소식보기", "사회공헌", "인재채용", "윤리경영"],
+  ["브랜드 소개", "메뉴 소개", "매장 찾기", "이벤트", "주문하기", "창업"],
+  ["브랜드 소개", "메뉴 소개", "매장 찾기", "이벤트", "주문하기", "창업"],
+  ["브랜드 소개", "메뉴 소개", "매장 찾기", "이벤트", "주문하기", "창업"],
+  ["브랜드 소개", "메뉴 소개", "매장 찾기", "이벤트", "주문하기", "창업"],
+  ["브랜드 소개", "메뉴 소개", "본푸드랩 소개", "주문하기"],
+  ["브랜드 소개", "상품 소개", "쇼핑혜택", "주문하기", "대량주문"],
+  ["창업안내", "창업상담", "창업 설명회", "성공스토리", "추천상권", "창업소식"]
 ];

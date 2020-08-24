@@ -3,17 +3,35 @@ import "./MainContent.scss"
 
 class MainContent extends Component {
   state = {
+    scrollPos: 0,
+    show: true
+  };
 
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll);
   }
 
-  render() { 
+  handleScroll = () => {
+    console.log(document.body.getBoundingClientRect());
+    this.setState({
+      scrollPos: document.body.getBoundingClientRect().top,
+      show: document.body.getBoundingClientRect().top < -530,
+    });
+  };
+
+  render() {
+    console.log(this.state.scrollPos)
     return (
       <div className="MainContent">
         <div className="left" style={{ display: "block" }}>
           <div className="mainContentCardContainer">
             <div className="mainContentArticle">
-              <img class="image1" src="./Images/maincontent0.png"></img>
-              <div className="leftCard"></div>
+              <img
+                class="image1"
+                alt="본과 함께하는 일상 첫번째 사진"
+                src="./Images/maincontent0.png"
+              ></img>
+              <div className="leftCardActive"></div>
               <div className="mainContentText">
                 <span>본죽</span>
                 <p className="textTitle">
