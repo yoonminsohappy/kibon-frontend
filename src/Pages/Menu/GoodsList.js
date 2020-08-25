@@ -8,19 +8,16 @@ class GoodsList extends Component {
     showUnderBar: true,
     hideUnderBar: false,
     activeTab: 0,
+    goods: {},
+    num: 1,
   };
 
-  // clickUnderbar = () => {
-  //   this.setState(() => ({
-  //     showUnderBar: true,
-  //   }));
-  //   console.log("hi", this.state.showUnderBar);
-  //   console.log("hi", this.state.hideUnderBar);
-  // };
-
-  handleClick = (id) => {
+  handleTabClick = (e, id) => {
+    e.preventDefault();
     this.setState({ activeTab: id });
+    this.props.tab(id);
   };
+
   render() {
     const arr = [
       "모든메뉴",
@@ -31,7 +28,6 @@ class GoodsList extends Component {
       "곁들임/음료",
       "간편식",
     ];
-    // console.log(this.props.goods);
     return (
       <div className="contentWrap">
         <div className="contentWrapVisual">
@@ -46,7 +42,7 @@ class GoodsList extends Component {
                 return (
                   <li
                     key={str}
-                    onClick={() => this.handleClick(idx)}
+                    onClick={(e) => this.handleTabClick(e, idx)}
                     className={this.state.activeTab === idx ? "on" : ""}
                   >
                     {str}
@@ -57,33 +53,19 @@ class GoodsList extends Component {
           </div>
           <div className="menuMapList">
             <ul className="menuList">
-              {this.props.menu1 &&
-                this.props.menu1.map((el, idx) => {
+              {this.props.menu &&
+                this.props.menu.map((el, idx) => {
                   return (
-                    <Link to={`/menu/${idx}`} key={idx}>
-                      {this.state.activeTab === idx ? (
-                        <Goods
-                          key={idx}
-                          id={el.id}
-                          name={el.name}
-                          price={el.price}
-                          category={el.category}
-                          img={el.image}
-                          best={el.best}
-                          new={el.new}
-                        />
-                      ) : null}
-                      {/* <Goods
-                        key={idx}
-                        id={el.id}
-                        name={el.name}
-                        price={el.price}
-                        category={el.category}
-                        img={el.image}
-                        best={el.best}
-                        new={el.new}
-                      /> */}
-                    </Link>
+                    <Goods
+                      key={idx}
+                      id={el.id}
+                      name={el.name}
+                      price={el.price}
+                      category={el.category}
+                      img={el.image}
+                      best={el.best}
+                      new={el.new}
+                    />
                   );
                 })}
             </ul>

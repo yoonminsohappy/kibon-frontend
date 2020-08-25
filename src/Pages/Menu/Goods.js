@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { withRouter } from "react-router-dom";
 
 class Goods extends Component {
   constructor() {
@@ -29,6 +30,9 @@ class Goods extends Component {
       <li>
         <div
           className="goods-block"
+          onClick={() => {
+            this.props.history.push(`/menu/menu-detail/${this.state.id}`);
+          }}
           onMouseEnter={this.handleMouseOver}
           onMouseLeave={this.handleMouseLeave}
         >
@@ -73,4 +77,4 @@ class Goods extends Component {
   }
 }
 
-export default Goods;
+export default withRouter(Goods);
