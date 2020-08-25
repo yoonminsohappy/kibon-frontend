@@ -11,7 +11,6 @@ class Menu extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      menu: [],
       num: 1,
     };
   }
@@ -67,10 +66,10 @@ class Menu extends Component {
           img={"/Images/sub_visual_bonjuk.jpg"}
         />
         <GoodsList
-          boyang={this.state.menu1}
-          youngyang={this.state.menu2}
-          byeolmi={this.state.menu3}
-          jeontong={this.state.menu4}
+          menu1={this.state.menu1}
+          menu2={this.state.menu2}
+          menu3={this.state.menu3}
+          menu4={this.state.menu4}
         />
         <MenuFooter />
       </div>

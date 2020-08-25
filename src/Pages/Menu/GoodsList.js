@@ -57,11 +57,23 @@ class GoodsList extends Component {
           </div>
           <div className="menuMapList">
             <ul className="menuList">
-              {this.props.boyang &&
-                this.props.boyang.map((el, idx) => {
+              {this.props.menu1 &&
+                this.props.menu1.map((el, idx) => {
                   return (
                     <Link to={`/menu/${idx}`} key={idx}>
-                      <Goods
+                      {this.state.activeTab === idx ? (
+                        <Goods
+                          key={idx}
+                          id={el.id}
+                          name={el.name}
+                          price={el.price}
+                          category={el.category}
+                          img={el.image}
+                          best={el.best}
+                          new={el.new}
+                        />
+                      ) : null}
+                      {/* <Goods
                         key={idx}
                         id={el.id}
                         name={el.name}
@@ -70,7 +82,7 @@ class GoodsList extends Component {
                         img={el.image}
                         best={el.best}
                         new={el.new}
-                      />
+                      /> */}
                     </Link>
                   );
                 })}
