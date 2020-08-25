@@ -18,7 +18,7 @@ class MenuDetail extends Component {
   }
 
   componentDidMount = () => {
-    console.log("props :", this.props);
+    // console.log("props :", this.props);
     fetch(`http://10.58.5.219:8000/product/detail/${this.state.num}`)
       .then((res) => res.json())
       .then((res) => {
@@ -28,20 +28,24 @@ class MenuDetail extends Component {
         });
       });
   };
+
+  // const allTextList = this.state.data.product.detail[0].text_list;
+  // console.log(allTextList);
+  //  allTextList.split("\n").map( el => {return <span>{el}<br /></span>});
+
   render() {
-    // console.log(this.state.data);
     return (
       <div className="MenuDetail">
         {this.state.data[0] &&
           this.state.data.map((product, idx) => {
             const { name, price, image_list, text_list } = product.detail[0];
-            // console.log(image_list);
+
             return (
               <>
                 <Introduction
                   key={idx}
                   name={name}
-                  price={price}
+                  price={parseInt(price)}
                   image1={image_list[0]}
                   image2={image_list[1]}
                   introText={text_list[0]}
@@ -55,13 +59,13 @@ class MenuDetail extends Component {
                   detailText={text_list[5]}
                 />
                 <div className="aboutIngredients">
-                  <span className="ingreText">식재료 이야기</span>
-                  {/* {text_list[6]} */}
+                  <span className="ingreText">{text_list[6]}</span>
                   <span className="ingreUnderBar" />
 
                   <FirstIngredient
                     image={image_list[4]}
-                    point={text_list[7]}
+                    point={text_list[7]
+                    // name={text_list[]}
                     detail={text_list[8]}
                   />
 
@@ -77,7 +81,20 @@ class MenuDetail extends Component {
                     detail={text_list[12]}
                   />
                 </div>
-                <Recommend />;
+                <Recommend
+                  title={text_list[14]}
+                  subTitle={text_list[15]}
+                  firstTagImage={image_list[7]}
+                  secondTagImage={image_list[8]}
+                  thirdTagImage={image_list[9]}
+                  firstTag={text_list[16]}
+                  secondTag={text_list[18]}
+                  thirdTag={text_list[20]}
+                  firstTagText={text_list[17]}
+                  secondTagText={text_list[19]}
+                  thirdTagText={text_list[21]}
+                />
+                ;
               </>
             );
           })}

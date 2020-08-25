@@ -3,11 +3,11 @@ import Origin from "./Origin";
 import "./Introduction.scss";
 
 class Introduction extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       menuClass: "myMenu",
-      menuImage: "{this.props.image1}",
+      menuImage: props.image1,
       borderColor: "",
       originClass: "Origin",
     };
@@ -20,14 +20,12 @@ class Introduction extends Component {
   };
 
   handleImg1 = () => {
-    console.log("hello");
     this.setState({
       menuImage: this.props.image1,
     });
   };
 
   handleImg2 = () => {
-    console.log("hi");
     this.setState({
       menuImage: this.props.image2,
     });
@@ -50,7 +48,7 @@ class Introduction extends Component {
       <div className="Introduction">
         <div className="detailContainer">
           <div className="infoContainer">
-            <img alt="menu" className="menu" src={this.props.image1} />
+            <img alt="menu" className="menu" src={this.state.menuImage} />
             <div className="wholeContainer">
               <p className="name">{this.props.name}</p>
               <p className="intro">{this.props.introText}</p>
@@ -78,14 +76,7 @@ class Introduction extends Component {
                 </div>
               </div>
               <div className="bar"></div>
-              <p className="summary">
-                {this.props.introSummary}
-                {/* 푹 고아 부드럽고 진한 닭고기에 전복까지 더해진 최고의 보양식!
-                <br />
-                국내산 수삼 한 뿌리까지 통째로 들어간 완벽한 영양 한 그릇으로
-                <br />
-                깊고 진한 진짜 보양식을 만나보세요. */}
-              </p>
+              <p className="summary">{this.props.introSummary}</p>
 
               <div className="previewImage">
                 <img
