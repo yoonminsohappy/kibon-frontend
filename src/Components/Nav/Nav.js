@@ -8,8 +8,8 @@ class Nav extends Component {
     super(props);
     this.state = {
       activeTab: -1,
-      display: "none",
-      show: false,
+      isDisplay: false,
+      hidden: true,
       scrollPos: 0,
     };
   }
@@ -19,42 +19,43 @@ class Nav extends Component {
   }
 
   handleScroll = () =>{
-    console.log(document.body.getBoundingClientRect());
+    console.log(document.body.getBoundingClientRect().x);
     this.setState({
       scrollPos: document.body.getBoundingClientRect().top,
-      show: document.body.getBoundingClientRect().top === 0
+      hidden:
+        document.body.getBoundingClientRect().top === 0
     });
   }
 
-  mouseOver=(idx)=>{
+  tabActiveHandler = (idx) => {
     this.setState({activeTab: idx}) 
   }
 
-  mouseLeave=()=>{
+  mouseLeave = () => {
     this.setState({activeTab: -1})
   }
 
   render() {
-    const {show, activeTab, scrollPos} = this.state;
+    const {hidden, activeTab, scrollPos} = this.state;
     return (
       <div className="Nav">
         <nav className="mainNav">
           <div className="navHr"></div>
-          <div className={show ? "inactive" : "box"}></div>
+          <div className={hidden ? "inactive" : "box"}></div>
           <img
             alt="본죽로고이미지"
             className="mainLogoImg"
             src="/Images/logo_gnb.png"
-          ></img>
+          />
           <div className="mainCategory">
             <ul>
-              {arr.map((str, idx) => {
+              {MENU_NAME_ARR.map((str, idx) => {
                 return (
                   <li>
                     <Link
                       to="#"
                       id="testing"
-                      onMouseEnter={() => this.mouseOver(idx)}
+                      onMouseEnter={() => this.tabActiveHandler(idx)}
                       top={scrollPos}
                     >
                       {str}
@@ -77,7 +78,7 @@ class Nav extends Component {
           </div>
         </nav>
         <div>
-          <SubMenu submenu={SUB_MENU[activeTab]} hover={activeTab} />
+          <SubMenu submenu={SUB_MENU_TABLE[activeTab]} hover={activeTab} />
         </div>
       </div>
     );
@@ -86,7 +87,7 @@ class Nav extends Component {
 
 export default Nav;
 
-const arr = [
+const MENU_NAME_ARR = [
   "본아이에프",
   "본죽",
   "본죽&비빔밥cafe",
@@ -97,7 +98,7 @@ const arr = [
   "창업안내",
 ];
 
-const SUB_MENU = [
+const SUB_MENU_TABLE = [
   ["회사소개", "경영이념", "소식보기", "사회공헌", "인재채용", "윤리경영"],
   ["브랜드 소개", "메뉴 소개", "매장 찾기", "이벤트", "주문하기", "창업"],
   ["브랜드 소개", "메뉴 소개", "매장 찾기", "이벤트", "주문하기", "창업"],

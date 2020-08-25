@@ -1,9 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Notice from "./NewsCard/Notice";
-import News from "./NewsCard/News";
 import "./MainNews.scss";
-import DonationNews from "./NewsCard/DonationNews";
+import NewsCard from "./NewsCard/NewsCard";
+import NewMenuContent from "../NewMenuContent/NewMenuContent";
 
 class MainNews extends Component {
   state = {  }
@@ -15,9 +14,14 @@ class MainNews extends Component {
           <p>본아이에프의 새로운 소식</p>
         </h2>
         <div className="mainNewsBoxContainer">
-          <Notice data={MAIN_NEWS_TEXT[0]}/>
-          <News data={MAIN_NEWS_TEXT[1]}/>
-          <DonationNews data={MAIN_NEWS_TEXT[2]}/>
+          {/* {MAIN_NEWS_TEXT.map((v,idx)=>{
+            return(
+            <NewsCard data={v[idx]} />
+            )
+          })} */}
+          <NewsCard data={MAIN_NEWS_TEXT[0]} />
+          <NewsCard data={MAIN_NEWS_TEXT[1]} />
+          <NewsCard data={MAIN_NEWS_TEXT[2]} />
         </div>
       </div>
     );

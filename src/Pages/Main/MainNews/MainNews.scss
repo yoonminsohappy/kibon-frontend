@@ -30,6 +30,80 @@
       height: 211px;
       background-color: white;
 
+      &:hover .top {
+        position: absolute;
+        height: 5px;
+        width: 100%;
+        background-color: #6e0000;
+        transition: all 0.1s;
+        z-index: 2;
+      }
+
+      &:hover .right1 {
+        position: absolute;
+        height: 100%;
+        width: 5px;
+        background-color: #6e0000;
+        transition: all 0.1s linear 0.1s;
+        z-index: 2;
+      }
+
+      &:hover .bottom {
+        position: absolute;
+        height: 5px;
+        width: 100%;
+        background-color: #6e0000;
+        transition: all 0.1s 0.2s;
+        z-index: 2;
+      }
+
+      &:hover .left1 {
+        position: absolute;
+        height: 100%;
+        width: 5px;
+        background-color: #6e0000;
+        transition: all 0.1s 0.3s;
+        z-index: 2;
+      }
+
+      .top {
+        position: absolute;
+        height: 2px;
+        width: 0;
+        background-color: #6e0000;
+        transition: all 0.1s 0.3s;
+      }
+
+      .right1 {
+        position: absolute;
+        right: 0;
+        height: 0px;
+        width: 2px;
+        z-index: 1;
+        background-color: #6e0000;
+        transition: all 0.1s 0.2s;
+      }
+
+      .bottom {
+        height: 2px;
+        width: 0;
+        background-color: #6e0000;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        transition: all 0.1s 0.1s;
+      }
+      .left1 {
+        position: absolute;
+        height: 0;
+        width: 2px;
+        z-index: 1;
+        background-color: #6e0000;
+        bottom: 0;
+        left: 0;
+        transition: all 0.1s;
+      }
+
       h3 {
         padding: 25px 0px 0px 20px;
         margin-bottom: 1px;
@@ -48,7 +122,7 @@
       .activeBox {
         position: relative;
         width: 100%;
-        height: 143px;
+        height: 138px;
         background-color: white;
 
         .subTitle {

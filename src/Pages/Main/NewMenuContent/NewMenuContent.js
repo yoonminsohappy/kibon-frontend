@@ -41,7 +41,7 @@ class NewMenuContent extends Component {
                 </div>
               </div>
             </div>
-            <img src={`/Images/food${index}.png`}></img>
+            <img className="newBigImage" src={`/Images/food${index}.png`}></img>
           </div>
         </div>
       </div>

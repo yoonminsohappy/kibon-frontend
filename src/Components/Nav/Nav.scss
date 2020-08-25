@@ -1,5 +1,12 @@
 @import "../../Styles/common.scss";
 
+@mixin iconSize {
+  width: 49px;
+  height: 49px;
+  margin-left: 7px;
+  border: solid 1px rgba(255, 255, 255, 0.5);
+}
+
 .Nav {
   .mainNav {
     position: fixed;
@@ -25,10 +32,11 @@
   .inactive {
     position: absolute;
     width: 100%;
-    height: 96px;
+    height: 0px;
+    background-color: #6e0000e6;
     z-index: -1;
     animation-name: up;
-    animation-duration: 0.5s;
+    animation-duration: 1s;
   }
 
   @keyframes down {
@@ -42,12 +50,10 @@
 
   @keyframes up {
     0% {
-      top: 0px;
-      background-color: #6e0000e6;
+      top: 96px;
     }
     100% {
-      top: -96px;
-      background-color: #6e0000e6;
+      top: 0px;
     }
   }
 
@@ -119,20 +125,14 @@
     }
 
     .searchImg {
-      width: 49px;
-      height: 49px;
-      margin-left: 7px;
+      @include iconSize;
       background-image: url("/Images/gnb_util.png");
-      border: solid 1px rgba(255, 255, 255, 0.5);
     }
 
     .menuImg {
-      width: 49px;
-      height: 49px;
-      margin-left: 7px;
+      @include iconSize;
       background-image: url("/Images/gnb_util.png");
       background-position: -50px top;
-      border: solid 1px rgba(255, 255, 255, 0.5);
     }
   }
 

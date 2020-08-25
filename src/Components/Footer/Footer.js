@@ -16,12 +16,12 @@ class Footer extends Component {
                 </dt>
                 <dd className="footerBar">|</dd>
                 <dd className="phoneNumber">1668-3944</dd>
-                <dt className="footerImage1"></dt>
+                <dt className="phoneIcon"></dt>
                 <dt className="mainNumberText">대표번호</dt>
                 <dd className="footerBar">|</dd>
                 <dd className="phoneNumber">1644-6288</dd>
 
-                <dt className="footerImage2"></dt>
+                <dt className="lampIcon"></dt>
                 <dt className="foundedNumberText">창업문의</dt>
                 <dd className="footerBar">|</dd>
                 <dd className="phoneNumber">1668-3007</dd>
@@ -73,7 +73,9 @@ class Footer extends Component {
             </ul>
             <p className="companyInfo">
               <span>본아이에프(주)</span>
-              <span>서울특별시 영등포구 선유로165 (양평동3가, 와이파이센터)6층</span>
+              <span>
+                서울특별시 영등포구 선유로165 (양평동3가, 와이파이센터)6층
+              </span>
               <span>대표자명: 김철호, 이진희</span>
               <span>사업자등록번호 101-86-07256</span>
               <span>통신판매신고번호:2019-1230호</span>

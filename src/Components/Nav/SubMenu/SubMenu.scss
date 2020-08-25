@@ -1,4 +1,4 @@
-.SubMainContainer {
+.SubMenu {
   position: fixed;
   // top: 96px;
   width: 100%;
@@ -37,6 +37,24 @@
     }
     100% {
       top: 0px;
+    }
+  }
+
+  .upin {
+    position: absolute;
+    width: 100%;
+    height: 146px;
+    animation-name: up;
+    animation-duration: 0.5s;
+    background-color: #6e0000e6;
+  }
+
+  @keyframes up {
+    0% {
+      top: 0px;
+    }
+    100% {
+      top: -146px;
     }
   }
 }

@@ -5,6 +5,7 @@ class DonationNews extends Component {
 
   state = {
     index: 0,
+    onMouseHover: false
   };
 
   handlePlus = () => {
@@ -23,17 +24,36 @@ class DonationNews extends Component {
     }
   };
 
+  mouseHover=()=>{
+    this.setState({onMouseHover:true});
+  }
+
+  mouseLeave =()=>{
+    this.setState({onMouseHover:false});
+  }
+
   render() {
-    const {index} = this.state;
+    console.log(this.state.onMouseHover);
+    const { index, onMouseHover } = this.state;
     const {data} = this.props;
     return (
-      <div className="newsBox">
+      <div
+        className="newsBox"
+        // onMouseEnter={this.mouseHover}
+        // onMouseLeave={this.mouseLeave}
+      >
+        <div className="top" />
+        <div className="right1" />
+        <div className="bottom" />
+        <div className="left1" />
         <h3>{data.title}</h3>
         <Link to="#" className="title">
           •••
         </Link>
         <div className="activeBox">
-          <Link to="#" className="subTitle">{data.subTitle[index]}</Link>
+          <Link to="#" className="subTitle">
+            {data.subTitle[index]}
+          </Link>
           <span className="date">{data.date[index]}</span>
           <div className="left" onClick={this.handdleMinor}>
             <div className="leftButton" />

@@ -19,7 +19,7 @@ class Banner extends Component {
     return (
       <div className="Banner">
         <div className="BannerImageSize">
-          <Slider {...params}>
+          <Slider {...params} style={{overflow:"hidden"}}>
             <div>
               <img alt="2000원 할인 사진" src="./Images/banner1.png" />
             </div>
