@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+<<<<<<< HEAD
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import JoinTable from "./Component/JoinTable";
 import "./SignUp.scss";
@@ -36,6 +37,12 @@ class SignUp extends Component {
         </div>
       </main>
     );
+=======
+
+class SignUp extends Component {
+  render() {
+    return <div></div>;
+>>>>>>> master
   }
 }
 
