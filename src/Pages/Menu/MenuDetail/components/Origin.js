@@ -20,17 +20,14 @@ class Origin extends Component {
           <div className="headContainer">
             <div className="Head">원산지 정보</div>
             <div className="classPopContainer">
-              <div 
-              onClick={this.closeOrigin} 
-              className="closePop"></div>
+              <div onClick={this.closeOrigin} className="closePop"></div>
             </div>
           </div>
           <div className="originInfoContainer">
             <img
               alt="originInformation"
               className="originInfo"
-              src={this.props.originClass}
-              // "/Images/pop_origin.jpg"
+              src="/Images/pop_origin.jpg"
             />
           </div>
         </div>

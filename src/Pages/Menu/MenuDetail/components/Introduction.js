@@ -7,7 +7,7 @@ class Introduction extends Component {
     super(props);
     this.state = {
       menuClass: "myMenu",
-      menuImage: props.image1,
+      menuImage: "/Images/menu.png",
       borderColor: "",
       originClass: "Origin",
     };
@@ -21,13 +21,13 @@ class Introduction extends Component {
 
   handleImg1 = () => {
     this.setState({
-      menuImage: this.props.image1,
+      menuImage: "/Images/menu.png",
     });
   };
 
   handleImg2 = () => {
     this.setState({
-      menuImage: this.props.image2,
+      menuImage: "/Images/menu_subimage.png",
     });
   };
 
@@ -48,12 +48,14 @@ class Introduction extends Component {
       <div className="Introduction">
         <div className="detailContainer">
           <div className="infoContainer">
-            <img alt="menu" className="menu" src={this.state.menuImage} />
+            <img alt="menu" className="menu" src="/Images/menu.png" />
             <div className="wholeContainer">
-              <p className="name">{this.props.name}</p>
-              <p className="intro">{this.props.introText}</p>
+              <p className="name">삼계전복죽</p>
+              <p className="intro">
+                삼복 더위 이기는 영양 가득 최고의 보양 한 그릇
+              </p>
               <div className="priceContainer">
-                <strong className="price">{this.props.price}</strong>
+                <strong className="price">15000</strong>
                 <span className="unit">원</span>
               </div>
               <div className="btnContainer">
@@ -76,28 +78,30 @@ class Introduction extends Component {
                 </div>
               </div>
               <div className="bar"></div>
-              <p className="summary">{this.props.introSummary}</p>
+              <p className="summary">
+                푹 고아 부드럽고 진한 닭고기에 전복까지 더해진 최고의 보양식!
+                <br />
+                국내산 수삼 한 뿌리까지 통째로 들어간 완벽한 영양 한 그릇으로
+                <br />
+                깊고 진한 진짜 보양식을 만나보세요.
+              </p>
 
               <div className="previewImage">
                 <img
                   onClick={this.handleImg1}
                   alt="subimage1"
                   className={
-                    this.state.menuImage === "{this.props.image1}"
-                      ? "subImage1"
-                      : ""
+                    this.state.menuImage === "menu.png" ? "subImage1" : ""
                   }
-                  src={this.props.image1}
+                  src="/Images/menu.png"
                 />
                 <img
                   onClick={this.handleImg2}
                   alt="subimage2"
                   className={
-                    this.state.menuImage === "{this.props.image2}"
-                      ? "subImage2"
-                      : ""
+                    this.state.menuImage === "menu.png" ? "subImage2" : ""
                   }
-                  src={this.props.image2}
+                  src="/Images/menu_subimage.png"
                 />
               </div>
             </div>
