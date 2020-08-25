@@ -1,7 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
+import { withRouter } from "react-router-dom";
 import "./MemberForm.scss";
 
-class memberForm extends Component {
+
+class memberForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -19,7 +21,7 @@ class memberForm extends Component {
   };
 
   locationEvent = () => {
-    fetch("http://10.58.3.101:8000/user/login", {
+    fetch("http://10.58.1.31:8000/user/login", {
       method: "POST",
       body: JSON.stringify({
         identifier: this.state.idValue,
@@ -27,8 +29,11 @@ class memberForm extends Component {
       }),
     })
       .then((response) => response.json())
-      .then((response) => console.log(response));
-  };
+      .then((response) => {
+        localStorage.setItem("token",response.token)
+        this.props.history.push('/');
+      });
+  }
   render() {
     return (
       <div className="MemberForm">
@@ -76,4 +81,4 @@ class memberForm extends Component {
   }
 }
 
-export default memberForm;
+export default withRouter(memberForm);
