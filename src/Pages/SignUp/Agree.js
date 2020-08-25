@@ -18,7 +18,7 @@ class Agree extends Component {
       userIdValue: "",
       passwordValue: "",
       passwordCheckValue: "",
-      genderValue: "",
+      genderValue: "남자",
       phoneValue: "",
       emailValue: "",
       errorBoxDay: true,
