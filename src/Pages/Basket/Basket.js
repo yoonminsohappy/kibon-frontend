@@ -3,6 +3,7 @@ import "./Basket.scss";
 import "../../Components/TitleSection/TitleSection";
 import { Link } from "react-router-dom";
 import "../../Styles/common.scss";
+import BasketList from "./BasketList";
 
 class Basket extends Component {
   render() {
@@ -32,71 +33,27 @@ class Basket extends Component {
               <table className="tableList">
                 <thead>
                   <tr>
-                    {/* <tr> */}
                     <th>주문메뉴</th>
-                    {/* </tr> */}
-                    {/* <tr> */}
                     <th>수량</th>
-                    {/* </tr> */}
-                    {/* <tr> */}
                     <th>가격</th>
-                    {/* </tr> */}
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td className="al">
-                      <div className="goodsPhoto">
-                        <p className="goodsThumb">
-                          <img src="" alt="goods" />
-                        </p>
-                        <p className="goodsTxt">
-                          "[본죽&amp;비빔밥cafe]" 해물김치해장죽 &nbsp; /
-                          "(대)"포장용기
-                        </p>
-                      </div>
-                    </td>
-                    <td>1개</td>
-                    <td className="ar">
-                      <span className="spoqa">10,000</span>원
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="al">
-                      <div className="goodsPhoto">
-                        <p className="goodsThumb">
-                          <img src="" alt="goods" />
-                        </p>
-                        <p className="goodsTxt">
-                          "[본죽&amp;비빔밥cafe]" 해물김치해장죽 &nbsp; /
-                          "(대)"포장용기
-                        </p>
-                      </div>
-                    </td>
-                    <td>1개</td>
-                    <td className="ar">
-                      <span className="spoqa">10,000</span>원
-                    </td>
-                  </tr>
-                  <tr>
-                    <td className="al">
-                      <div className="goodsPhoto">
-                        <p className="goodsThumb">
-                          <img src="" alt="goods" />
-                        </p>
-                        <p className="goodsTxt">
-                          "[본죽&amp;비빔밥cafe]" 해물김치해장죽 &nbsp; /
-                          "(대)"포장용기
-                        </p>
-                      </div>
-                    </td>
-                    <td>1개</td>
-                    <td className="ar">
-                      <span className="spoqa">10,000</span>원
-                    </td>
-                  </tr>
-                </tbody>
+                {baskets.map((el, idx) => {
+                  return <BasketList />;
+                })}
               </table>
+              <div className="totalSection">
+                <div className="totalTitle">총 금액</div>
+                <div className="totalGoodsPrice">
+                  <span>상품가</span>
+                  <span>0원</span>
+                </div>
+                <div className="totalPrice">
+                  <span>합계</span>
+                  <span>0원</span>
+                </div>
+                <div className="payBtn">결제하기</div>
+              </div>
             </div>
           </div>
         </div>
@@ -104,5 +61,20 @@ class Basket extends Component {
     );
   }
 }
+
+const baskets = [
+  {
+    image: "https://files.bonif.co.kr/upload/cmdt/BF101_pic_4BpzCLaw.jpg",
+    name: "[본죽&amp;비빔밥cafe] 해물김치해장죽&nbsp; / (대)포장용기",
+  },
+  {
+    image: "https://files.bonif.co.kr/upload/cmdt/BF101_pic_4BpzCLaw.jpg",
+    name: "[본죽&amp;비빔밥cafe] 해물김치해장죽&nbsp; / (대)포장용기",
+  },
+  {
+    image: "https://files.bonif.co.kr/upload/cmdt/BF101_pic_4BpzCLaw.jpg",
+    name: "[본죽&amp;비빔밥cafe] 해물김치해장죽&nbsp; / (대)포장용기",
+  },
+];
 
 export default Basket;

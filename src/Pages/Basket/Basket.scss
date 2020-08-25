@@ -112,11 +112,15 @@
       }
     }
     .orderPayItems {
+      margin: 0 auto;
       .tableWrap {
+        display: flex;
+        margin: 0 auto;
         .tableList {
-          margin: 0 auto;
-          width: 1400px;
+          width: 1000px;
           border-collapse: collapse;
+          text-align: center;
+          vertical-align: center;
           thead {
             tr {
               width: 100%;
@@ -124,7 +128,7 @@
                 width: 30%;
                 font-weight: 500;
                 background-color: #f4f4f4;
-                height: 58px;
+                line-height: 58px;
                 border-left: 1px solid #ddd;
                 text-align: center;
                 color: #222;
@@ -137,14 +141,41 @@
           tbody {
             tr {
               td {
+                position: relative;
                 border-bottom: 1px solid #ddd;
                 padding: 15px 10px;
                 color: #666;
-                .goods-photo .good-thumb {
-                  vertical-align: middle;
-                  display: inline-block;
-                  width: 100px;
-                  height: 100px;
+                .btnLeft {
+                  position: absolute;
+                  top: 40%;
+                  left: 30%;
+                  transform: rotate(-45deg);
+                  width: 10px;
+                  height: 10px;
+                  border-top: 1px solid black;
+                  border-left: 1px solid black;
+                  cursor: pointer;
+                }
+                .btnRight {
+                  position: absolute;
+                  top: 40%;
+                  right: 30%;
+                  transform: rotate(45deg);
+                  width: 10px;
+                  height: 10px;
+                  border-top: 1px solid black;
+                  border-right: 1px solid black;
+                  cursor: pointer;
+                }
+                .goodsPhoto {
+                  .goodsThumb {
+                    img {
+                      vertical-align: middle;
+                      display: inline-block;
+                      width: 100px;
+                      height: 100px;
+                    }
+                  }
                 }
                 .al {
                   width: 50%;
@@ -153,6 +184,45 @@
                 }
               }
             }
+          }
+        }
+        .totalSection {
+          position: relative;
+          width: 300px;
+          height: 300px;
+          margin-left: 50px;
+          .totalTitle {
+            width: 100%;
+            height: 80px;
+            font-size: 26px;
+            line-height: 80px;
+            padding-top: 10px;
+            border-bottom: 3px solid #000;
+          }
+          .totalGoodsPrice {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            height: 80px;
+            line-height: 80px;
+            padding-top: 10px;
+            border-bottom: 3px solid #000;
+          }
+          .totalPrice {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 30px;
+          }
+          .payBtn {
+            text-align: center;
+            line-height: 50px;
+            color: white;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: $bur;
           }
         }
       }
