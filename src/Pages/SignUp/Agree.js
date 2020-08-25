@@ -76,8 +76,9 @@ class Agree extends Component {
   }
 
   locationEvent = () => {
-    if (this.state.nameValue.length >= 1) {
-      fetch("http://10.58.3.101:8000/user/signup", {
+    const { nameValue, birthDayValue, userIdValue, passwordValue, phoneValue, emailValue, allChecked} = this.state;
+    if (nameValue && birthDayValue && userIdValue && passwordValue && phoneValue && emailValue && allChecked) {
+      fetch("http://10.58.1.31:8000/user/signup", {
         method: "POST",
         body: JSON.stringify({
           name: this.state.nameValue,
@@ -90,9 +91,10 @@ class Agree extends Component {
         }),
       })
         .then((response) => response.json())
-        .then((response) => console.log(response));
-        this.props.history.push('/sign-up/join-complete');
-
+        .then((response) => { 
+          localStorage.setItem("name",response.name);
+          this.props.history.push('/sign-up/join-complete');
+        });
     } else {
       alert("필수입력창에 내용을 채워주세요.");
     }

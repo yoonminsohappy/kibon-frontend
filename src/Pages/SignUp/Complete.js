@@ -4,6 +4,20 @@ import JoinTable from "./Component/JoinTable";
 import "./Complete.scss";
 
 class Complete extends Component {
+  constructor() {
+    super();
+    this.state = {
+      username: "",
+    };
+  }
+
+  componentDidMount() {
+    console.log(this.state.name);
+    this.setState({
+      username:localStorage.getItem("name")
+    })  
+  }
+  
   render() {
     return (
       <div className="Complete">
@@ -17,7 +31,7 @@ class Complete extends Component {
           </div>
           <div className="completeBox">
             <p>
-              <strong>이효정</strong> 고객님,
+              <strong>{this.state.username}</strong> 고객님,
               <br />
               본아이에프 회원이 되신 것을 환영합니다.
             </p>
