@@ -10,9 +10,9 @@ class Agree extends Component {
     super();
     this.state = {
       allChecked: false,
-      Checked0: false,
-      Checked1: false,
-      Checked2: false,
+      checked0: false,
+      checked1: false,
+      checked2: false,
       nameValue: "",
       birthDayValue: "",
       userIdValue: "",
@@ -32,20 +32,19 @@ class Agree extends Component {
     const {allChecked} = this.state;
     this.setState({
       allChecked: !allChecked,
-      Checked0: !allChecked,
-      Checked1: !allChecked,
-      Checked2: !allChecked,
+      checked0: !allChecked,
+      checked1: !allChecked,
+      checked2: !allChecked,
     })
 
   };
 
   handleChecked = (index) => {
-    console.log(index);
     this.setState({
-      [`Checked${index}`]: !this.state[`Checked${index}`]
+      [`checked${index}`]: !this.state[`checked${index}`]
     }, ()=> {
       this.setState({
-        allChecked: this.state.Checked0 && this.state.Checked1 && this.state.Checked2
+        allChecked: this.state.checked0 && this.state.checked1 && this.state.checked2
       })
     })
   }
@@ -95,7 +94,6 @@ class Agree extends Component {
 
     } else {
       alert("필수입력창에 내용을 채워주세요.");
-      this.props.history.push("/sign-up/join-complete");
     }
   };
 
@@ -143,9 +141,9 @@ class Agree extends Component {
   }
 }
 const titleText = [
-  { content: "이용약관 동의", name: "Checked0" },
-  { content: "개인정보 수집 및 이용 동의", name: "Checked1" },
-  { content: "광고성 정보 수신 동의", name: "Checked2" },
+  { content: "이용약관 동의", name: "checked0" },
+  { content: "개인정보 수집 및 이용 동의", name: "checked1" },
+  { content: "광고성 정보 수신 동의", name: "checked2" },
 ];
 
 export default Agree;
