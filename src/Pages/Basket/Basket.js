@@ -32,13 +32,15 @@ class Basket extends Component {
               <table className="tableList">
                 <thead>
                   <tr>
+                    {/* <tr> */}
                     <th>주문메뉴</th>
-                  </tr>
-                  <tr>
+                    {/* </tr> */}
+                    {/* <tr> */}
                     <th>수량</th>
-                  </tr>
-                  <tr>
+                    {/* </tr> */}
+                    {/* <tr> */}
                     <th>가격</th>
+                    {/* </tr> */}
                   </tr>
                 </thead>
                 <tbody>
@@ -59,8 +61,41 @@ class Basket extends Component {
                       <span className="spoqa">10,000</span>원
                     </td>
                   </tr>
+                  <tr>
+                    <td className="al">
+                      <div className="goodsPhoto">
+                        <p className="goodsThumb">
+                          <img src="" alt="goods" />
+                        </p>
+                        <p className="goodsTxt">
+                          "[본죽&amp;비빔밥cafe]" 해물김치해장죽 &nbsp; /
+                          "(대)"포장용기
+                        </p>
+                      </div>
+                    </td>
+                    <td>1개</td>
+                    <td className="ar">
+                      <span className="spoqa">10,000</span>원
+                    </td>
+                  </tr>
+                  <tr>
+                    <td className="al">
+                      <div className="goodsPhoto">
+                        <p className="goodsThumb">
+                          <img src="" alt="goods" />
+                        </p>
+                        <p className="goodsTxt">
+                          "[본죽&amp;비빔밥cafe]" 해물김치해장죽 &nbsp; /
+                          "(대)"포장용기
+                        </p>
+                      </div>
+                    </td>
+                    <td>1개</td>
+                    <td className="ar">
+                      <span className="spoqa">10,000</span>원
+                    </td>
+                  </tr>
                 </tbody>
-                <tfoot></tfoot>
               </table>
             </div>
           </div>
