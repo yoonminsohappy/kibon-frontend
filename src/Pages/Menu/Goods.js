@@ -31,7 +31,7 @@ class Goods extends Component {
         <div
           className="goods-block"
           onClick={() => {
-            this.props.history.push(`/menu/menu-detail/${this.state.id}`);
+            this.props.history.push(`/menu/menu-detail/${this.props.id}`);
           }}
           onMouseEnter={this.handleMouseOver}
           onMouseLeave={this.handleMouseLeave}

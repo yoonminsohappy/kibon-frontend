@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import Category from "./Category/Category";
 import Goods from "./Goods";
 import { Link } from "react-router-dom";
 
