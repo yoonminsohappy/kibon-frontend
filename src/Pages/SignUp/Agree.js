@@ -91,6 +91,7 @@ class Agree extends Component {
       })
         .then((response) => response.json())
         .then((response) => console.log(response));
+        this.props.history.push('/sign-up/join-complete');
 
     } else {
       alert("필수입력창에 내용을 채워주세요.");
