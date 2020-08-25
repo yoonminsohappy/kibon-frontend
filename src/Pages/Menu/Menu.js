@@ -12,6 +12,7 @@ class Menu extends Component {
     super(props);
     this.state = {
       num: 1,
+      data: [],
     };
   }
   componentDidMount = () => {
