@@ -1,0 +1,125 @@
+@import "../../../Styles/common.scss";
+
+.Joinbox {
+  border-top: 2px solid #222;
+  margin-top: 30px;
+
+  tbody {
+    tr {
+      th {
+        width: 245px;
+        font-size: 18px;
+        font-weight: 400;
+        text-align: left;
+        line-height: 50px;
+        padding: 15px 0 15px 20px;
+        border-bottom: 1px solid #ddd;
+
+        .necessary {
+          color: $labelBur;
+          padding-left: 2px;
+          margin-top: -9px;
+          vertical-align: super;
+        }
+      }
+
+      td {
+        height: 90px;
+        padding: 20px 0;
+        border-bottom: 1px solid #ddd;
+
+        .textInput {
+          width: 375px;
+          height: 50px;
+          padding: 0 20px;
+          font-size: 16px;
+          color: #666;
+          vertical-align: middle;
+          border: 1px solid #ccc;
+
+          &:focus {
+            border-color: $labelBur;
+            outline: none;
+          }
+        }
+
+        .genderCheck {
+          width: 220px;
+          height: 50px;
+          font-size: 16px;
+          padding: 0 20px;
+          border: 1px solid #ccc;
+
+          &:focus {
+            outline: none;
+          }
+        }
+
+        .idBox {
+          width: 375px;
+          height: 50px;
+          display: flex;
+
+          .userId {
+            width: 220px;
+            height: 50px;
+            padding: 0 20px;
+            margin-right: 10px;
+            font-size: 16px;
+            color: #666;
+            border: 1px solid #ccc;
+
+            &:focus {
+              border-color: $labelBur;
+              outline: none;
+            }
+          }
+
+          .checkBtn {
+            width: 140px;
+            font-size: 18px;
+            font-weight: 500;
+            color: #fff;
+            border: 1px solid $bur;
+            background-color: $bur;
+            cursor: pointer;
+          }
+        }
+
+        .agreeOption {
+          color: #666;
+          padding: 15px 0;
+
+          p {
+            line-height: 25px;
+          }
+        }
+
+        .recomId {
+          width: 220px;
+          height: 50px;
+          padding: 0 20px;
+          margin-right: 10px;
+          font-size: 16px;
+          color: #666;
+          border: 1px solid #ccc;
+
+          &:focus {
+            border-color: $labelBur;
+            outline: none;
+          }
+        }
+
+        .alretText {
+          display: none;
+          margin-left: 12px;
+          color: #962639;
+        }
+
+        .alretDisplay {
+          display: inline-block;
+        }
+      }
+    }
+  }
+}
