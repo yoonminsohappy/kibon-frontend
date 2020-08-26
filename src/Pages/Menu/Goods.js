@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class Goods extends Component {
   constructor() {
@@ -25,15 +26,12 @@ class Goods extends Component {
   };
 
   render() {
-    // console.log(this.props);
+    console.log(this.props);
     // console.log(this.props.category);
     return (
       <li>
         <div
           className="goods-block"
-          onClick={() => {
-            this.props.history.push(`/menu/menu-detail/${this.props.id}`);
-          }}
           onMouseEnter={this.handleMouseOver}
           onMouseLeave={this.handleMouseLeave}
         >
@@ -45,6 +43,9 @@ class Goods extends Component {
           <div className="goods-thumb">
             <p>
               <img
+                onClick={() => {
+                  this.props.history.push(`/menu/menu-detail/${this.props.id}`);
+                }}
                 alt="goodsDetail"
                 src={this.props.img}
                 className="goods-detail-view"
@@ -59,9 +60,9 @@ class Goods extends Component {
               }
               style={{ display: this.state.isHovering }}
             >
-              <a href="#cartWrap" data-idx="7" className="btn-zzim full">
+              <Link to="/" className="btn-zzim full">
                 MY메뉴
-              </a>
+              </Link>
             </div>
           </div>
           <div className="goods-name">

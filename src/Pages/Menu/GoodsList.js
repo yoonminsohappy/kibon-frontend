@@ -52,21 +52,35 @@ class GoodsList extends Component {
           </div>
           <div className="menuMapList">
             <ul className="menuList">
-              {this.props.menu &&
-                this.props.menu.map((el, idx) => {
-                  return (
-                    <Goods
-                      key={idx}
-                      id={el.ID}
-                      name={el.name}
-                      price={el.price}
-                      category={el.category}
-                      img={el.image}
-                      best={el.best}
-                      new={el.new}
-                    />
-                  );
-                })}
+              {this.state.activeTab === 0
+                ? this.props.all.map((el, idx) => {
+                    return (
+                      <Goods
+                        key={idx}
+                        id={el.ID}
+                        name={el.name}
+                        price={el.price}
+                        category={el.category}
+                        img={el.image}
+                        best={el.best}
+                        new={el.new}
+                      />
+                    );
+                  })
+                : this.props.menu.map((el, idx) => {
+                    return (
+                      <Goods
+                        key={idx}
+                        id={el.ID}
+                        name={el.name}
+                        price={el.price}
+                        category={el.category}
+                        img={el.image}
+                        best={el.best}
+                        new={el.new}
+                      />
+                    );
+                  })}
             </ul>
           </div>
         </div>

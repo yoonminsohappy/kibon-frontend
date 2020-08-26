@@ -6,9 +6,7 @@ class MenuFooter extends Component {
   render() {
     return (
       <div className="btnBrandOrder">
-        <Link to="/" className="block">
-          지금 바로 주문하기
-        </Link>
+        <Link to="/">지금 바로 주문하기</Link>
       </div>
     );
   }

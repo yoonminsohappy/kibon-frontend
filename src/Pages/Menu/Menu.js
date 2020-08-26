@@ -5,7 +5,7 @@ import "./Menu.scss";
 import "../../Styles/common.scss";
 import "../../Components/TitleSection/TitleSection";
 import TitleSection from "../../Components/TitleSection/TitleSection";
-import url from "../../Config";
+import url from "../../config";
 
 class Menu extends Component {
   constructor(props) {
@@ -28,10 +28,10 @@ class Menu extends Component {
         })
       );
   };
+
   componentDidUpdate = () => {
     if (this.state.num < 5) {
       console.log("컴디업");
-      // let all = [];
       fetch(`${url}/products?category=${this.state.num}`)
         .then((res) => res.json())
         .then((res) =>
@@ -45,7 +45,6 @@ class Menu extends Component {
   };
 
   whichTab = (idx) => {
-    // let all = [];
     if (idx > 0 && idx < 5) {
       fetch(`${url}/products?category=${idx}`)
         .then((res) => res.json())
@@ -54,14 +53,10 @@ class Menu extends Component {
             menu: res.data,
           });
         });
-      // all.concat(this.state.menu);
-      // console.log(all);
     }
   };
 
   render() {
-    console.log("all: ", this.state.all);
-    console.log("menu: ", this.state.menu);
     console.log("렌더");
     return (
       <div className="Menu">
@@ -69,7 +64,11 @@ class Menu extends Component {
           title={"메뉴소개"}
           img={"/Images/sub_visual_bonjuk.jpg"}
         />
-        <GoodsList menu={this.state.menu} tab={this.whichTab} />
+        <GoodsList
+          all={this.state.all}
+          menu={this.state.menu}
+          tab={this.whichTab}
+        />
         <MenuFooter />
       </div>
     );
