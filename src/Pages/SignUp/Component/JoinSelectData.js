@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import './Joinbox.scss';
+import "./Joinbox.scss";
 
 class JoinSelectData extends Component {
   render() {

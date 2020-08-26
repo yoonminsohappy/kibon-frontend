@@ -61,24 +61,24 @@ class Agree extends Component {
   };
 
   handleChange = (e) => {
-    const { name, value } = e.target;
-
+    const {name, value} = e.target;
+    
     const table = {
-      birthDayValue: ["errorBoxDay", valDay(value)],
-      passwordValue: ["errorBoxPassword", valPassword(value)],
-      passwordCheckValue: [
-        "errorBoxPasswordCheck",
-        valpasswordCheck(this.state.passwordValue, value),
-      ],
-      phoneValue: ["errorBoxPhone", valPhone(value)],
-      emailValue: ["errorBoxEmail", valEmail(value)],
-    };
-
-    this.setState({ 
-      [name]: value, 
-      [table[name][0]]: table[name][1] 
-    });
-  };
+      nameValue: value,
+      birthDayValue: [ "errorBoxDay", valDay(value) ],
+      passwordValue: [ "errorBoxPassword", valPassword(value) ],
+      userIdValue: value,
+      passwordCheckValue: [ "errorBoxPasswordCheck", valpasswordCheck(this.state.passwordValue, value) ],
+      genderValue: value,
+      phoneValue: [ "errorBoxPhone", valPhone(value) ],
+      emailValue: [ "errorBoxEmail", valEmail(value) ]
+    }
+    
+    this.setState({
+      [name]: value,
+      [table[name][0]]: table[name][1]
+    })
+  }
 
   locationEvent = () => {
     const {
@@ -112,12 +112,14 @@ class Agree extends Component {
         }),
       })
         .then((response) => response.json())
-        .then((response) => {
-          if(response.SUCCESS){
+        .then((response) => { 
+          console.log(response);
+          if(response.message === "SUCCESS"){
             localStorage.setItem("name", response.name);
             this.props.history.push("/sign-up/join-complete");
+          }else{
+            alert("회원가입에 실패하였습니다! 입력창을 확인해주세요.");
           }
-          alert("회원가입에 실패하였습니다! 입력창을 확인해주세요.");
         });
     } else {
       alert("필수입력창에 내용을 채워주세요.");
