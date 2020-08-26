@@ -113,7 +113,6 @@ class Agree extends Component {
       })
         .then((response) => response.json())
         .then((response) => { 
-          console.log(response);
           if(response.message === "SUCCESS"){
             localStorage.setItem("name", response.name);
             this.props.history.push("/sign-up/join-complete");
