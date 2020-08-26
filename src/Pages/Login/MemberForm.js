@@ -21,7 +21,7 @@ class memberForm extends React.Component {
   };
 
   locationEvent = () => {
-    fetch("http://10.58.1.31:8000/user/login", {
+    fetch(`http://10.58.4.96:8000/user/login`, {
       method: "POST",
       body: JSON.stringify({
         identifier: this.state.idValue,
@@ -29,9 +29,13 @@ class memberForm extends React.Component {
       }),
     })
       .then((response) => response.json())
-      .then((response) => {
-        localStorage.setItem("token",response.token)
-        this.props.history.push('/');
+      .then((response) => { 
+        if(response.token){
+          localStorage.setItem("token",response.token)
+          this.props.history.push('/');
+      }else{
+        alert("아이디와 비밀번호를 확인해주세요")
+      }
       });
   }
   render() {
