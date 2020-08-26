@@ -34,16 +34,16 @@ class Footer extends Component {
           <div className="footerContents">
             <div className="footerSns">
               <div className="snsIn">
-                <div className="insta" />
+                <div className="icon insta" />
               </div>
               <div className="snsIn">
-                <div className="youtube" />
+                <div className="icon youtube" />
               </div>
               <div className="snsIn">
-                <div className="facebook" />
+                <div className="icon facebook" />
               </div>
               <div className="snsIn">
-                <div className="blog" />
+                <div className="icon blog" />
               </div>
             </div>
             <ul className="linkList">

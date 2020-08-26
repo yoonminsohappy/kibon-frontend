@@ -4,6 +4,7 @@ import TitleSection from "../../Components/TitleSection/TitleSection";
 import StoreItems from "./StoreItems/StoreItems";
 import SearchLocate from "./StoreSearch/SearchLocate";
 import SearchKeyword from "./StoreSearch/SearchKeyword";
+import Nav from "../../Components/Nav/Nav";
 
 class Store extends Component {
   state = {
@@ -61,6 +62,8 @@ class Store extends Component {
 
   render() {
     return (
+      <>
+      <Nav/>
       <div className="Store">
         <TitleSection
           img={"/Images/sub_visual_bonrice.jpg"}
@@ -152,6 +155,7 @@ class Store extends Component {
           </div>
         </div>
       </div>
+      </>
     );
   }
 }

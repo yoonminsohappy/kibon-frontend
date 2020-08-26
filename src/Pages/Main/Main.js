@@ -11,12 +11,8 @@ import MainNews from './MainNews/MainNews';
 import '../../Styles/common.scss';
 
 class Main extends Component {
-  state={
-  
-  }
 
   render() {
-
     return (
       <div className="Main">
         <Nav />
@@ -26,7 +22,7 @@ class Main extends Component {
             <span>life Style</span>
             <p>본과 함께하는 일상</p>
           </h2>
-          <div style={{ marginTop: "-110px" }}></div>
+          <div className="boundaryBlock" />
           <MainContent />
         </div>
         <MainVod />
@@ -38,5 +34,4 @@ class Main extends Component {
     );
   }
 }
-
 export default Main;

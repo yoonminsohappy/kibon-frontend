@@ -34,14 +34,16 @@ class NewMenuContent extends Component {
                   {menuText.map((v, idx) => {
                     return (
                       <Link to="#" onClick={() => this.handleImage(idx)}>
-                        <div className="imgBorder"><img className={`border${idx}`} src={`/Images/foodmenu${idx}.png`}></img></div>
+                        <div className="imgBorder">
+                          <img className={`border${idx}`} src={`/Images/foodmenu${idx}.png`} />
+                        </div>
                       </Link>
                     );
                   })}
                 </div>
               </div>
             </div>
-            <img className="newBigImage" src={`/Images/food${index}.png`}></img>
+            <img className="newBigImage" src={`/Images/food${index}.png`} />
           </div>
         </div>
       </div>

@@ -14,7 +14,6 @@ import "./Banner.scss"
     };
 
 class Banner extends Component {
-  state = {  }
   render() { 
     return (
       <div className="Banner">
@@ -51,7 +50,6 @@ class Banner extends Component {
                       <dd>{v.mainContent}</dd>
                     </div>
                     <div className="arrowImage"></div>
-                    {/* <img alt="화살표 이미지" src="./Images/main_arrow.png" /> */}
                   </dl>
                 </Link>
               </div>

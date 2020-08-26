@@ -10,13 +10,13 @@ class DonationNews extends Component {
 
   handlePlus = () => {
     if (this.state.index >= 2) {
-      return;
-    } else {
+      return
+    } else{
       this.setState({ index: this.state.index + 1 });
     }
   };
 
-  handdleMinor = () => {
+  handleMinor = () => {
     if (this.state.index <= 0) {
       return;
     } else {
@@ -33,15 +33,10 @@ class DonationNews extends Component {
   }
 
   render() {
-    console.log(this.state.onMouseHover);
-    const { index, onMouseHover } = this.state;
+    const { index} = this.state;
     const {data} = this.props;
     return (
-      <div
-        className="newsBox"
-        // onMouseEnter={this.mouseHover}
-        // onMouseLeave={this.mouseLeave}
-      >
+      <div className="newsBox">
         <div className="top" />
         <div className="right1" />
         <div className="bottom" />
@@ -55,7 +50,7 @@ class DonationNews extends Component {
             {data.subTitle[index]}
           </Link>
           <span className="date">{data.date[index]}</span>
-          <div className="left" onClick={this.handdleMinor}>
+          <div className="left" onClick={this.handleMinor}>
             <div className="leftButton" />
           </div>
           <div className="right" onClick={this.handlePlus}>

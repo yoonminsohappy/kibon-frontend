@@ -4,25 +4,25 @@ import './SubMenu.scss';
 
 class SubMenu extends Component {
 
-  render() { 
-    console.log(this.props.hover )
-
+  render() {
+    const{submenu,hover} = this.props;
     return (
       <div className="SubMenu">
-        <div className={this.props.hover >= 0 ? "downin" : ""}></div>
+        <div className={hover >= 0 ? "downin" : ""}></div>
         <div className="subIFMenu">
           <ul>
-            {this.props.submenu && this.props.submenu.map((v=>{
+            {submenu && submenu.map((v , idx) =>{
             return (
-                <li><Link to="#">{v}</Link></li>
+                <li><Link to="#">{v}
+                <div className="subUnderLine"/>
+                </Link></li>
             );
-          }))}          
+          })}          
           </ul>
         </div>
       </div>
     );
   }
 }
- 
 export default SubMenu;
 

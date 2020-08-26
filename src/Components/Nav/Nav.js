@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from "react-router-dom";
 import './Nav.scss';
 import SubMenu from './SubMenu/SubMenu';
+import Search from './Search/Search';
 
 class Nav extends Component {
   constructor(props) {
@@ -11,6 +12,8 @@ class Nav extends Component {
       isDisplay: false,
       hidden: true,
       scrollPos: 0,
+      underLine:"",
+      isSearch : false
     };
   }
 
@@ -18,8 +21,7 @@ class Nav extends Component {
     window.addEventListener("scroll", this.handleScroll)
   }
 
-  handleScroll = () =>{
-    console.log(document.body.getBoundingClientRect().x);
+  handleScroll = () => {
     this.setState({
       scrollPos: document.body.getBoundingClientRect().top,
       hidden:
@@ -35,13 +37,17 @@ class Nav extends Component {
     this.setState({activeTab: -1})
   }
 
+  isSearch = () =>{
+    this.setState((prevState)=> ({isSearch: !prevState.isSearch}))
+  }
+
   render() {
-    const {hidden, activeTab, scrollPos} = this.state;
+    const {hidden, activeTab, scrollPos, isSearch} = this.state;
     return (
-      <div className="Nav">
+      <div className="Nav" onMouseLeave={() => this.tabActiveHandler(-1)}>
         <nav className="mainNav">
           <div className="navHr"></div>
-          <div className={hidden ? "inactive" : "box"}></div>
+          <div className={hidden ? "nav inactive" : "nav box"}></div>
           <img
             alt="본죽로고이미지"
             className="mainLogoImg"
@@ -54,11 +60,13 @@ class Nav extends Component {
                   <li>
                     <Link
                       to="#"
-                      id="testing"
                       onMouseEnter={() => this.tabActiveHandler(idx)}
                       top={scrollPos}
                     >
                       {str}
+                      <div
+                        className={activeTab === idx ? "activeUnderLine" : ""}
+                      />
                     </Link>
                   </li>
                 );
@@ -69,17 +77,18 @@ class Nav extends Component {
             <Link to="#">주문</Link>
             <div>|</div>
             <Link to="#">로그인</Link>
-            <div style={{ display: "none" }}>|</div>
-            <Link to="#" style={{ display: "none" }}>
+            <div className="logout">|</div>
+            <Link to="#" className="logout">
               로그아웃
             </Link>
-            <Link to="#" className="searchImg"></Link>
-            <Link to="#" className="menuImg"></Link>
+            <Link to="#" className="searchImg" onClick={this.isSearch} />
+            <Link to="#" className="menuImg" />
           </div>
         </nav>
         <div>
           <SubMenu submenu={SUB_MENU_TABLE[activeTab]} hover={activeTab} />
         </div>
+        <Search isSearch={isSearch} />
       </div>
     );
   }

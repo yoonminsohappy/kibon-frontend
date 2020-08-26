@@ -33,23 +33,23 @@
     position: relative;
     align-items: center;
     margin: 0 auto;
+
+    & p:before {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 26px;
+      top: -40px;
+      left: 50%;
+      opacity: 0.5;
+      background: url("/Images/ico_main_slash.png");
+    }
   }
 
   p {
     font-size: 25px;
     line-height: 50px;
     color: white;
-  }
-
-  div p:before {
-    content: "";
-    position: absolute;
-    width: 18px;
-    height: 26px;
-    top: -40px;
-    left: 50%;
-    opacity: 0.5;
-    background: url("/Images/ico_main_slash.png");
   }
 
   div p:after {

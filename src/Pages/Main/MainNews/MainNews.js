@@ -5,7 +5,6 @@ import NewsCard from "./NewsCard/NewsCard";
 import NewMenuContent from "../NewMenuContent/NewMenuContent";
 
 class MainNews extends Component {
-  state = {  }
   render() { 
     return (
       <div className="MainNews">
@@ -19,9 +18,9 @@ class MainNews extends Component {
             <NewsCard data={v[idx]} />
             )
           })} */}
-          <NewsCard data={MAIN_NEWS_TEXT[0]} />
-          <NewsCard data={MAIN_NEWS_TEXT[1]} />
-          <NewsCard data={MAIN_NEWS_TEXT[2]} />
+          <NewsCard data={notice} />
+          <NewsCard data={press} />
+          <NewsCard data={nanumNews} />
         </div>
       </div>
     );
@@ -59,3 +58,5 @@ const MAIN_NEWS_TEXT = [
     date: ["2020.08.14", "2020.08.07", "2020.05.19"],
   },
 ];
+
+const [notice, press, nanumNews] = MAIN_NEWS_TEXT;

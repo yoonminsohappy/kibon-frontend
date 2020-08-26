@@ -75,8 +75,9 @@
   }
 
   .mainNumberText {
-    color: #999999;
-    padding: 0px 10px 0px 5px;
+    color: #999;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   .lampIcon {
@@ -106,32 +107,32 @@
     border-right: solid 1px #4d4d50;
     border-left: solid 1px #4d4d50;
     background-color: $footerGray;
-  }
 
-  .familySite a {
-    color: #8f8f91;
-  }
+    a {
+      color: #8f8f91;
+    }
 
-  .familySite a::before {
-    content: "";
-    transform: rotate(90deg);
-    transition: all 0.5s;
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    width: 13px;
-    height: 1px;
-    background-color: white;
-  }
+    a::before {
+      content: "";
+      transform: rotate(90deg);
+      transition: all 0.5s;
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      width: 13px;
+      height: 1px;
+      background-color: white;
+    }
 
-  .familySite a::after {
-    content: "";
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    width: 13px;
-    height: 1px;
-    background-color: white;
+    a::after {
+      content: "";
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      width: 13px;
+      height: 1px;
+      background-color: white;
+    }
   }
 
   .on {
@@ -156,28 +157,23 @@
     background-color: #333337;
   }
 
-  .insta {
+  .icon {
     background-image: url("/Images/ico_sns.png");
     background-position-x: 50%;
-    background-position-y: -150px;
     width: 45px;
     height: 45px;
+  }
+
+  .insta {
+    background-position-y: -150px;
   }
 
   .youtube {
-    background-image: url("/Images/ico_sns.png");
-    background-position-x: 50%;
     background-position-y: 0px;
-    width: 45px;
-    height: 45px;
   }
 
   .facebook {
-    background-image: url("/Images/ico_sns.png");
-    background-position-x: 50%;
     background-position-y: -50px;
-    width: 45px;
-    height: 45px;
   }
 
   .blog {
