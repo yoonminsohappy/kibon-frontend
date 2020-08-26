@@ -65,8 +65,8 @@
         color: #222;
 
         &::after {
-          border-color: $labelBur !important;
-          background: #fff !important;
+          border-color: $labelBur;
+          background: #fff;
         }
       }
 

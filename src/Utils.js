@@ -11,7 +11,7 @@ export const valDay = (value) => {
 
 // 비밀번호 조건
 export const valPassword = (value) => {
-  if (value.length <= 10) {
+  if (value.length >= 8 && value.length <= 16) {
     return true;
   } else if (value.length === 0) {
     return true;

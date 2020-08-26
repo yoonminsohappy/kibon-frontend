@@ -12,7 +12,6 @@ class Complete extends Component {
   }
 
   componentDidMount() {
-    console.log(this.state.name);
     this.setState({
       username:localStorage.getItem("name")
     })  

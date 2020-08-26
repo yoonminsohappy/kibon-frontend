@@ -1,8 +1,15 @@
 import React, { Component } from "react";
-import { valDay, valPassword, valpasswordCheck, valPhone, valEmail } from "../../Utils"
+import {
+  valDay,
+  valPassword,
+  valpasswordCheck,
+  valPhone,
+  valEmail,
+} from "../../Utils";
 import JoinTable from "./Component/JoinTable";
 import RulBox from "./Component/RulBox";
-import Joinbox from "./Component/Joinbox"
+import Joinbox from "./Component/Joinbox";
+import API from "../../config";
 import "./Agree.scss";
 
 class Agree extends Component {
@@ -22,6 +29,7 @@ class Agree extends Component {
       phoneValue: "",
       emailValue: "",
       errorBoxDay: true,
+      errorBoxPassword: true,
       errorBoxPasswordCheck: true,
       errorBoxPhone: true,
       errorBoxEmail: true,
@@ -29,56 +37,69 @@ class Agree extends Component {
   }
 
   handleAllChecked = () => {
-    const {allChecked} = this.state;
+    const { allChecked } = this.state;
     this.setState({
       allChecked: !allChecked,
       checked0: !allChecked,
       checked1: !allChecked,
       checked2: !allChecked,
-    })
-
+    });
   };
 
   handleChecked = (index) => {
-    this.setState({
-      [`checked${index}`]: !this.state[`checked${index}`]
-    }, ()=> {
-      this.setState({
-        allChecked: this.state.checked0 && this.state.checked1 && this.state.checked2
-      })
-    })
-  }
+    this.setState(
+      {
+        [`checked${index}`]: !this.state[`checked${index}`],
+      },
+      () => {
+        this.setState({
+          allChecked:
+            this.state.checked0 && this.state.checked1 && this.state.checked2,
+        });
+      }
+    );
+  };
 
   handleChange = (e) => {
-    const {name, value} = e.target;
+    const { name, value } = e.target;
 
-    if (name === "birthDayValue") {
-      this.setState({ errorBoxDay: valDay(value)});
-    }
+    const table = {
+      birthDayValue: ["errorBoxDay", valDay(value)],
+      passwordValue: ["errorBoxPassword", valPassword(value)],
+      passwordCheckValue: [
+        "errorBoxPasswordCheck",
+        valpasswordCheck(this.state.passwordValue, value),
+      ],
+      phoneValue: ["errorBoxPhone", valPhone(value)],
+      emailValue: ["errorBoxEmail", valEmail(value)],
+    };
 
-    if (name === "passwordValue") {
-      this.setState({ errorBoxPhone: valPassword(value)});
-    }
-
-    if (name === "passwordCheckValue") {
-      this.setState({ errorBoxPasswordCheck: valpasswordCheck(this.state.passwordValue, value)});
-    }
-
-    if (name === "phoneValue") {
-      this.setState({ errorBoxPhone: valPhone(value)});
-    }
-
-    if (name === "emailValue") {
-      this.setState({ errorBoxEmail: valEmail(value)});
-    }
-
-    this.setState({[name]: value});
-  }
+    this.setState({ 
+      [name]: value, 
+      [table[name][0]]: table[name][1] 
+    });
+  };
 
   locationEvent = () => {
-    const { nameValue, birthDayValue, userIdValue, passwordValue, phoneValue, emailValue, allChecked} = this.state;
-    if (nameValue && birthDayValue && userIdValue && passwordValue && phoneValue && emailValue && allChecked) {
-      fetch("http://10.58.1.31:8000/user/signup", {
+    const {
+      nameValue,
+      birthDayValue,
+      userIdValue,
+      passwordValue,
+      phoneValue,
+      emailValue,
+      allChecked,
+    } = this.state;
+    if (
+      nameValue &&
+      birthDayValue &&
+      userIdValue &&
+      passwordValue &&
+      phoneValue &&
+      emailValue &&
+      allChecked
+    ) {
+      fetch(`${API}/user/signup`, {
         method: "POST",
         body: JSON.stringify({
           name: this.state.nameValue,
@@ -91,9 +112,12 @@ class Agree extends Component {
         }),
       })
         .then((response) => response.json())
-        .then((response) => { 
-          localStorage.setItem("name",response.name);
-          this.props.history.push('/sign-up/join-complete');
+        .then((response) => {
+          if(response.SUCCESS){
+            localStorage.setItem("name", response.name);
+            this.props.history.push("/sign-up/join-complete");
+          }
+          alert("회원가입에 실패하였습니다! 입력창을 확인해주세요.");
         });
     } else {
       alert("필수입력창에 내용을 채워주세요.");
@@ -102,7 +126,7 @@ class Agree extends Component {
 
   render() {
     return (
-      <main className="agree">
+      <main className="Agree">
         <JoinTable state="agree" />
         <div className="stepInner">
           <div className="innerText">
@@ -128,10 +152,15 @@ class Agree extends Component {
             </div>
             {titleText.map((el, index) => {
               return (
-                <RulBox contents={el.content} key={index} checked={this.state[el.name]} onClick={()=>this.handleChecked(index)}/>
+                <RulBox
+                  contents={el.content}
+                  key={index}
+                  checked={this.state[el.name]}
+                  onClick={() => this.handleChecked(index)}
+                />
               );
             })}
-            <Joinbox handleChange={this.handleChange} totalData={this.state}/>
+            <Joinbox handleChange={this.handleChange} totalData={this.state} />
             <div className="submitBox">
               <button className="joinSubmit" onClick={this.locationEvent}>
                 회원가입
@@ -143,6 +172,7 @@ class Agree extends Component {
     );
   }
 }
+
 const titleText = [
   { content: "이용약관 동의", name: "checked0" },
   { content: "개인정보 수집 및 이용 동의", name: "checked1" },
