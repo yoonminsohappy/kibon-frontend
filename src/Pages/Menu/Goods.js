@@ -25,6 +25,7 @@ class Goods extends Component {
   };
 
   render() {
+    // console.log(this.props);
     // console.log(this.props.category);
     return (
       <li>
@@ -43,13 +44,11 @@ class Goods extends Component {
           </div>
           <div className="goods-thumb">
             <p>
-              <a href="/#">
-                <img
-                  alt="goodsDetail"
-                  src={this.props.img}
-                  className="goods-detail-view"
-                />
-              </a>
+              <img
+                alt="goodsDetail"
+                src={this.props.img}
+                className="goods-detail-view"
+              />
             </p>
             <div
               onClick={this.handleHeartClick}

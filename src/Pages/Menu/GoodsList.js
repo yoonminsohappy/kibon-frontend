@@ -57,7 +57,7 @@ class GoodsList extends Component {
                   return (
                     <Goods
                       key={idx}
-                      id={el.id}
+                      id={el.ID}
                       name={el.name}
                       price={el.price}
                       category={el.category}
