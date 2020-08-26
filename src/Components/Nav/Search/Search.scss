@@ -8,7 +8,7 @@
     padding-bottom: 30px;
     z-index: 4;
     background-color: white;
-    animation: downSearch 1s;
+    animation: downSearch 0.3s;
     @keyframes downSearch {
       0% {
         height: 0px;
@@ -36,24 +36,103 @@
     img {
       cursor: pointer;
     }
-  }
-  a {
-    height: 100%;
-    width: 177px;
-    line-height: 40px;
-    color: #666;
-    font-size: 16px;
+
+    a {
+      height: 100%;
+      width: 177px;
+      line-height: 40px;
+      color: #666;
+      font-size: 16px;
+      background: url("/Images/ico_select_search.png") right top no-repeat;
+    }
+
+    input {
+      height: 100%;
+      width: 878px;
+      padding-left: 20px;
+      padding-right: 64px;
+      background-color: white;
+      border: none;
+      border-left: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      outline-color: #6e0000;
+      color: #666;
+      font-size: 28px;
+    }
   }
 
-  input {
-    height: 100%;
-    width: 878px;
-    padding-left: 20px;
-    padding-right: 64px;
-    background-color: white;
-    border: none;
-    border-left: 1px solid #ddd;
-    border-right: 1px solid #ddd;
+  .keywordBox {
+    width: 1132px;
+    height: 126px;
+    padding-top: 40px;
+
+    .todayBlock {
+      width: 100%;
+      height: 38px;
+
+      dl {
+        display: flex;
+        width: 100%;
+        height: 100%;
+      }
+
+      dt {
+        width: 120px;
+        height: 100%;
+        line-height: 38px;
+        font-size: 18px;
+        font-weight: 500;
+      }
+
+      dd {
+        width: 1012px;
+        height: 100%;
+
+        .sharp {
+          width: 72.64px;
+          height: 38px;
+          margin-right: 25px;
+          padding-left: 20px;
+          padding-right: 20px;
+          line-height: 34px;
+          font-size: 16px;
+          border-radius: 20px;
+          background-color: #f5f4f2;
+        }
+        .strong {
+          border: solid 2px #962639;
+        }
+      }
+    }
+
+    .keyWord {
+      width: 1132px;
+      height: 38px;
+      margin-top: 10px;
+
+      dl {
+        display: flex;
+        width: 100%;
+        height: 100%;
+      }
+
+      dt {
+        width: 120px;
+        height: 100%;
+        line-height: 38px;
+        font-size: 18px;
+        font-weight: 500;
+      }
+      .sharp {
+        width: 72.64px;
+        height: 38px;
+        margin-right: 25px;
+        padding-left: 20px;
+        padding-right: 20px;
+        line-height: 34px;
+        font-size: 16px;
+      }
+    }
   }
 }
 
