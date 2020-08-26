@@ -1,5 +1,6 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
+import API from '../../config';
 import "./MemberForm.scss";
 
 
@@ -21,7 +22,7 @@ class memberForm extends React.Component {
   };
 
   locationEvent = () => {
-    fetch(`http://10.58.4.96:8000/user/login`, {
+    fetch(`${API}/user/login`, {
       method: "POST",
       body: JSON.stringify({
         identifier: this.state.idValue,
