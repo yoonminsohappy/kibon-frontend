@@ -1,0 +1,178 @@
+@import "../../Styles/common.scss";
+
+.signUp {
+  width: 100%;
+  @include center;
+  flex-direction: column;
+
+  .title {
+    font-size: 42px;
+    font-weight: 400;
+    text-align: center;
+    line-height: 1em;
+    margin-bottom: 30px;
+  }
+
+  .joinStepBox {
+    text-align: center;
+    margin-bottom: 35px;
+
+    ol {
+      li {
+        width: 220px;
+        padding-top: 45px;
+        position: relative;
+        display: inline-block;
+        color: #c2c2c2;
+        font-size: 16px;
+        vertical-align: top;
+
+        strong {
+          font-weight: 700;
+          display: block;
+        }
+
+        span {
+          display: block;
+        }
+
+        &::before {
+          content: "";
+          width: 100%;
+          height: 3px;
+          position: absolute;
+          top: 17px;
+          left: 50%;
+          background: #ddd;
+        }
+
+        &::after {
+          content: "";
+          width: 36px;
+          height: 36px;
+          border: 3px solid #ddd;
+          background: #ddd;
+          box-sizing: border-box;
+          position: absolute;
+          left: 50%;
+          top: 0;
+          margin-left: -18px;
+          border-radius: 100%;
+        }
+
+        &:last-child::before {
+          display: none;
+        }
+      }
+
+      .step {
+        color: #222;
+
+        &::after {
+          border-color: $labelBur !important;
+          background: #fff !important;
+        }
+      }
+    }
+  }
+
+  .stepInner {
+    width: 1132px;
+    margin: 0 auto;
+
+    .innerText {
+      text-align: center;
+      margin-bottom: 26px;
+
+      h3 {
+        font-size: 28px;
+        font-weight: 500;
+        margin-bottom: 10px;
+
+        .textPoint {
+          color: $labelBur !important;
+        }
+      }
+
+      .innerSpan {
+        font-size: 16px;
+        color: $textContent;
+        line-height: 26px;
+      }
+    }
+
+    .innerSelect {
+      @include center;
+      flex-direction: row;
+
+      .phone {
+        width: 50%;
+        height: 380px;
+        position: relative;
+        text-align: center;
+        background: #f4f4f4;
+        margin-right: 20px;
+
+        .phoneBtn {
+          width: 196px;
+          height: 50px;
+          margin-top: 280px;
+          padding: 0;
+          border: 1px solid $bur;
+          background: $bur;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 50px;
+          color: #ffffff;
+
+          cursor: pointer;
+
+          &::before {
+            content: "";
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 50%;
+            top: 50px;
+            margin-left: -100px;
+            background: url(/Images/bg_join_auth.png) center top no-repeat;
+          }
+        }
+      }
+
+      .ipin {
+        width: 50%;
+        height: 380px;
+        position: relative;
+        text-align: center;
+        background: #f4f4f4;
+
+        .ipinBtn {
+          width: 196px;
+          height: 50px;
+          margin-top: 280px;
+          padding: 0;
+          border: 1px solid $bur;
+          background: $bur;
+          font-size: 18px;
+          font-weight: 500;
+          line-height: 50px;
+          color: #ffffff;
+          cursor: pointer;
+
+          &::before {
+            content: "";
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            left: 50%;
+            top: 50px;
+            margin-left: -100px;
+            background: url(/Images/bg_join_auth.png) center top no-repeat;
+            background-position: center -200px;
+          }
+        }
+      }
+    }
+  }
+}

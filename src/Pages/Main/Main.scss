@@ -1,0 +1,31 @@
+@import "../../Styles/common.scss";
+
+.Main {
+  width: 100%;
+  .mainContentTitle {
+    width: 100%;
+    height: 96px;
+    padding: 70px 0px 110px;
+    text-align: center;
+
+    span {
+      font-family: $serif;
+      font-style: italic;
+      color: #8f172b;
+      font-size: 20px;
+    }
+
+    p {
+      font-size: 48px;
+      line-height: 60px;
+    }
+  }
+
+  .mainContentContainer {
+    padding: 70px 0px 110px;
+  }
+
+  .boundaryBlock {
+    margin-top: -110px;
+  }
+}

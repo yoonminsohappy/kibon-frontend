@@ -8,6 +8,7 @@ $textContent: #666;
 $labelGreen: #87af0f;
 $grayBackground: #f4f4f4;
 $serif: "Noto Serif";
+
 @mixin center {
   display: flex;
   justify-content: center;
@@ -18,6 +19,7 @@ $serif: "Noto Serif";
   font-family: "Noto Sans KR", sans-serif;
   text-decoration: none;
 }
+
 body {
   max-width: 100%;
   height: 100%;
@@ -25,9 +27,11 @@ body {
   color: #222;
   background-color: #fff;
 }
+
 a {
   text-decoration: none;
   color: inherit;
+
   &:active {
     color: inherit;
   }
