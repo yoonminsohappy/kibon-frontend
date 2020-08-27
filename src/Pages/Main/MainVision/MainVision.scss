@@ -1,0 +1,65 @@
+.MainVision {
+  width: 100%;
+  height: 350px;
+  padding-top: 70px;
+  text-align: center;
+  background: url("/Images/bg_main_vision.png") center center no-repeat;
+  background-attachment: fixed;
+
+  h2 {
+    margin-bottom: 50px;
+    color: white;
+
+    p {
+      font-size: 48px;
+      line-height: 70px;
+    }
+  }
+
+  span {
+    font-size: 20px;
+  }
+
+  .greenContentBox {
+    position: relative;
+    width: 550px;
+    height: 225px;
+    margin: 0 auto;
+    background-color: #87af0f;
+  }
+
+  div {
+    display: flex;
+    position: relative;
+    align-items: center;
+    margin: 0 auto;
+
+    & p:before {
+      content: "";
+      position: absolute;
+      width: 18px;
+      height: 26px;
+      top: -40px;
+      left: 50%;
+      opacity: 0.5;
+      background: url("/Images/ico_main_slash.png");
+    }
+  }
+
+  p {
+    font-size: 25px;
+    line-height: 50px;
+    color: white;
+  }
+
+  div p:after {
+    content: "";
+    position: absolute;
+    width: 18px;
+    height: 26px;
+    bottom: -40px;
+    left: 50%;
+    opacity: 0.5;
+    background: url("/Images/ico_main_slash.png");
+  }
+}

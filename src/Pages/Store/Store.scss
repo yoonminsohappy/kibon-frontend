@@ -1,0 +1,260 @@
+@import "../../Styles/common.scss";
+
+.Store {
+  * {
+    box-sizing: border-box;
+    color: inherit;
+    font-family: "Noto Sans KR";
+    letter-spacing: -0.025em;
+  }
+  input,
+  select {
+    font-size: 1em;
+  }
+  .subContents {
+    position: relative;
+    width: 1132px;
+    padding-bottom: 120px;
+    margin: 0 auto;
+    .brandMapBox {
+      .storeRegistBox {
+        border: 1px solid #ccc;
+        height: 720px;
+        .storeMapBlock {
+          width: 565px;
+          float: left;
+          position: relative;
+          #map {
+            background: url("/Images/map_example.jpg");
+            width: 565px;
+            height: 720px;
+            position: relative;
+            overflow: hidden;
+            background-color: grey;
+          }
+        }
+        .storeRegistBlock {
+          width: 565px;
+          float: left;
+          position: relative;
+          .popTab {
+            display: flex;
+            button {
+              width: 50%;
+              position: relative;
+              background-color: transparent;
+              text-align: center;
+              font-size: 20px;
+              line-height: 59px;
+              border: none;
+              border-bottom: 1px solid #ddd;
+              outline: none;
+              cursor: pointer;
+            }
+            .searchLocation {
+              &::before {
+                content: "";
+                display: inline-block;
+                width: 1px;
+                height: 18px;
+                background: #ddd;
+                position: absolute;
+                top: 40%;
+                right: -1px;
+              }
+              &::after {
+                content: "";
+                display: inline-block;
+                bottom: -1px;
+                height: 3px;
+                position: absolute;
+                left: 0;
+                width: 100%;
+                background-color: $bur;
+              }
+            }
+            .searchKeyword {
+              &::before {
+                content: "";
+                display: inline-block;
+                width: 1px;
+                height: 18px;
+                background: #ddd;
+                position: absolute;
+                top: 40%;
+                left: 0;
+              }
+              &::after {
+                content: "";
+                bottom: -1px;
+                height: 3px;
+                position: absolute;
+                left: 0;
+                width: 100%;
+                background-color: $bur;
+              }
+            }
+          }
+          .addSearchTab {
+            .addStore {
+              position: relative;
+              padding: 20px;
+              background: #f4f4f4;
+              .addStoreInput {
+                display: flex;
+                position: relative;
+                padding-right: 49px;
+                height: 50px;
+                #strNm {
+                  width: 36.5%;
+                  padding: 0 20px;
+                  border: 1px solid #ccc;
+                }
+                #schKey {
+                  width: 100%;
+                  border: 1px solid #ccc;
+                  padding: 0 20px;
+                }
+
+                select {
+                  background: url("/Images/ico_select.png") right center
+                    no-repeat #fff;
+                  width: 32%;
+                  height: 50px;
+                  margin-right: -1px;
+                  border: 1px solid #ccc;
+                  padding: 0 40px 0 12px;
+                  color: #666;
+                  font-size: 1em;
+                  appearance: none;
+                }
+                #strNm {
+                  border: 1px solid #ccc;
+                  padding: 0 20px;
+                  color: #666;
+                }
+                .search {
+                  position: absolute;
+                  top: 0;
+                  right: 0;
+                }
+              }
+            }
+            #storeC02 {
+              display: none;
+            }
+          }
+          .storeCheckBox {
+            border-top: 1px solid #ddd;
+            padding: 12px 20px;
+            height: 50px;
+            line-height: 24px;
+
+            input {
+              -webkit-transform: scale(1.7);
+              border-radius: 10px;
+            }
+
+            label {
+              padding-right: 20px;
+              color: #666;
+            }
+
+            label.checkLabel {
+              padding-left: 20px;
+            }
+          }
+          .registStoreBox {
+            height: auto;
+            max-height: 517px;
+            overflow: auto !important;
+
+            ul {
+              position: relative;
+              li {
+                position: relative;
+                padding: 20px 20px 35px 20px;
+                border: 1px solid #ddd;
+                border-right: none;
+                border-bottom: none;
+                .storeNm {
+                  display: block;
+                  color: $labelBur;
+                  line-height: 1em;
+                }
+                .storeArea {
+                  display: block;
+                  line-height: 1em;
+                  font-size: 24px;
+                  padding-top: 11px;
+                  padding-right: 75px;
+                }
+                p {
+                  color: #666;
+                  line-height: 28px;
+                  margin-top: 15px;
+                }
+                .storeBtns {
+                  position: absolute;
+                  right: 20px;
+                  bottom: 20px;
+
+                  a {
+                    display: inline-block;
+                    text-align: center;
+                    margin-left: 6px;
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 38px;
+                    height: 40px;
+                    width: 100px;
+                    border: 1px solid #ccc;
+                  }
+
+                  .disabled {
+                    opacity: 0.5;
+                    color: #ddd;
+                  }
+
+                  .btnDark {
+                    border-color: #444;
+                    background: #444;
+                  }
+                }
+                .zzim {
+                  position: absolute;
+                  top: 20px;
+                  right: 20px;
+                  width: 44px;
+                  height: 44px;
+                  text-indent: -999em;
+                  overflow: hidden;
+                  background: url("/Images/ico_zzim.png") left top no-repeat;
+                  background-position: -100px top;
+                }
+              }
+              .scrollElement {
+                position: absolute;
+                bottom: 2px;
+                right: 0;
+                border: none;
+                z-index: 10;
+              }
+            }
+            &::-webkit-scrollbar {
+              width: 3px;
+              position: absolute;
+            }
+            &::-webkit-scrollbar-thumb {
+              border-radius: 8px;
+              background-color: #222;
+            }
+            &::-webkit-scrollbar-track {
+              background-color: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+}

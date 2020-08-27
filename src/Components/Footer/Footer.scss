@@ -1,0 +1,223 @@
+@import "../../Styles/common.scss";
+
+.Footer {
+  .position {
+    position: relative;
+    left: 0;
+    bottom: 0;
+    margin-bottom: -1px;
+    width: 100%;
+  }
+
+  .utilBox {
+    height: 50px;
+    border-top: solid 1px #46464a;
+    border-bottom: solid 1px #4d4d50;
+    background-color: $footerGray;
+  }
+
+  .utilInnerBox {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 48px;
+    width: 1132px;
+    margin: 0 auto;
+    background-color: $footerGray;
+  }
+
+  .image {
+    width: 31px;
+    height: 20px;
+    top: 24px;
+    background-image: url(/Images/ico_sns.png);
+    background-position: 0px -226px;
+    background-size: auto;
+  }
+
+  dl {
+    @include center;
+    height: 100%;
+  }
+
+  .phoneNumberInfoText {
+    padding-right: 10px;
+    padding-left: 5px;
+    color: #999;
+    font-size: 16px;
+  }
+
+  .phoneNumber {
+    @include center;
+    color: white;
+    width: 89.38px;
+    padding-left: 10px;
+    height: 48px;
+  }
+
+  .footerBar {
+    color: #999999;
+  }
+
+  .footerContents {
+    height: 200px;
+    background-color: $footerGray;
+  }
+
+  .phoneIcon {
+    width: 16px;
+    height: 21px;
+    top: 24px;
+    background-image: url(/Images/ico_sns.png);
+    background-position: 0px -200px;
+    background-size: auto;
+    margin-left: 50px;
+  }
+
+  .mainNumberText {
+    color: #999;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .lampIcon {
+    width: 16px;
+    height: 21px;
+    top: 24px;
+    background-image: url(/Images/ico_sns.png);
+    background-position-x: -20px;
+    background-position-y: -200px;
+    background-size: auto;
+    margin-left: 50px;
+  }
+
+  .foundedNumberText {
+    color: #999999;
+    padding: 0px 10px 0px 5px;
+  }
+
+  .familySite {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    width: 265px;
+    padding: 0px 20px 0px 20px;
+    height: 100%;
+    border-right: solid 1px #4d4d50;
+    border-left: solid 1px #4d4d50;
+    background-color: $footerGray;
+
+    a {
+      color: #8f8f91;
+    }
+
+    a::before {
+      content: "";
+      transform: rotate(90deg);
+      transition: all 0.5s;
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      width: 13px;
+      height: 1px;
+      background-color: white;
+    }
+
+    a::after {
+      content: "";
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      width: 13px;
+      height: 1px;
+      background-color: white;
+    }
+  }
+
+  .on {
+    opacity: 0;
+    transform: rotate(0deg);
+    transition: all 0.5s;
+  }
+
+  .footerSns {
+    @include center;
+    width: 100%;
+    height: 75px;
+    margin: 0px 0px 25px;
+    background-color: #333337;
+  }
+
+  .snsIn {
+    width: 45px;
+    height: 100%;
+    margin: 0px 10px;
+    padding: 30px 0px 0px;
+    background-color: #333337;
+  }
+
+  .icon {
+    background-image: url("/Images/ico_sns.png");
+    background-position-x: 50%;
+    width: 45px;
+    height: 45px;
+  }
+
+  .insta {
+    background-position-y: -150px;
+  }
+
+  .youtube {
+    background-position-y: 0px;
+  }
+
+  .facebook {
+    background-position-y: -50px;
+  }
+
+  .blog {
+    background-image: url("/Images/ico_sns.png");
+    background-position-x: 50%;
+    background-position-y: -100px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .linkList {
+    display: flex;
+    justify-content: center;
+
+    li {
+      padding: 0px 10px;
+      color: #8f8f91;
+    }
+
+    a {
+      text-decoration: none;
+      color: #8f8f91;
+    }
+
+    &:nth-child(3) {
+      color: white;
+    }
+  }
+
+  .companyInfo {
+    @include center;
+    margin: 15px 0px 0px;
+    font-size: 14px;
+    line-height: 1em;
+
+    span {
+      color: #999;
+      padding-left: 15px;
+    }
+  }
+
+  .copyright {
+    text-align: center;
+    margin: 9px 0px 0px;
+    color: #666;
+  }
+}
