@@ -1,0 +1,20 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "title": "꿀꿀이죽",
+      "price": 8500,
+      "image": "https://files.bonif.co.kr/upload/cmdt/BF101_pic_4BpzCLaw.jpg",
+      "benefits": "포장불가",
+      "quantity": 2
+    },
+    {
+      "id": 2,
+      "title": "가죽",
+      "price": 10000,
+      "image": "https://files.bonif.co.kr/upload/cmdt/BF101_pic_4BpzCLaw.jpg",
+      "benefits": "쇼핑백동봉/포장가능",
+      "quantity": 1
+    }
+  ]
+}
