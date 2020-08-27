@@ -1,6 +1,184 @@
+@import "../../Styles/common.scss";
+
 .Menu {
-  .tabRow {
+  * {
+    box-sizing: border-box;
+    color: inherit;
+    font-family: "Noto Sans KR";
+    letter-spacing: -0.025em;
+  }
+
+  .subContents {
+    width: 1132px;
+    margin: 0 auto;
+    .tabBrand {
+      table-layout: fixed;
+      margin-top: -20px;
+      margin-bottom: 30px;
+      border-bottom: 1px solid lightgray;
+      .tabRow {
+        display: flex;
+        justify-content: space-between;
+        li {
+          position: relative;
+          width: 161px;
+          height: 51px;
+          font-size: 16px;
+          font-weight: 500;
+          text-align: center;
+          line-height: 50px;
+          color: #666;
+          cursor: pointer;
+        }
+
+        .on {
+          width: 161px;
+          // height: 3px;
+          border-bottom: 3px solid $bur;
+          z-index: 1;
+        }
+      }
+    }
+  }
+}
+.menuMapList {
+  width: 1162px;
+  margin-left: -30px;
+
+  .menuList {
     display: flex;
-    justify-content: center;
+    justify-content: start;
+    flex-wrap: wrap;
+
+    li {
+      margin-top: 20px;
+      padding-left: 30px;
+
+      .goods-block {
+        position: relative;
+        height: 350px;
+
+        .active {
+          animation: 1s;
+        }
+
+        .goods-icon {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: 1;
+          letter-spacing: -0.025em;
+
+          em {
+            display: inline-block;
+            color: #fff;
+            line-height: 30px;
+            font-size: 14px;
+            padding: 0 8px;
+            text-transform: uppercase;
+            font-weight: 500;
+          }
+
+          .best {
+            background: #962639;
+            font-family: "Spoqa";
+          }
+
+          .new {
+            background: #87af0f;
+            font-family: "Spoqa";
+          }
+        }
+      }
+      .goods-thumb {
+        position: relative;
+
+        p {
+          width: 260.5px;
+          height: 260.5px;
+        }
+
+        img {
+          width: 100%;
+          height: 100%;
+          cursor: pointer;
+        }
+      }
+
+      .goods-opt-selectbox {
+        position: absolute;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+
+        width: 260.5px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+
+        span {
+          color: white;
+
+          &::before {
+            content: "";
+            display: inline-block;
+            background: url("/Images/ico_zzim2.png") no-repeat;
+            cursor: pointer;
+            width: 23px;
+            height: 20px;
+            margin-right: 8px;
+            vertical-align: -3px;
+          }
+        }
+      }
+
+      .goods-opt-selectbox-fill {
+        position: absolute;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.6);
+        width: 260.5px;
+        height: 50px;
+        line-height: 50px;
+        text-align: center;
+
+        span {
+          color: white;
+
+          &::before {
+            content: "";
+            display: inline-block;
+            background: url("/Images/ico_zzim2.png") no-repeat;
+            background-position-x: -26px;
+            cursor: pointer;
+            width: 23px;
+            height: 20px;
+            margin-right: 8px;
+            vertical-align: -3px;
+          }
+        }
+      }
+
+      .goods-name {
+        padding-top: 10px;
+
+        .name {
+          width: 260.5px;
+          height: 27px;
+          line-height: 27px;
+          font-size: 18px;
+        }
+
+        .price {
+          width: 260.5px;
+          height: 24px;
+          line-height: 24px;
+          margin-top: 2px;
+
+          span {
+            color: $labelBur;
+            font-size: inherit;
+          }
+        }
+      }
+    }
   }
 }

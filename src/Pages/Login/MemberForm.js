@@ -1,9 +1,11 @@
-import React, { Component } from "react";
+import React from "react";
+import { withRouter } from "react-router-dom";
+import API from "../../config";
 import "./MemberForm.scss";
 
-class memberForm extends Component {
-  constructor(props) {
-    super(props);
+class MemberForm extends React.Component {
+  constructor() {
+    super();
     this.state = {
       idValue: "",
       passwordValue: "",
@@ -19,7 +21,7 @@ class memberForm extends Component {
   };
 
   locationEvent = () => {
-    fetch("http://10.58.3.101:8000/user/login", {
+    fetch(`${API}/user/login`, {
       method: "POST",
       body: JSON.stringify({
         identifier: this.state.idValue,
@@ -27,7 +29,14 @@ class memberForm extends Component {
       }),
     })
       .then((response) => response.json())
-      .then((response) => console.log(response));
+      .then((response) => {
+        if (response.token) {
+          localStorage.setItem("token", response.token);
+          this.props.history.push("/");
+        } else {
+          alert("아이디와 비밀번호를 확인해주세요");
+        }
+      });
   };
   render() {
     return (
@@ -48,9 +57,16 @@ class memberForm extends Component {
             name="passwordValue"
           />
           <div className="checkBox">
-            <label><input className="check"type="checkBox" />아이디 저장</label>
+            <label>
+              <input className="check" type="checkBox" />
+              아이디 저장
+            </label>
           </div>
-          <button className="loginBtn" type="button" onClick={this.locationEvent}> 
+          <button
+            className="loginBtn"
+            type="button"
+            onClick={this.locationEvent}
+          >
             로그인
           </button>
         </div>
@@ -76,4 +92,4 @@ class memberForm extends Component {
   }
 }
 
-export default memberForm;
+export default withRouter(MemberForm);
