@@ -43,6 +43,23 @@ class Menu extends Component {
         );
     }
   };
+  
+  post = () => {
+    const token = localStorage.getItem("token");
+    fetch(`${url}/order/cart`, {
+      method: "POST",
+      headers: {
+        Authorization: token,
+      },
+      body: JSON.stringify({
+        cart_id: this.props.cart_id,
+      }),
+    }).then((res) => {
+      if (res.status === 200) {
+        this.props.handleData();
+      }
+    });
+  };
 
   whichTab = (idx) => {
     if (idx > 0 && idx < 5) {
