@@ -27,7 +27,7 @@ class BasketFeeds extends Component {
         Authorization: token,
       },
       body: JSON.stringify({
-        cart_id: this.props.cart_id,
+        product_id: this.props.product_id,
         delta: number,
       }),
     }).then((res) => {
@@ -58,7 +58,7 @@ class BasketFeeds extends Component {
         Authorization: token,
       },
       body: JSON.stringify({
-        cart_id: this.props.cart_id,
+        product_id: this.props.product_id,
       }),
     }).then((res) => {
       if (res.status === 200) {
@@ -111,7 +111,10 @@ class BasketFeeds extends Component {
             <button className="qtySubtract" onClick={() => this.minus()}>
               -
             </button>
-            <button className="qtyAdd" onClick={() => this.plus()}>
+            <button
+              className="qtyAdd"
+              onClick={() => (this.plus(), this.patch())}
+            >
               +
             </button>
           </div>

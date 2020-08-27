@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import BasketFeeds from "./BasketFeeds/BasketFeeds";
 import { Link } from "react-router-dom";
+import url from "../../config";
+
 // import url from "../../config";
 import "./Basket2.scss";
 import "../../Styles/common.scss";
@@ -28,7 +30,7 @@ class Basket extends Component {
   getData = () => {
     const token = localStorage.getItem("token");
     console.log("getData 실행");
-    fetch("./data/Basket.json", {
+    fetch(url + "/order/cart", {
       method: "GET",
       headers: {
         Authorization: token,
@@ -65,16 +67,17 @@ class Basket extends Component {
   // }
 
   render() {
+    // console.log();
     const basketFeeds = this.state.itemsArr.map((el, idx) => {
       return (
         <BasketFeeds
           handleData={this.getData}
-          cart_id={el.cart_id}
+          product_id={el.product_id}
           id={el.id}
           name={el.name}
           price={el.price}
           image={el.image}
-          quantity={el.quantity}
+          quantity={el.changed_quantity}
           checkboxEach={this.state.checkbox_each}
           checkboxEachChecked={this.checkboxEachChecked}
           key={idx}
