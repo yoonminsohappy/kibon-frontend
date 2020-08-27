@@ -1,0 +1,182 @@
+.recommendSection {
+  width: 1600px;
+  height: 577px;
+  background-color: #faf9f7;
+
+  .recommendIntroBox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .recommendIntro {
+      font-size: 24px;
+      font-weight: 500;
+      padding-top: 80px;
+      padding-bottom: 14px;
+    }
+
+    .underBar {
+      width: 30px;
+      height: 4px;
+      background: #962639;
+      margin-bottom: 40px;
+    }
+
+    .recommendText {
+      display: flex;
+      font-size: 38px;
+      font-weight: 350;
+      line-height: 50px;
+
+      .recommendMenu {
+        font-weight: 400;
+      }
+
+      .recommend {
+        font-weight: 500;
+        padding-left: 9px;
+      }
+    }
+  }
+
+  .eachRecommendBox {
+    display: flex;
+    justify-content: center;
+
+    .eachRecommend {
+      width: 1132px;
+      height: 211px;
+      background-color: white;
+      margin-top: 85px;
+      display: flex;
+
+      .recommendForHealth {
+        width: 377.324px;
+        height: 211px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 70px;
+        padding-bottom: 35px;
+        position: relative;
+
+        .forHealthImg {
+          position: absolute;
+          top: -27%;
+        }
+
+        .forHealth {
+          padding-bottom: 22px;
+          font-weight: 500;
+        }
+
+        .recommendUnderBar {
+          width: 16px;
+          height: 1px;
+          background-color: #ddcbc1;
+          margin-bottom: 14px;
+        }
+
+        .aboutHealth {
+          font-size: 16px;
+          color: #666666;
+          line-height: 25px;
+          text-align: center;
+        }
+      }
+
+      .sideBarContainer {
+        display: flex;
+        align-items: center;
+
+        .sideBar {
+          height: 150px;
+          border: 1px solid #faf9f7;
+        }
+      }
+
+      .recommendForBreakfast {
+        width: 377.324px;
+        height: 211px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 70px;
+        padding-bottom: 35px;
+        position: relative;
+
+        .forBreakfastImg {
+          position: absolute;
+          top: -27%;
+        }
+
+        .forBreakfast {
+          padding-bottom: 22px;
+          font-weight: 500;
+        }
+
+        .recommendUnderBar {
+          width: 16px;
+          height: 1px;
+          background-color: #ddcbc1;
+          margin-bottom: 14px;
+        }
+
+        .aboutBreakfast {
+          font-size: 16px;
+          color: #666666;
+          line-height: 25px;
+          text-align: center;
+        }
+      }
+
+      .sideBarContainer {
+        display: flex;
+        align-items: center;
+
+        .sideBar {
+          height: 150px;
+          border: 1px solid #faf9f7;
+        }
+      }
+
+      .recommendForPresent {
+        width: 377.324px;
+        height: 211px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding-top: 70px;
+        padding-bottom: 35px;
+        position: relative;
+
+        .forPresentImg {
+          position: absolute;
+          top: -27%;
+        }
+
+        .forPresent {
+          padding-bottom: 22px;
+          font-weight: 500;
+        }
+
+        .recommendUnderBar {
+          width: 16px;
+          height: 1px;
+          background-color: #ddcbc1;
+          margin-bottom: 14px;
+        }
+
+        .aboutPresent1 {
+          font-size: 16px;
+          color: #666666;
+          line-height: 25px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
