@@ -18,6 +18,9 @@
 
     .checkBox {
       margin-bottom: 28px;
+      label {
+        cursor: pointer;
+      }
     }
 
     .loginBtn {
@@ -31,6 +34,7 @@
       border: 1px solid $bur;
       background: $bur;
       padding: 0 40px;
+      cursor: pointer;
     }
   }
 
@@ -126,6 +130,7 @@
         line-height: 36px;
         padding: 0 7px 0 4px;
         margin-right: 26px;
+        cursor: pointer;
 
         &::after {
           content: "";

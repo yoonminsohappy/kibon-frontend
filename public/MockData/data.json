@@ -1,0 +1,43 @@
+const dataList :
+
+ { 
+
+  first_component : {  
+  name: ""
+  text: ""
+  price: 
+  summary: "",
+  image: "" ,
+  sub_image: ""
+  origin_image: ""}
+
+
+
+  second_component : { 
+    product_detail: ""
+    product_detail_kor: ""
+    contents:[{image:"",text:""},{image:"",text:""}] }
+  
+ 
+
+ third_component : { 
+   title: ""
+   contents:[{image:},{point:},{name:},{text:}]}
+ 
+ 
+
+ fourth_component : { 
+  title: 
+  subtitle: 
+  image1:
+  tag1:
+  text1:
+  image2:
+  tag2:
+  text2:
+  image3:
+  tag3:
+  text3:
+ }
+
+export default dataList;
