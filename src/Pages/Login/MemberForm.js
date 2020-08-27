@@ -1,12 +1,11 @@
 import React from "react";
 import { withRouter } from "react-router-dom";
-import API from '../../config';
+import API from "../../config";
 import "./MemberForm.scss";
 
-
-class memberForm extends React.Component {
-  constructor(props) {
-    super(props);
+class MmberForm extends React.Component {
+  constructor() {
+    super();
     this.state = {
       idValue: "",
       passwordValue: "",
@@ -30,15 +29,15 @@ class memberForm extends React.Component {
       }),
     })
       .then((response) => response.json())
-      .then((response) => { 
-        if(response.token){
-          localStorage.setItem("token",response.token)
-          this.props.history.push('/');
-      }else{
-        alert("아이디와 비밀번호를 확인해주세요")
-      }
+      .then((response) => {
+        if (response.token) {
+          localStorage.setItem("token", response.token);
+          this.props.history.push("/");
+        } else {
+          alert("아이디와 비밀번호를 확인해주세요");
+        }
       });
-  }
+  };
   render() {
     return (
       <div className="MemberForm">
@@ -58,9 +57,16 @@ class memberForm extends React.Component {
             name="passwordValue"
           />
           <div className="checkBox">
-            <label><input className="check"type="checkBox" />아이디 저장</label>
+            <label>
+              <input className="check" type="checkBox" />
+              아이디 저장
+            </label>
           </div>
-          <button className="loginBtn" type="button" onClick={this.locationEvent}> 
+          <button
+            className="loginBtn"
+            type="button"
+            onClick={this.locationEvent}
+          >
             로그인
           </button>
         </div>
@@ -86,4 +92,4 @@ class memberForm extends React.Component {
   }
 }
 
-export default withRouter(memberForm);
+export default withRouter(MmberForm);
