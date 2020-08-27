@@ -1,11 +1,5 @@
 @import "../../Styles/common.scss";
 
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
 input,
 button {
   outline-style: none;

@@ -8,7 +8,6 @@ import Login from "./Pages/Login/Login";
 import SignUp from "./Pages/SignUp/SignUp";
 import MyPage from "./Pages/MyPage/MyPage";
 import Basket from "./Pages/Basket/Basket";
-import Basket2 from "./Pages/Basket/Basket2";
 
 class Routes extends React.Component {
   render() {
@@ -22,7 +21,6 @@ class Routes extends React.Component {
           <Route exact path="/menu" component={Menu} />
           <Route exact path="/menu/menu-detail:id" component={MenuDetail} />
           <Route exact path="/basket" component={Basket} />
-          <Route exact path="/basket2" component={Basket2} />
         </Switch>
       </Router>
     );

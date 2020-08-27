@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import BasketFeeds from "./BasketFeeds/BasketFeeds";
 import { Link } from "react-router-dom";
-import url from "../../config";
+import urlBasket from "../../configBasket";
+import "./Basket.scss";
 
-// import url from "../../config";
-import "./Basket2.scss";
+// import urlBasket from "../../config";
 import "../../Styles/common.scss";
 
 class Basket extends Component {
@@ -30,7 +30,7 @@ class Basket extends Component {
   getData = () => {
     const token = localStorage.getItem("token");
     console.log("getData 실행");
-    fetch(url + "/order/cart", {
+    fetch(urlBasket + "/order/cart", {
       method: "GET",
       headers: {
         Authorization: token,
