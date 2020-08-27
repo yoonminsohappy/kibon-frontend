@@ -1,0 +1,128 @@
+.Origin {
+  visibility: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: -25px;
+  background-color: rgba(0, 0, 0, 0.56);
+  z-index: 1;
+
+  .originContainer {
+    background-color: white;
+    width: 600px;
+    height: 830px;
+
+    .headContainer {
+      display: flex;
+      background-color: #6e0000;
+      width: 600px;
+      height: 70px;
+
+      .Head {
+        color: white;
+        font-weight: 500;
+        line-height: 70px;
+        font-size: 28px;
+        text-align: center;
+        width: 550px;
+        height: 70px;
+        padding-left: 50px;
+      }
+
+      .classPopContainer {
+        display: flex;
+        align-items: center;
+        padding-right: 20px;
+        .closePop {
+          width: 30px;
+          height: 30px;
+          background: url("/Images/x_icon.png") left top no-repeat;
+          background-size: 200px;
+          background-position-x: 4px;
+          background-position-y: 4px;
+          cursor: pointer;
+        }
+      }
+    }
+    .originInfoContainer {
+      width: 600px;
+      height: 757px;
+      margin-top: 15px;
+      padding: 45px 30px 50px 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .originInfo {
+        width: 100%;
+      }
+    }
+  }
+}
+
+.activeOrigin {
+  visibility: visible;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: -25px;
+  background-color: rgba(0, 0, 0, 0.56);
+  z-index: 1;
+
+  .originContainer {
+    background-color: white;
+    width: 600px;
+    height: 830px;
+
+    .headContainer {
+      display: flex;
+      background-color: #6e0000;
+      width: 600px;
+      height: 70px;
+
+      .Head {
+        color: white;
+        font-weight: 500;
+        line-height: 70px;
+        font-size: 28px;
+        text-align: center;
+        width: 550px;
+        height: 70px;
+        padding-left: 50px;
+      }
+
+      .classPopContainer {
+        display: flex;
+        align-items: center;
+        padding-right: 20px;
+        .closePop {
+          width: 30px;
+          height: 30px;
+          background: url("/Images/x_icon.png") left top no-repeat;
+          background-size: 200px;
+          background-position-x: 4px;
+          background-position-y: 4px;
+          cursor: pointer;
+        }
+      }
+    }
+    .originInfoContainer {
+      width: 600px;
+      height: 757px;
+      margin-top: 15px;
+      padding: 45px 30px 50px 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      .originInfo {
+        width: 520px;
+        height: 740px;
+      }
+    }
+  }
+}
