@@ -3,7 +3,7 @@ import { withRouter } from "react-router-dom";
 import API from "../../config";
 import "./MemberForm.scss";
 
-class MmberForm extends React.Component {
+class MemberForm extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -92,4 +92,4 @@ class MmberForm extends React.Component {
   }
 }
 
-export default withRouter(MmberForm);
+export default withRouter(MemberForm);
