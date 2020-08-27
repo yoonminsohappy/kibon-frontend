@@ -5,7 +5,7 @@ import "./Menu.scss";
 import "../../Styles/common.scss";
 import "../../Components/TitleSection/TitleSection";
 import TitleSection from "../../Components/TitleSection/TitleSection";
-import url from "../../config";
+import urlMenu from "../../configMenu"
 
 class Menu extends Component {
   constructor(props) {
@@ -19,7 +19,7 @@ class Menu extends Component {
 
   componentDidMount = () => {
     console.log("컴디마");
-    fetch(`${url}/products?category=${this.state.num}`)
+    fetch(`${urlMenu}/products?category=${this.state.num}`)
       .then((res) => res.json())
       .then((res) =>
         this.setState({
@@ -30,9 +30,9 @@ class Menu extends Component {
   };
 
   componentDidUpdate = () => {
-    if (this.state.num < 5) {
+    if (this.state.num < 7) {
       console.log("컴디업");
-      fetch(`${url}/products?category=${this.state.num}`)
+      fetch(`${urlMenu}/products?category=${this.state.num}`)
         .then((res) => res.json())
         .then((res) =>
           this.setState({
@@ -43,27 +43,11 @@ class Menu extends Component {
         );
     }
   };
-  
-  post = () => {
-    const token = localStorage.getItem("token");
-    fetch(`${url}/order/cart`, {
-      method: "POST",
-      headers: {
-        Authorization: token,
-      },
-      body: JSON.stringify({
-        cart_id: this.props.cart_id,
-      }),
-    }).then((res) => {
-      if (res.status === 200) {
-        this.props.handleData();
-      }
-    });
-  };
+
 
   whichTab = (idx) => {
-    if (idx > 0 && idx < 5) {
-      fetch(`${url}/products?category=${idx}`)
+    if (idx > 0 && idx < 7) {
+      fetch(`${urlMenu}/products?category=${idx}`)
         .then((res) => res.json())
         .then((res) => {
           this.setState({

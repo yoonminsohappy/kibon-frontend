@@ -109,18 +109,20 @@
         position: absolute;
         bottom: 0;
         background: rgba(0, 0, 0, 0.6);
+
         width: 260.5px;
         height: 50px;
         line-height: 50px;
         text-align: center;
 
-        a {
+        span {
           color: white;
 
           &::before {
             content: "";
             display: inline-block;
             background: url("/Images/ico_zzim2.png") no-repeat;
+            cursor: pointer;
             width: 23px;
             height: 20px;
             margin-right: 8px;
@@ -138,7 +140,7 @@
         line-height: 50px;
         text-align: center;
 
-        a {
+        span {
           color: white;
 
           &::before {
@@ -146,6 +148,7 @@
             display: inline-block;
             background: url("/Images/ico_zzim2.png") no-repeat;
             background-position-x: -26px;
+            cursor: pointer;
             width: 23px;
             height: 20px;
             margin-right: 8px;

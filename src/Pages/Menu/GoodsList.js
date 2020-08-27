@@ -17,6 +17,24 @@ class GoodsList extends Component {
     this.props.tab(id);
   };
 
+  // post = () => {
+  //   console.log("포스트 함수")
+  //   const token = localStorage.getItem("token");
+  //   fetch(`${url}/order/cart`, {
+  //     method: "POST",
+  //     headers: {
+  //       Authorization: token,
+  //     },
+  //     body: JSON.stringify({
+  //       cart_id: cart_id,
+  //     }),
+  //   }).then((res) => {
+  //     if (res.status === 200) {
+  //       this.props.handleData();
+  //     }
+  //   });
+  // };
+
   render() {
     const arr = [
       "모든메뉴",

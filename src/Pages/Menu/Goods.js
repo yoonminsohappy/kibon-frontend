@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
+import urlBasket from "../../configBasket"
+
 
 class Goods extends Component {
   constructor() {
@@ -10,6 +12,22 @@ class Goods extends Component {
       isClicked: false,
     };
   }
+
+  
+
+  post = () => {
+    console.log("포스트 함수")
+    const token = localStorage.getItem("token");
+    fetch(`${urlBasket}/order/cart`, {
+      method: "POST",
+      headers: {
+        Authorization: token,
+      },
+      body: JSON.stringify({
+        product_id: JSON.product_id,
+      }),
+    }).then((res) => res.json()).then((res) => console.log("res: ", res));
+  };
 
   handleMouseOver = () => {
     this.setState({ isHovering: "block" });
@@ -26,7 +44,7 @@ class Goods extends Component {
   };
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     // console.log(this.props.category);
     return (
       <li>
@@ -52,7 +70,7 @@ class Goods extends Component {
               />
             </p>
             <div
-              onClick={this.handleHeartClick}
+              onClick={()=> {this.handleHeartClick(); this.post()}}
               className={
                 this.state.isClicked
                   ? "goods-opt-selectbox-fill"
@@ -60,9 +78,9 @@ class Goods extends Component {
               }
               style={{ display: this.state.isHovering }}
             >
-              <Link to="/" className="btn-zzim full">
-                MY메뉴
-              </Link>
+              <span className="btn-zzim full">
+                장바구니 담기
+              </span>
             </div>
           </div>
           <div className="goods-name">
