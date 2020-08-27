@@ -19,12 +19,29 @@ class BasketFeeds extends Component {
     console.log(this.props.match);
   };
 
-  patch = (number) => {
-    const token = localStorage.getItem("token");
+  plus = (number) => {
+    this.patchData(number);
+    this.setState({ num: this.state.num + number });
+  };
+
+  minus = (number) => {
+    console.log(number);
+    this.patchData(number);
+    if (this.state.num === 1) {
+      return;
+    } else if (this.state.num > 1) {
+      this.setState({ num: this.state.num + number });
+    }
+  };
+
+  patchData = (number) => {
+    // const token = localStorage.getItem("token");
+    console.log("patchData 실행");
     fetch(url + "/order/cart", {
       method: "PATCH",
       headers: {
-        Authorization: token,
+        Authorization:
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZGVudGlmaWVyIjoiaGo4ODUzIn0.cr4C6pb_2iCz2Pty08WV5S9McGKbk1MY1zoqe6xF0Ms",
       },
       body: JSON.stringify({
         product_id: this.props.product_id,
@@ -37,30 +54,20 @@ class BasketFeeds extends Component {
     });
   };
 
-  minus = () => {
-    if (this.state.num > 1) {
-      this.setState({
-        num: this.state.num - 1,
-      });
-    } else return;
-  };
-  plus = () => {
-    this.setState({
-      num: this.state.num + 1,
-    });
-  };
-
-  delete = () => {
-    const token = localStorage.getItem("token");
+  deleteData = () => {
+    // const token = localStorage.getItem("token");
+    console.log("deleteData 실행");
     fetch(`${url}/order/cart`, {
       method: "DELETE",
       headers: {
-        Authorization: token,
+        Authorization:
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZGVudGlmaWVyIjoiaGo4ODUzIn0.cr4C6pb_2iCz2Pty08WV5S9McGKbk1MY1zoqe6xF0Ms",
       },
       body: JSON.stringify({
-        product_id: this.props.product_id,
+        product_id: 2,
       }),
     }).then((res) => {
+      console.log(res);
       if (res.status === 200) {
         this.props.handleData();
       }
@@ -106,14 +113,23 @@ class BasketFeeds extends Component {
             <input
               className="qtyInput"
               type="number"
-              value={this.state.num}
+              value={this.props.quantity}
             ></input>
-            <button className="qtySubtract" onClick={() => this.minus()}>
+            <button
+              className="qtySubtract"
+              onClick={() => {
+                this.minus();
+                this.patchData();
+              }}
+            >
               -
             </button>
             <button
               className="qtyAdd"
-              onClick={() => (this.plus(), this.patch())}
+              onClick={() => {
+                this.plus();
+                this.patchData();
+              }}
             >
               +
             </button>
@@ -121,16 +137,12 @@ class BasketFeeds extends Component {
         </td>
         <td className="priceContainer">
           <span className="price">
-            <span className="num">
-              {(price * this.state.num).toLocaleString()}
-            </span>{" "}
-            원
+            <span className="num">{this.props.price.toLocaleString()}</span> 원
           </span>
         </td>
-        {/* {Number(this.state.num * 10000).toLocaleString()} */}
         <td className="funcContainer">
           <div className="btnGroup">
-            <button className="remove" onClick={this.delete}>
+            <button className="remove" onClick={() => this.deleteData()}>
               취소
             </button>
           </div>

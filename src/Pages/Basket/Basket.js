@@ -4,8 +4,6 @@ import BasketFeeds from "./BasketFeeds/BasketFeeds";
 import { Link } from "react-router-dom";
 import urlBasket from "../../configBasket";
 import "./Basket.scss";
-
-// import urlBasket from "../../config";
 import "../../Styles/common.scss";
 
 class Basket extends Component {
@@ -18,7 +16,6 @@ class Basket extends Component {
       checked_each: 0,
       itemsArr: [],
       emptyFeed: false,
-      navMoving: false,
     };
   }
 
@@ -28,18 +25,19 @@ class Basket extends Component {
   };
 
   getData = () => {
-    const token = localStorage.getItem("token");
+    // const token = localStorage.getItem("token");
     console.log("getData 실행");
     fetch(urlBasket + "/order/cart", {
       method: "GET",
       headers: {
-        Authorization: token,
+        Authorization:
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZGVudGlmaWVyIjoiaGo4ODUzIn0.cr4C6pb_2iCz2Pty08WV5S9McGKbk1MY1zoqe6xF0Ms",
       },
     })
       .then((res) => res.json())
       .then((res) =>
         this.setState({
-          itemsArr: res.items,
+          itemsArr: res.cart_list,
           emptyFeed: true,
         })
       );
@@ -60,11 +58,6 @@ class Basket extends Component {
       this.setState({ checkbox_each: true, checkbox_all: true });
     }
   };
-  // totalPriceHandler() {
-  //   this.setState({
-  //     totalPrice: ,
-  //   });
-  // }
 
   render() {
     // console.log();
@@ -73,11 +66,10 @@ class Basket extends Component {
         <BasketFeeds
           handleData={this.getData}
           product_id={el.product_id}
-          id={el.id}
+          // id={el.id}
           name={el.name}
           price={el.price}
-          image={el.image}
-          quantity={el.changed_quantity}
+          image={el.image_url}
           checkboxEach={this.state.checkbox_each}
           checkboxEachChecked={this.checkboxEachChecked}
           key={idx}
@@ -89,19 +81,13 @@ class Basket extends Component {
 
     return (
       <div className="Basket">
-        <div
-          className={
-            this.state.navMoving
-              ? "contents contentsOn"
-              : "contents contentsOff"
-          }
-        >
+        <div>
           <main className="mainContainer">
             <section className="sectionWrap">
               <div className="orderPopTop">
                 <div className="innerWrapIn">
                   <h3>일반주문</h3>
-                  <Link to="/" class="closeFullPop">
+                  <Link to="/" className="closeFullPop">
                     닫기
                   </Link>
                 </div>
