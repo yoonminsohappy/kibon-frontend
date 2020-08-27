@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import SubMenu from "./SubMenu/SubMenu";
 import Search from "./Search/Search";
-import "./Nav.scss";
+import "./DefaultNav.scss";
 
-class Nav extends Component {
+class DefaultNav extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -46,7 +46,7 @@ class Nav extends Component {
       <div className="Nav" onMouseLeave={() => this.tabActiveHandler(-1)}>
         <nav className="mainNav">
           <div className="navHr"></div>
-          <div className={hidden ? "nav inactive" : "nav box"}></div>
+          <div className="nav box"></div>
           <Link to="/">
             <img
               alt="본죽로고이미지"
@@ -77,14 +77,10 @@ class Nav extends Component {
           <div className="mainUtil">
             <Link to="#">주문</Link>
             <div>|</div>
-            <Link to="/login">로그인</Link>
+            <Link to="#">로그인</Link>
             <div className="logout">|</div>
             <Link to="#" className="logout">
               로그아웃
-            </Link>
-            <div>|</div>
-            <Link to="#" className="logout">
-              장바구니
             </Link>
             <Link to="#" className="searchImg" onClick={this.isSearch} />
             <Link to="#" className="menuImg" />
@@ -99,7 +95,7 @@ class Nav extends Component {
   }
 }
 
-export default Nav;
+export default DefaultNav;
 
 const MENU_NAME_ARR = [
   "본아이에프",

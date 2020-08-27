@@ -1,20 +1,18 @@
 import React, { Component } from "react";
-import {Link} from 'react-router-dom';
+import { Link } from "react-router-dom";
 import "./NewMenuContent.scss";
 
 class NewMenuContent extends Component {
   state = {
-    index : "0"
-  }
+    index: "0",
+  };
 
-  handleImage =(idx)=>{
-    this.setState({index: idx });
-  }
+  handleImage = (idx) => {
+    this.setState({ index: idx });
+  };
 
-
-
-  render() { 
-    const {index} = this.state;
+  render() {
+    const { index } = this.state;
 
     return (
       <div class="NewMenuContent">
@@ -35,7 +33,10 @@ class NewMenuContent extends Component {
                     return (
                       <Link to="#" onClick={() => this.handleImage(idx)}>
                         <div className="imgBorder">
-                          <img className={`border${idx}`} src={`/Images/foodmenu${idx}.png`} />
+                          <img
+                            className={`border${idx}`}
+                            src={`/Images/foodmenu${idx}.png`}
+                          />
                         </div>
                       </Link>
                     );

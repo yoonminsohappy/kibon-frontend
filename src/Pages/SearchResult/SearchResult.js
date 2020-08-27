@@ -1,27 +1,26 @@
 import React, { Component } from "react";
-import {Link} from "react-router-dom";
-import Nav from "../../Components/Nav/Nav"
-import Footer from "../../Components/Footer/Footer"
+import { Link } from "react-router-dom";
+import Nav from "../../Components/Nav/Nav";
+import Footer from "../../Components/Footer/Footer";
 import "./SearchResult.scss";
 
 class SearchResult extends Component {
-  state = {  
-    menuList : []
-  }
+  state = {
+    menuList: [],
+  };
 
-  componentDidMount(){
+  componentDidMount() {
     fetch(
       `http://10.58.0.78:8000/products?search=${this.props.match.params.text}`
     )
       .then((res) => res.json())
       .then((res) => this.setState({ menuList: res.data }));
 
-    console.log("컨디마:", this.state.menuList)
+    console.log("컨디마:", this.state.menuList);
   }
 
-
   render() {
-    console.log(this.state.menuList) 
+    console.log(this.state.menuList);
     return (
       <div className="SearchResult">
         <div className="topBox" />
@@ -34,31 +33,36 @@ class SearchResult extends Component {
         <div className="innerContents">
           <div className="popularList">
             <h3>본 인기메뉴</h3>
-            {POPULAR_MENU.map((v)=>{
-              return(
-              <Link to="#" key={v}>{v}</Link>
-              )
+            {POPULAR_MENU.map((v) => {
+              return (
+                <Link to="#" key={v}>
+                  {v}
+                </Link>
+              );
             })}
-
           </div>
+          {this.state.menuList &&
+            this.state.menuList.map((v, idx) => {
+              return (
+                <div style={{ textAlign: "center" }}>
+                  {v.name}, {parseInt(v.price)}
+                  <img src={v.image} />
+                </div>
+              );
+            })}
         </div>
-        {this.state.menuList &&
-          this.state.menuList.map((v, idx) => {
-            return (
-              <div style={{ textAlign: "center" }}>
-                {v.name}, {parseInt(v.price)}
-                <img src={v.image} />
-              </div>
-            );
-          })}
         {/* <Footer /> */}
       </div>
     );
   }
 }
- 
-export default SearchResult
 
-const POPULAR_MENU=[
-  "해물김치해장죽", "쇠고기야채죽", "광양식바싹불고기 반상", "백설", "바싹불고기오징어 한상"
-]
+export default SearchResult;
+
+const POPULAR_MENU = [
+  "해물김치해장죽",
+  "쇠고기야채죽",
+  "광양식바싹불고기 반상",
+  "백설",
+  "바싹불고기오징어 한상",
+];
