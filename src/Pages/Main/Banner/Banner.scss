@@ -1,0 +1,59 @@
+.Banner {
+  .BannerImageSize {
+    img {
+      width: 100%;
+      height: 780px;
+    }
+  }
+
+  .mainOrderBox {
+    display: flex;
+    position: relative;
+    width: 1140.99px;
+    height: 84px;
+    margin: 0 auto;
+    margin-top: -42px;
+    z-index: 1;
+    color: white;
+    background-color: #6e0000;
+
+    .selectCard {
+      width: 381.33px;
+      height: 100%;
+      border-left: solid 1px rgba(255, 255, 255, 0.2);
+      background-color: #6e0000;
+
+      .orderText {
+        display: flex;
+        align-items: center;
+      }
+
+      dl {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+
+        dt {
+          height: 100%;
+          line-height: 84px;
+          padding-left: 20px;
+          font-weight: 500;
+          font-size: 20px;
+        }
+
+        dd {
+          height: 100%;
+          padding-left: 10px;
+          font-size: 16px;
+          font-weight: 500;
+          opacity: 0.5;
+        }
+        .arrowImage {
+          width: 20px;
+          height: 14px;
+          background: url("/Images/main_arrow.png") right center no-repeat;
+        }
+      }
+    }
+  }
+}

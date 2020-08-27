@@ -5,10 +5,12 @@
   bottom: 0;
   width: 100%;
   text-align: center;
-  color: #fff;
   background: $bur;
   line-height: 50px;
   font-size: 18px;
   font-weight: 500;
   z-index: 1;
+  .block {
+    color: #fff;
+  }
 }

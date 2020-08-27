@@ -1,0 +1,18 @@
+@import "../../../Styles/common.scss";
+
+.RuleBox {
+  border-top: 2px solid #222;
+  border-bottom: 1px solid #ddd;
+  background: #f4f4f4;
+  padding: 20px;
+  margin-top: 30px;
+
+  .ruleText {
+    font-size: 16px;
+    font-weight: 400;
+
+    .textPoint {
+      color: $labelBur !important;
+    }
+  }
+}
