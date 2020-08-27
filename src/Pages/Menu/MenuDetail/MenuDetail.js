@@ -1,46 +1,45 @@
 import React, { Component } from "react";
 import MenuFooter from "../MenuFooter";
-import Introduction from "../MenuDetail/components/Introduction";
-import DetailList from "./components/DetailList";
-// import FirstIngredient from "./components/IngredientCard";
-// import SecondInredient from "./components/SecondInredient";
-// import ThirdIngredient from "./components/ThirdIngredient";
-import Recommend from "../MenuDetail/components/Recommend";
 import "./MenuDetail.scss";
-import IngredientList from "./components/IngredientList";
 
 class MenuDetail extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = {
-  //     data: [],
-  //     num: props.match.params.id,
-  //   };
-  // }
+  constructor() {
+    super();
+    this.state = {
+      data: [],
+    };
+  }
 
-  // componentDidMount = () => {
-  //   // console.log("props :", this.props);
-  //   fetch(`http://10.58.5.219:8000/product/detail/${this.state.num}`)
-  //     .then((res) => res.json())
-  //     .then((res) => {
-  //       this.setState({
-  //         data: [res],
-  //         num: this.state.num + 1,
-  //       });
-  //     });
-  // };
+  componentDidMount = () => {
+    fetch(`http://10.58.0.78:8000/products/${this.props.match.params.id}`)
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({
+          data: res.html,
+        });
+      });
+  };
+
+  componentDidUpdate = (prevProps) => {
+    if (prevProps.match.params.id !== this.props.match.params.id) {
+      fetch(`http://10.58.0.78:8000/products/${this.props.match.params.id}`)
+        .then((res) => res.json())
+        .then((res) => {
+          this.setState({
+            data: res.html,
+          });
+        });
+    }
+  };
 
   render() {
     return (
       <div className="MenuDetail">
-        <Introduction />
-        <DetailList />
-        <div className="aboutIngredients">
-          <span className="ingreText">식재료 이야기</span>
-          <span className="ingreUnderBar"></span>
-        </div>
-        <IngredientList />
-        <Recommend />
+        <div
+          dangerouslySetInnerHTML={{
+            __html: this.state.data,
+          }}
+        ></div>
         <MenuFooter />
       </div>
     );
