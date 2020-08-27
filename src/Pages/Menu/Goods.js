@@ -10,12 +10,14 @@ class Goods extends Component {
     this.state = {
       isHovering: "none",
       isClicked: false,
+      itemsArr: [],
+      emptyFeed: false,
     };
   }
 
   getData = () => {
     const token = localStorage.getItem("token");
-    console.log("getData 실행");
+    console.log("getData 함수");
     fetch(urlBasket + "/order/cart", {
       method: "GET",
       headers: {

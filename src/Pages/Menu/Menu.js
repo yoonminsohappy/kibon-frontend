@@ -6,6 +6,7 @@ import "../../Styles/common.scss";
 import "../../Components/TitleSection/TitleSection";
 import TitleSection from "../../Components/TitleSection/TitleSection";
 import urlMenu from "../../configMenu"
+import urlBasket from "../../configBasket"
 
 class Menu extends Component {
   constructor(props) {
@@ -42,6 +43,24 @@ class Menu extends Component {
           })
         );
     }
+  };
+
+  getData = () => {
+    const token = localStorage.getItem("token");
+    console.log("getData 실행");
+    fetch(urlBasket + "/order/cart", {
+      method: "GET",
+      headers: {
+        Authorization: token,
+      },
+    })
+      .then((res) => res.json())
+      .then((res) =>
+        this.setState({
+          itemsArr: res.items,
+          emptyFeed: true,
+        })
+      );
   };
 
 
