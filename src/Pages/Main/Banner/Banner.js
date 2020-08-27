@@ -1,24 +1,24 @@
-import React, { Component} from "react";
-import{Link} from "react-router-dom"
+import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import Slider from "react-slick";
-import "./Banner.scss"
+import "./Banner.scss";
 
- const params = {
-      dots: true,
-      infinite: true,
-      speed: 1000,
-      slidesToShow: 1,
-      slidesToScroll: 1,
-      autoplay: true,
-      autoplaySpeed: 3000
-    };
+const params = {
+  dots: true,
+  infinite: true,
+  speed: 1000,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+  autoplay: true,
+  autoplaySpeed: 3000,
+};
 
 class Banner extends Component {
-  render() { 
+  render() {
     return (
       <div className="Banner">
         <div className="BannerImageSize">
-          <Slider {...params} style={{overflow:"hidden"}}>
+          <Slider {...params} style={{ overflow: "hidden" }}>
             <div>
               <img alt="2000원 할인 사진" src="./Images/banner1.png" />
             </div>
@@ -61,19 +61,19 @@ class Banner extends Component {
   }
 }
 
-const MAIN_ORDER_CONTENTS =[
+const MAIN_ORDER_CONTENTS = [
   {
-  title: "주문하기",
-  mainContent: "간편한 결제와 신속한 배달"
+    title: "주문하기",
+    mainContent: "간편한 결제와 신속한 배달",
   },
   {
-    title:"선물하기",
-    mainContent: "본으로 전하는 따뜻한 마음"
+    title: "선물하기",
+    mainContent: "본으로 전하는 따뜻한 마음",
   },
   {
-    title:"단체주문",
-    mainContent: "02-6908-6377 (200개 이상 주문 시)"
-  }
-]
- 
+    title: "단체주문",
+    mainContent: "02-6908-6377 (200개 이상 주문 시)",
+  },
+];
+
 export default Banner;

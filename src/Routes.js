@@ -8,6 +8,7 @@ import Agree from "./Pages/SignUp/Agree";
 import Complete from "./Pages/SignUp/Complete";
 import SignUp from "./Pages/SignUp/SignUp";
 import MyPage from "./Pages/MyPage/MyPage";
+import Basket from "./Pages/Basket/Basket";
 import Store from "./Pages/Store/Store";
 import SearchResult from "./Pages/SearchResult/SearchResult";
 
@@ -25,6 +26,7 @@ class Routes extends React.Component {
           <Route exact path="/menu/menu-detail/:id" component={MenuDetail} />
           <Route exact path="/store" component={Store} />
           <Route exact path="/" component={Main} />
+          <Route exact path="/basket" component={Basket} />
           <Route exact path="/:text" component={SearchResult} />
         </Switch>
       </Router>
