@@ -13,7 +13,23 @@ class Goods extends Component {
     };
   }
 
-  
+  getData = () => {
+    const token = localStorage.getItem("token");
+    console.log("getData 실행");
+    fetch(urlBasket + "/order/cart", {
+      method: "GET",
+      headers: {
+        Authorization: token,
+      },
+    })
+      .then((res) => res.json())
+      .then((res) =>
+        this.setState({
+          itemsArr: res.items,
+          emptyFeed: true,
+        })
+      );
+  };
 
   post = () => {
     console.log("포스트 함수")
