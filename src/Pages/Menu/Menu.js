@@ -5,8 +5,8 @@ import "./Menu.scss";
 import "../../Styles/common.scss";
 import "../../Components/TitleSection/TitleSection";
 import TitleSection from "../../Components/TitleSection/TitleSection";
-import urlMenu from "../../configMenu"
-import urlBasket from "../../configBasket"
+import urlMenu from "../../configMenu";
+import urlBasket from "../../configBasket";
 
 class Menu extends Component {
   constructor(props) {
@@ -62,7 +62,6 @@ class Menu extends Component {
         })
       );
   };
-
 
   whichTab = (idx) => {
     if (idx > 0 && idx < 7) {

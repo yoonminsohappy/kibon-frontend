@@ -1,9 +1,7 @@
-<<<<<<< HEAD
 import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import { Link } from "react-router-dom";
-import urlBasket from "../../configBasket"
-
+import urlBasket from "../../configBasket";
 
 class Goods extends Component {
   constructor() {
@@ -12,13 +10,14 @@ class Goods extends Component {
       isHovering: "none",
       isClicked: false,
       itemsArr: [],
+      postArr: [],
+      num: 0,
       emptyFeed: false,
     };
   }
 
   getData = () => {
     const token = localStorage.getItem("token");
-    console.log("getData 함수");
     fetch(urlBasket + "/order/cart", {
       method: "GET",
       headers: {
@@ -34,18 +33,27 @@ class Goods extends Component {
       );
   };
 
-  post = () => {
-    console.log("포스트 함수")
+  postData = (product_id, total_price) => {
+    console.log(product_id, total_price);
     const token = localStorage.getItem("token");
     fetch(`${urlBasket}/order/cart`, {
       method: "POST",
       headers: {
-        Authorization: token,
+        Authorization:
+          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZGVudGlmaWVyIjoiaGo4ODUzIn0.cr4C6pb_2iCz2Pty08WV5S9McGKbk1MY1zoqe6xF0Ms",
       },
       body: JSON.stringify({
-        product_id: JSON.product_id,
+        product_id,
+        total_price: Math.floor(total_price),
       }),
-    }).then((res) => res.json()).then((res) => console.log("res: ", res));
+    })
+      .then((res) => res.json())
+      .then((res) =>
+        // this.setState({
+        //   postArr: res,
+        // })
+        console.log(res)
+      );
   };
 
   handleMouseOver = () => {
@@ -63,8 +71,6 @@ class Goods extends Component {
   };
 
   render() {
-    // console.log(this.props);
-    // console.log(this.props.category);
     return (
       <li>
         <div
@@ -89,7 +95,10 @@ class Goods extends Component {
               />
             </p>
             <div
-              onClick={()=> {this.handleHeartClick(); this.post()}}
+              onClick={() => {
+                this.handleHeartClick();
+                this.postData(this.props.id, this.props.price);
+              }}
               className={
                 this.state.isClicked
                   ? "goods-opt-selectbox-fill"
@@ -97,15 +106,13 @@ class Goods extends Component {
               }
               style={{ display: this.state.isHovering }}
             >
-              <span className="btn-zzim full">
-                장바구니 담기
-              </span>
+              <span className="btn-zzim full">장바구니 담기</span>
             </div>
           </div>
           <div className="goods-name">
             <p className="name">{this.props.name}</p>
             <p className="price">
-              <span>{`${this.props.price}`}</span> 원
+              <span>{`${Math.floor(this.props.price)}`}</span> 원
             </p>
           </div>
         </div>
@@ -115,81 +122,3 @@ class Goods extends Component {
 }
 
 export default withRouter(Goods);
-=======
-import React, { Component } from "react";
-
-class Goods extends Component {
-  constructor() {
-    super();
-    this.state = {
-      isHovering: "none",
-      isClicked: false,
-    };
-  }
-
-  handleMouseOver = () => {
-    this.setState({ isHovering: "block" });
-  };
-
-  handleMouseLeave = () => {
-    this.setState({ isHovering: "none" });
-  };
-
-  handleHeartClick = () => {
-    this.setState((prevState) => ({
-      isClicked: !prevState.isClicked,
-    }));
-  };
-
-  render() {
-    // console.log(this.props.category);
-    return (
-      <li>
-        <div
-          className="goods-block"
-          onMouseEnter={this.handleMouseOver}
-          onMouseLeave={this.handleMouseLeave}
-        >
-          <div className="goods-icon">
-            <em className={this.props.best ? "best" : "new"}>
-              {this.props.best ? "best" : "" || this.props.new ? "new" : ""}
-            </em>
-          </div>
-          <div className="goods-thumb">
-            <p>
-              <a href="/#">
-                <img
-                  alt="goodsDetail"
-                  src={this.props.img}
-                  className="goods-detail-view"
-                />
-              </a>
-            </p>
-            <div
-              onClick={this.handleHeartClick}
-              className={
-                this.state.isClicked
-                  ? "goods-opt-selectbox-fill"
-                  : "goods-opt-selectbox"
-              }
-              style={{ display: this.state.isHovering }}
-            >
-              <a href="#cartWrap" data-idx="7" className="btn-zzim full">
-                MY메뉴
-              </a>
-            </div>
-          </div>
-          <div className="goods-name">
-            <p className="name">{this.props.name}</p>
-            <p className="price">
-              <span>{`${this.props.price}`}</span> 원
-            </p>
-          </div>
-        </div>
-      </li>
-    );
-  }
-}
-
-export default Goods;
->>>>>>> 22aeae413ec06a05010f1267c8d8daf462214004
