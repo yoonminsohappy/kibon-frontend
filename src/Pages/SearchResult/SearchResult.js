@@ -11,10 +11,10 @@ class SearchResult extends Component {
 
   componentDidMount(){
     fetch(
-      `http://10.58.4.214:8000/products/search?q=${this.props.match.params.text}`
+      `http://10.58.0.78:8000/products?search=${this.props.match.params.text}`
     )
-    .then(res => res.json())
-    .then(res => this.setState({menuList: res.data}))
+      .then((res) => res.json())
+      .then((res) => this.setState({ menuList: res.data }));
 
     console.log("컨디마:", this.state.menuList)
   }
@@ -47,6 +47,7 @@ class SearchResult extends Component {
             return (
               <div style={{ textAlign: "center" }}>
                 {v.name}, {parseInt(v.price)}
+                <img src={v.image} />
               </div>
             );
           })}

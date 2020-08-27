@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from "react-router-dom";
-import './Nav.scss';
 import SubMenu from './SubMenu/SubMenu';
 import Search from './Search/Search';
+import './Nav.scss';
 
 class Nav extends Component {
   constructor(props) {
@@ -48,11 +48,13 @@ class Nav extends Component {
         <nav className="mainNav">
           <div className="navHr"></div>
           <div className={hidden ? "nav inactive" : "nav box"}></div>
-          <img
-            alt="본죽로고이미지"
-            className="mainLogoImg"
-            src="/Images/logo_gnb.png"
-          />
+          <Link to="/">
+            <img
+              alt="본죽로고이미지"
+              className="mainLogoImg"
+              src="/Images/logo_gnb.png"
+            />
+          </Link>
           <div className="mainCategory">
             <ul>
               {MENU_NAME_ARR.map((str, idx) => {
