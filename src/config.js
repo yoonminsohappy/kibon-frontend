@@ -1,2 +1,3 @@
-const API = "http://10.58.4.96:8000"
-export default API
+const url = "http://10.58.5.219:8000";
+
+export default url
