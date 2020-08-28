@@ -122,13 +122,16 @@ button {
         .form {
           .orderTableContainer {
             .orderTableWrap {
+              width: 100%;
               background-color: #fff;
               font-size: 1.4em;
               float: left;
               .orderTable {
+                width: 650px;
                 float: left;
                 font-size: 14px;
                 thead {
+                  width: 1200px;
                   tr {
                     height: 52px;
                     background-color: #f4f4f4;
@@ -137,7 +140,6 @@ button {
                       padding: 12px;
                       height: 52px;
 
-                      // checkbox 체크되기 전
                       .checkboxWrap {
                         position: relative;
                         height: 15px;
@@ -153,7 +155,6 @@ button {
                         }
                       }
 
-                      // checkbox 체크되었을 때
                       .checkboxWrapChecked {
                         position: relative;
                         height: 15px;
@@ -223,7 +224,6 @@ button {
                 tbody {
                   .emptyBody {
                     td {
-                      display: none;
                       width: 100%;
                       color: #727272;
                       border-top: 1px solid #ccc;
