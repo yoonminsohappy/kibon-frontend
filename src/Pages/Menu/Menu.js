@@ -7,6 +7,8 @@ import "../../Components/TitleSection/TitleSection";
 import TitleSection from "../../Components/TitleSection/TitleSection";
 import urlMenu from "../../configMenu";
 import urlBasket from "../../configBasket";
+import DefaultNav from "../../Components/DefaultNav/DefaultNav";
+import Footer from "../../Components/Footer/Footer";
 
 class Menu extends Component {
   constructor(props) {
@@ -15,11 +17,13 @@ class Menu extends Component {
       menu: [],
       all: [],
       num: 1,
+      scrollPos: 0,
+      show: true,
     };
   }
 
   componentDidMount = () => {
-    console.log("컴디마");
+    window.addEventListener("scroll", this.handleScroll);
     fetch(`${urlMenu}/products?category=${this.state.num}`)
       .then((res) => res.json())
       .then((res) =>
@@ -75,21 +79,33 @@ class Menu extends Component {
     }
   };
 
+  handleScroll = () => {
+    this.setState({
+      scrollPos: window.scrollY,
+      // show: document.body.getBoundingClientRect().top < -530,
+    });
+  };
+
   render() {
-    console.log("렌더");
+    console.log(document.body.clientHeight);
+    const { scrollPos } = this.state;
     return (
-      <div className="Menu">
-        <TitleSection
-          title={"메뉴소개"}
-          img={"/Images/sub_visual_bonjuk.jpg"}
-        />
-        <GoodsList
-          all={this.state.all}
-          menu={this.state.menu}
-          tab={this.whichTab}
-        />
-        <MenuFooter />
-      </div>
+      <>
+        <DefaultNav />
+        <div className="Menu">
+          <TitleSection
+            title={"메뉴소개"}
+            img={"/Images/sub_visual_bonjuk.jpg"}
+          />
+          <GoodsList
+            all={this.state.all}
+            menu={this.state.menu}
+            tab={this.whichTab}
+          />
+          <MenuFooter scrollPos={scrollPos} />
+        </div>
+        <Footer />
+      </>
     );
   }
 }

@@ -1,6 +1,14 @@
 @import "../../../Styles/common.scss";
 
 .MainContent {
+  .soupImageHide {
+    width: 650px;
+    height: 480px;
+    margin-top: -35px;
+    z-index: 3;
+    display: none;
+  }
+
   .soupImage {
     width: 650px;
     height: 480px;
@@ -13,11 +21,19 @@
 
   @keyframes change1 {
     0% {
-      opacity: 0.8;
+      opacity: 0.5;
     }
     100% {
       opacity: 1;
     }
+  }
+
+  .bonCafeImageHide {
+    width: 650px;
+    height: 410px;
+    margin-top: -33px;
+    z-index: 1;
+    display: none;
   }
 
   .bonCafeImage {
@@ -39,6 +55,13 @@
   }
 }
 
+.bonLunchBoxImageHide {
+  width: 650px;
+  height: 515px;
+  margin-top: -70px;
+  display: none;
+}
+
 .bonLunchBoxImage {
   width: 650px;
   height: 515px;
@@ -46,21 +69,31 @@
   animation-name: change3;
   animation-duration: 1s;
   opacity: 1;
+  z-index: 2;
 }
 
 @keyframes change3 {
   0% {
-    opacity: 0;
+    opacity: 0.5;
   }
   100% {
     opacity: 1;
   }
 }
 
+.bonSulImageHide {
+  width: 650px;
+  height: 515px;
+  margin-top: -41px;
+  display: none;
+  z-index: 0;
+}
+
 .bonSulImage {
   width: 650px;
   height: 515px;
   margin-top: -41px;
+  z-index: 0;
 }
 
 .left {
@@ -82,6 +115,14 @@
       line-height: 30px;
     }
 
+    .mainContentTextHide {
+      position: relative;
+      width: 480px;
+      height: 100%;
+      padding: 25px 0px 0px 30px;
+      display: none;
+    }
+
     .mainContentText {
       position: relative;
       width: 480px;
@@ -89,7 +130,7 @@
       padding: 25px 0px 0px 30px;
       animation-name: firstCardBox;
       animation-duration: 1s;
-      z-index: -1;
+      z-index: 1;
     }
 
     @keyframes firstCardBox {
@@ -115,7 +156,7 @@
       width: 50%;
       height: 325px;
       right: 0;
-      z-index: -1;
+      z-index: 1;
       background-color: #f4f4f4;
       animation-name: first;
       animation-duration: 2s;
@@ -129,27 +170,6 @@
         right: 0px;
       }
     }
-
-    // .brownBox {
-    //   position: absolute;
-    //   width: 650px;
-    //   height: 375px;
-    //   margin-top: -5px;
-    //   background-color: brown;
-    //   animation-name: leftbox;
-    //   animation-duration: 4s;
-    //   z-index: -2;
-    // }
-
-    // @keyframes leftbox {
-    //   0% {
-    //     right: 50%;
-    //   }
-    //   100% {
-    //     right: 10%;
-    //   }
-    // }
-
     .textTitle {
       font-size: 34px;
       padding: 2px 0px 6px;
@@ -202,6 +222,14 @@
       line-height: 30px;
     }
 
+    .mainContentTextHide {
+      position: relative;
+      width: 480px;
+      height: 100%;
+      padding: 25px 0px 0px 30px;
+      display: none;
+    }
+
     .mainContentText {
       position: relative;
       width: 480px;
@@ -214,7 +242,7 @@
 
     @keyframes secondCardBox {
       0% {
-        left: -480px;
+        left: -40%;
       }
       100% {
         left: 0;
@@ -235,7 +263,7 @@
       width: 50%;
       height: 325px;
       left: 0;
-      z-index: -1;
+      z-index: 0;
       background-color: #f4f4f4;
       animation-name: rightCardActive;
       animation-duration: 2s;

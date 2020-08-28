@@ -18,7 +18,10 @@ class NoMemberForm extends Component {
         </div>
         <div className="joinRule">
           <div className="ruletext">
-            <label><input type="checkbox" className="check" />비회원 이용약관 동의</label>
+            <label>
+              <input type="checkbox" className="check" />
+              비회원 이용약관 동의
+            </label>
           </div>
         </div>
         <div className="inputBox">

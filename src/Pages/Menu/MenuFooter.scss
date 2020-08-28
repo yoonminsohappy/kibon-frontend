@@ -1,7 +1,7 @@
 @import "./../../Styles/common.scss";
+
 .btnBrandOrder {
   position: fixed;
-  left: 0;
   bottom: 0;
   width: 100%;
   text-align: center;
@@ -10,5 +10,21 @@
   font-size: 18px;
   font-weight: 500;
   z-index: 1;
+  color: white;
+}
+
+.btnBrandOrderFix {
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background: $bur;
+  line-height: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  z-index: 1;
+  color: white;
+}
+
+.orderText {
   color: white;
 }

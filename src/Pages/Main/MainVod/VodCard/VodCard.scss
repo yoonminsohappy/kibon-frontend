@@ -1,0 +1,18 @@
+.VodCard {
+  display: relative;
+  flex: 1 0 20%;
+  height: 393px;
+
+  .card {
+    margin-right: 45px;
+  }
+
+  .playButton {
+    position: absolute;
+    width: 62px;
+    height: 62px;
+    background: url("/Images/ico_vod.png");
+    margin-left: 309px;
+    top: 45%;
+  }
+}
