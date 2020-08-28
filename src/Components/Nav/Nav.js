@@ -14,6 +14,7 @@ class Nav extends Component {
       scrollPos: 0,
       underLine: "",
       isSearch: false,
+      test: true,
     };
   }
 
@@ -38,6 +39,17 @@ class Nav extends Component {
 
   isSearch = () => {
     this.setState((prevState) => ({ isSearch: !prevState.isSearch }));
+  };
+
+  test = () => {
+    this.setState(
+      {
+        test: false,
+      },
+      () => {
+        window.localStorage.removeItem("token");
+      }
+    );
   };
 
   render() {
@@ -75,17 +87,17 @@ class Nav extends Component {
             </ul>
           </div>
           <div className="mainUtil">
-            <Link to="#">주문</Link>
-            <div>|</div>
-            <Link to="/login">로그인</Link>
-            <div className="logout">|</div>
-            <Link to="#" className="logout">
-              로그아웃
-            </Link>
-            <div>|</div>
-            <Link to="#" className="logout">
+            <Link to={window.localStorage.token ? "/basket" : "/login"}>
               장바구니
             </Link>
+            <div>|</div>
+            <Link
+              to={window.localStorage.token ? "#" : "/login"}
+              onClick={this.test}
+            >
+              {window.localStorage.token ? "로그아웃" : "로그인"}
+            </Link>
+            <div className="logout">|</div>
             <Link to="#" className="searchImg" onClick={this.isSearch} />
             <Link to="#" className="menuImg" />
           </div>

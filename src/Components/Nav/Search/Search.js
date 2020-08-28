@@ -1,18 +1,17 @@
 import React, { Component } from "react";
-import {Link, withRouter} from "react-router-dom";
-import './Search.scss';
+import { Link, withRouter } from "react-router-dom";
+import "./Search.scss";
 
 class Search extends Component {
-  state = { 
-    searchText : ""
-  }
+  state = {
+    searchText: "",
+  };
 
-  searchText = (e) =>{
-    this.setState({searchText: e.target.value})
-  }
+  searchText = (e) => {
+    this.setState({ searchText: e.target.value });
+  };
 
-  render() { 
-    console.log(this.state.searchText)
+  render() {
     return (
       <div className={this.props.isSearch ? "Search" : "searchBarOut"}>
         <div className="searchBarIn">
@@ -87,5 +86,5 @@ class Search extends Component {
     );
   }
 }
- 
-export default withRouter (Search);
+
+export default withRouter(Search);

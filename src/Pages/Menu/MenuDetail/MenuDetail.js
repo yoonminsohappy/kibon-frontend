@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import MenuFooter from "../MenuFooter";
 import "./MenuDetail.scss";
+import Nav from "../../../Components/Nav/Nav";
+import DefaultNav from "../../../Components/DefaultNav/DefaultNav";
+import Footer from "../../../Components/Footer/Footer";
+import API from "../../../config";
 
 class MenuDetail extends Component {
   constructor() {
@@ -11,7 +15,7 @@ class MenuDetail extends Component {
   }
 
   componentDidMount = () => {
-    fetch(`http://10.58.0.78:8000/products/${this.props.match.params.id}`)
+    fetch(`${API}/products/${this.props.match.params.id}`)
       .then((res) => res.json())
       .then((res) => {
         this.setState({
@@ -22,7 +26,7 @@ class MenuDetail extends Component {
 
   componentDidUpdate = (prevProps) => {
     if (prevProps.match.params.id !== this.props.match.params.id) {
-      fetch(`http://10.58.0.78:8000/products/${this.props.match.params.id}`)
+      fetch(`${API}/products/${this.props.match.params.id}`)
         .then((res) => res.json())
         .then((res) => {
           this.setState({
@@ -34,14 +38,18 @@ class MenuDetail extends Component {
 
   render() {
     return (
-      <div className="MenuDetail">
-        <div
-          dangerouslySetInnerHTML={{
-            __html: this.state.data,
-          }}
-        ></div>
-        <MenuFooter />
-      </div>
+      <>
+        <DefaultNav />
+        <div className="MenuDetail">
+          <div
+            dangerouslySetInnerHTML={{
+              __html: this.state.data,
+            }}
+          ></div>
+          <MenuFooter />
+        </div>
+        <Footer />
+      </>
     );
   }
 }

@@ -1,18 +1,23 @@
 import React, { Component } from "react";
-import {Link, withRouter} from "react-router-dom";
-import './Search.scss';
+import { Link, withRouter } from "react-router-dom";
+import "./Search.scss";
 
 class Search extends Component {
-  state = { 
-    searchText : ""
-  }
+  state = {
+    searchText: "",
+  };
 
-  searchText = (e) =>{
-    this.setState({searchText: e.target.value})
-  }
+  searchText = (e) => {
+    this.setState({ searchText: e.target.value });
+  };
 
-  render() { 
-    console.log(this.state.searchText)
+  refresh = (e) => {
+    this.props.history.push(`/${this.state.searchText}`);
+    e(window.location.reload());
+  };
+
+  render() {
+    console.log(this.state.searchText);
     return (
       <div className={this.props.isSearch ? "Search" : "searchBarOut"}>
         <div className="searchBarIn">
@@ -25,12 +30,7 @@ class Search extends Component {
                 placeholder="해장"
                 onChange={this.searchText}
               ></input>
-              <img
-                src="./Images/btn_search.png"
-                onClick={() =>
-                  this.props.history.push(`/${this.state.searchText}`)
-                }
-              />
+              <img src="./Images/btn_search.png" onClick={this.refresh} />
             </div>
             <div className="keywordBox">
               <div className="todayBlock">
@@ -87,5 +87,5 @@ class Search extends Component {
     );
   }
 }
- 
-export default withRouter (Search);
+
+export default withRouter(Search);

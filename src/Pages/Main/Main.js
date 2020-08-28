@@ -1,17 +1,16 @@
-import React, { Component } from 'react';
-import Nav from '../../Components/Nav/Nav';
-import Banner from './Banner/Banner';
-import Footer from '../../Components/Footer/Footer';
-import MainContent from './MainContent/MainContent';
-import MainVod from './MainVod/MainVod';
-import NewMenuContent from './NewMenuContent/NewMenuContent';
-import MainVision from './MainVision/MainVision';
-import './Main.scss';
-import MainNews from './MainNews/MainNews';
-import '../../Styles/common.scss';
+import React, { Component } from "react";
+import Nav from "../../Components/Nav/Nav";
+import Banner from "./Banner/Banner";
+import Footer from "../../Components/Footer/Footer";
+import MainContent from "./MainContent/MainContent";
+import MainVod from "./MainVod/MainVod";
+import NewMenuContent from "./NewMenuContent/NewMenuContent";
+import MainVision from "./MainVision/MainVision";
+import "./Main.scss";
+import MainNews from "./MainNews/MainNews";
+import "../../Styles/common.scss";
 
 class Main extends Component {
-
   render() {
     return (
       <div className="Main">

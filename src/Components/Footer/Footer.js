@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import './Footer.scss'
+import "./Footer.scss";
 
 class Footer extends Component {
   render() {
     return (
-      <footer className="Footer">
+      <footer className="Footer" id="yeheum" ref={(ref) => (this.footer = ref)}>
         <div className="position">
           <div className="utilBox">
             <div className="utilInnerBox">

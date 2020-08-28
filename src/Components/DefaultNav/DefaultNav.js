@@ -17,16 +17,16 @@ class DefaultNav extends Component {
     };
   }
 
-  componentDidMount() {
-    window.addEventListener("scroll", this.handleScroll);
-  }
+  // componentDidMount() {
+  //   window.addEventListener("scroll", this.handleScroll);
+  // }
 
-  handleScroll = () => {
-    this.setState({
-      scrollPos: document.body.getBoundingClientRect().top,
-      hidden: document.body.getBoundingClientRect().top === 0,
-    });
-  };
+  // handleScroll = () => {
+  //   this.setState({
+  //     scrollPos: document.body.getBoundingClientRect().top,
+  //     hidden: document.body.getBoundingClientRect().top === 0,
+  //   });
+  // };
 
   tabActiveHandler = (idx) => {
     this.setState({ activeTab: idx });
@@ -40,8 +40,19 @@ class DefaultNav extends Component {
     this.setState((prevState) => ({ isSearch: !prevState.isSearch }));
   };
 
+  test = () => {
+    this.setState(
+      {
+        test: false,
+      },
+      () => {
+        window.localStorage.removeItem("token");
+      }
+    );
+  };
+
   render() {
-    const { hidden, activeTab, scrollPos, isSearch } = this.state;
+    const { activeTab, scrollPos, isSearch } = this.state;
     return (
       <div className="Nav" onMouseLeave={() => this.tabActiveHandler(-1)}>
         <nav className="mainNav">
@@ -75,13 +86,17 @@ class DefaultNav extends Component {
             </ul>
           </div>
           <div className="mainUtil">
-            <Link to="#">주문</Link>
-            <div>|</div>
-            <Link to="#">로그인</Link>
-            <div className="logout">|</div>
-            <Link to="#" className="logout">
-              로그아웃
+            <Link to={window.localStorage.token ? "/basket" : "/login"}>
+              장바구니
             </Link>
+            <div>|</div>
+            <Link
+              to={window.localStorage.token ? "/" : "/login"}
+              onClick={this.test}
+            >
+              {window.localStorage.token ? "로그아웃" : "로그인"}
+            </Link>
+            <div className="logout">|</div>
             <Link to="#" className="searchImg" onClick={this.isSearch} />
             <Link to="#" className="menuImg" />
           </div>

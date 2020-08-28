@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import "./MainContent.scss"
+import "./MainContent.scss";
 
 class MainContent extends Component {
   state = {
     scrollPos: 0,
-    show: true
+    show: true,
   };
 
   componentDidMount() {
@@ -19,12 +19,11 @@ class MainContent extends Component {
   };
 
   render() {
-    const {scrollPos} = this.state;
+    const { scrollPos } = this.state;
     const firstHeight = scrollPos < -159;
     const secondHeight = scrollPos < -777;
     const thirdHeight = scrollPos < -1295;
     const fourthHeight = scrollPos < -1961;
-
 
     return (
       <div className="MainContent">
@@ -33,12 +32,16 @@ class MainContent extends Component {
             <div className="mainContentArticle">
               <div className="brownBox"></div>
               <img
-                class="soupImage"
+                class={firstHeight ? "soupImage" : "soupImageHide"}
                 alt="본과 함께하는 일상 첫번째 사진"
                 src="./Images/maincontent0.png"
               />
               <div className={firstHeight ? "leftCardActive" : ""} />
-              <div className={firstHeight ? "mainContentText" : ""}>
+              <div
+                className={
+                  firstHeight ? "mainContentText" : "mainContentTextHide"
+                }
+              >
                 <span>본죽</span>
                 <p className="textTitle">
                   죽이 요리가 되는 <br /> 선물같은 시간
@@ -59,7 +62,11 @@ class MainContent extends Component {
           <div className="mainContentCardContainer">
             <div className="mainContentArticle">
               <div className={secondHeight ? "rightCardActive" : ""} />
-              <div className="mainContentText">
+              <div
+                className={
+                  secondHeight ? "mainContentText" : "mainContentTextHide"
+                }
+              >
                 <span>본죽&비빔밥cafe</span>
                 <p className="textTitle">
                   한식으로 함께 <br /> 한 곳에서 함께
@@ -72,7 +79,10 @@ class MainContent extends Component {
                 </p>
                 <button>자세히 보기</button>
               </div>
-              <img className="bonCafeImage" src="./Images/maincontent1.png" />
+              <img
+                className={secondHeight ? "bonCafeImage" : "bonCafeImageHide"}
+                src="./Images/maincontent1.png"
+              />
             </div>
           </div>
         </div>
@@ -81,7 +91,12 @@ class MainContent extends Component {
           <div className="mainContentCardContainer">
             <div className="mainContentArticle">
               <div className={thirdHeight ? "leftCardActive" : ""} />
-              <img className="bonLunchBoxImage" src="./Images/maincontent2.png" />
+              <img
+                className={
+                  thirdHeight ? "bonLunchBoxImage" : "bonLunchBoxImageHide"
+                }
+                src="./Images/maincontent2.png"
+              />
               <div className={thirdHeight ? "leftCardActive" : ""}></div>
               <div
                 className={thirdHeight ? "mainContentText" : ""}
@@ -107,7 +122,11 @@ class MainContent extends Component {
           <div className="mainContentCardContainer">
             <div className="mainContentArticle">
               <div className={fourthHeight ? "rightCardActive" : ""} />
-              <div className="mainContentText">
+              <div
+                className={
+                  fourthHeight ? "mainContentText" : "mainContentTextHide"
+                }
+              >
                 <span>본죽</span>
                 <p className="textTitle">
                   죽이 요리가 되는 <br /> 선물같은 시간
@@ -120,7 +139,10 @@ class MainContent extends Component {
                 </p>
                 <button>자세히 보기</button>
               </div>
-              <img className="bonSulImage" src="./Images/maincontent3.png" />
+              <img
+                className={fourthHeight ? "bonSulImage" : "bonSulImageHide"}
+                src="./Images/maincontent3.png"
+              />
             </div>
           </div>
         </div>
@@ -128,5 +150,5 @@ class MainContent extends Component {
     );
   }
 }
- 
+
 export default MainContent;

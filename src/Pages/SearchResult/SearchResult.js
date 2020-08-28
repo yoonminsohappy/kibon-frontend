@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import Nav from "../../Components/Nav/Nav";
 import Footer from "../../Components/Footer/Footer";
+import DefaultNav from "../../Components/DefaultNav/DefaultNav";
+import GoodsList from "./GoodsList";
+import API from "../../config";
 import "./SearchResult.scss";
 
 class SearchResult extends Component {
@@ -10,9 +12,7 @@ class SearchResult extends Component {
   };
 
   componentDidMount() {
-    fetch(
-      `http://10.58.0.78:8000/products?search=${this.props.match.params.text}`
-    )
+    fetch(`${API}/products?search=${this.props.match.params.text}`)
       .then((res) => res.json())
       .then((res) => this.setState({ menuList: res.data }));
 
@@ -20,39 +20,32 @@ class SearchResult extends Component {
   }
 
   render() {
-    console.log(this.state.menuList);
+    const { menuList } = this.state;
     return (
-      <div className="SearchResult">
-        <div className="topBox" />
-        <Nav />
-        <h2>
-          <strong>'{this.props.match.params.text}'</strong>
-          검색결과
-        </h2>
-        <div className="boundary"></div>
-        <div className="innerContents">
-          <div className="popularList">
-            <h3>본 인기메뉴</h3>
-            {POPULAR_MENU.map((v) => {
-              return (
-                <Link to="#" key={v}>
-                  {v}
-                </Link>
-              );
-            })}
+      <>
+        <DefaultNav />
+        <div className="SearchResult">
+          <h2>
+            <strong>'{this.props.match.params.text}'</strong>
+            검색결과
+          </h2>
+          <div className="boundary"></div>
+          <div className="innerContents">
+            <div className="popularList">
+              <h3>본 인기메뉴</h3>
+              {POPULAR_MENU.map((v) => {
+                return (
+                  <Link to="#" key={v}>
+                    {v}
+                  </Link>
+                );
+              })}
+            </div>
+            <GoodsList all={menuList} />
           </div>
-          {this.state.menuList &&
-            this.state.menuList.map((v, idx) => {
-              return (
-                <div style={{ textAlign: "center" }}>
-                  {v.name}, {parseInt(v.price)}
-                  <img src={v.image} />
-                </div>
-              );
-            })}
+          <Footer />
         </div>
-        {/* <Footer /> */}
-      </div>
+      </>
     );
   }
 }
