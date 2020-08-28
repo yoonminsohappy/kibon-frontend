@@ -39,8 +39,7 @@ class Goods extends Component {
     fetch(`${urlBasket}/order/cart`, {
       method: "POST",
       headers: {
-        Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZGVudGlmaWVyIjoiaGo4ODUzIn0.cr4C6pb_2iCz2Pty08WV5S9McGKbk1MY1zoqe6xF0Ms",
+        Authorization: token,
       },
       body: JSON.stringify({
         product_id,
