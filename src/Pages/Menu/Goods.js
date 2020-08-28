@@ -40,7 +40,8 @@ class Goods extends Component {
       method: "POST",
       headers: {
         Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZGVudGlmaWVyIjoiaGo4ODUzIn0.cr4C6pb_2iCz2Pty08WV5S9McGKbk1MY1zoqe6xF0Ms",
+          // "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZGVudGlmaWVyIjoiYWFhYTExIn0.FmqhqNNvfTekYzg_ZQeWKv8YdjJaehrQusrpH5u6vzU",
+          token,
       },
       body: JSON.stringify({
         product_id,

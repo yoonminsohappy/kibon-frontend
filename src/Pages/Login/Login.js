@@ -34,6 +34,7 @@ class Login extends Component {
   render() {
     const { ismemberShip, isMember } = this.state;
     return (
+<<<<<<< HEAD
       <>
         <DefaultNav />
         <main className="login">
