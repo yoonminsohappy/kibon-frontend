@@ -1,2 +1,2 @@
-const urlMenu = "http://10.58.0.78:8000";
+const urlMenu = "http://3.14.29.168:8000";
 export default urlMenu;
