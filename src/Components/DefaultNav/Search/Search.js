@@ -11,7 +11,13 @@ class Search extends Component {
     this.setState({ searchText: e.target.value });
   };
 
+  refresh = (e) => {
+    this.props.history.push(`/${this.state.searchText}`);
+    e(window.location.reload());
+  };
+
   render() {
+    console.log(this.state.searchText);
     return (
       <div className={this.props.isSearch ? "Search" : "searchBarOut"}>
         <div className="searchBarIn">
@@ -24,12 +30,7 @@ class Search extends Component {
                 placeholder="해장"
                 onChange={this.searchText}
               ></input>
-              <img
-                src="./Images/btn_search.png"
-                onClick={() =>
-                  this.props.history.push(`/${this.state.searchText}`)
-                }
-              />
+              <img src="./Images/btn_search.png" onClick={this.refresh} />
             </div>
             <div className="keywordBox">
               <div className="todayBlock">

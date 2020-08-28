@@ -1,12 +1,14 @@
 @import "../../Styles/common.scss";
 
 .Menu {
-  * {
-    box-sizing: border-box;
-    color: inherit;
-    font-family: "Noto Sans KR";
-    letter-spacing: -0.025em;
-  }
+  position: relative;
+
+  // * {
+  //   box-sizing: border-box;
+  //   color: inherit;
+  //   font-family: "Noto Sans KR";
+  //   letter-spacing: -0.025em;
+  // }
 
   .subContents {
     width: 1132px;

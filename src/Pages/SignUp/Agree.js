@@ -10,6 +10,8 @@ import JoinTable from "./Component/JoinTable";
 import RulBox from "./Component/RulBox";
 import Joinbox from "./Component/Joinbox";
 import API from "../../config";
+import DefaultNav from "../../Components/DefaultNav/DefaultNav";
+import Footer from "../../Components/Footer/Footer";
 import "./Agree.scss";
 
 class Agree extends Component {
@@ -61,24 +63,27 @@ class Agree extends Component {
   };
 
   handleChange = (e) => {
-    const {name, value} = e.target;
-    
+    const { name, value } = e.target;
+
     const table = {
       nameValue: value,
-      birthDayValue: [ "errorBoxDay", valDay(value) ],
-      passwordValue: [ "errorBoxPassword", valPassword(value) ],
+      birthDayValue: ["errorBoxDay", valDay(value)],
+      passwordValue: ["errorBoxPassword", valPassword(value)],
       userIdValue: value,
-      passwordCheckValue: [ "errorBoxPasswordCheck", valpasswordCheck(this.state.passwordValue, value) ],
+      passwordCheckValue: [
+        "errorBoxPasswordCheck",
+        valpasswordCheck(this.state.passwordValue, value),
+      ],
       genderValue: value,
-      phoneValue: [ "errorBoxPhone", valPhone(value) ],
-      emailValue: [ "errorBoxEmail", valEmail(value) ]
-    }
-    
+      phoneValue: ["errorBoxPhone", valPhone(value)],
+      emailValue: ["errorBoxEmail", valEmail(value)],
+    };
+
     this.setState({
       [name]: value,
-      [table[name][0]]: table[name][1]
-    })
-  }
+      [table[name][0]]: table[name][1],
+    });
+  };
 
   locationEvent = () => {
     const {
@@ -112,11 +117,11 @@ class Agree extends Component {
         }),
       })
         .then((response) => response.json())
-        .then((response) => { 
-          if(response.message === "SUCCESS"){
+        .then((response) => {
+          if (response.message === "SUCCESS") {
             localStorage.setItem("name", response.name);
             this.props.history.push("/sign-up/join-complete");
-          }else{
+          } else {
             alert("회원가입에 실패하였습니다! 입력창을 확인해주세요.");
           }
         });
@@ -127,49 +132,56 @@ class Agree extends Component {
 
   render() {
     return (
-      <main className="Agree">
-        <JoinTable state="agree" />
-        <div className="stepInner">
-          <div className="innerText">
-            <h3>약관동의 및 개인정보 입력</h3>
-            <span className="innerSpan">
-              회원 가입 시 먼저 이용약관을 읽어보신 후 동의하신 다음 필요한
-              정보를 입력하세요.
-              <br />각 회원의 신상정보에 대해서는 ‘신용정보의 이용 및 보호에
-              관한 법률’에 의거 완벽한 보안을 유지합니다.
-            </span>
-          </div>
-          <div className="joinRuleBox">
-            <div className="agreeAllBtn">
-              <label className="agreeAll">
-                <input
-                  className="check"
-                  type="checkbox"
-                  onClick={this.handleAllChecked}
-                  checked={this.state.allChecked}
-                />
-                전체약관에 모두 동의합니다.
-              </label>
+      <>
+        <DefaultNav />
+        <main className="Agree">
+          <JoinTable state="agree" />
+          <div className="stepInner">
+            <div className="innerText">
+              <h3>약관동의 및 개인정보 입력</h3>
+              <span className="innerSpan">
+                회원 가입 시 먼저 이용약관을 읽어보신 후 동의하신 다음 필요한
+                정보를 입력하세요.
+                <br />각 회원의 신상정보에 대해서는 ‘신용정보의 이용 및 보호에
+                관한 법률’에 의거 완벽한 보안을 유지합니다.
+              </span>
             </div>
-            {titleText.map((el, index) => {
-              return (
-                <RulBox
-                  contents={el.content}
-                  key={index}
-                  checked={this.state[el.name]}
-                  onClick={() => this.handleChecked(index)}
-                />
-              );
-            })}
-            <Joinbox handleChange={this.handleChange} totalData={this.state} />
-            <div className="submitBox">
-              <button className="joinSubmit" onClick={this.locationEvent}>
-                회원가입
-              </button>
+            <div className="joinRuleBox">
+              <div className="agreeAllBtn">
+                <label className="agreeAll">
+                  <input
+                    className="check"
+                    type="checkbox"
+                    onClick={this.handleAllChecked}
+                    checked={this.state.allChecked}
+                  />
+                  전체약관에 모두 동의합니다.
+                </label>
+              </div>
+              {titleText.map((el, index) => {
+                return (
+                  <RulBox
+                    contents={el.content}
+                    key={index}
+                    checked={this.state[el.name]}
+                    onClick={() => this.handleChecked(index)}
+                  />
+                );
+              })}
+              <Joinbox
+                handleChange={this.handleChange}
+                totalData={this.state}
+              />
+              <div className="submitBox">
+                <button className="joinSubmit" onClick={this.locationEvent}>
+                  회원가입
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      </main>
+        </main>
+        <Footer />
+      </>
     );
   }
 }
