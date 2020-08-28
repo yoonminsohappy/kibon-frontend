@@ -6,46 +6,45 @@ import "./BasketFeeds.scss";
 class BasketFeeds extends Component {
   constructor() {
     super();
-
     this.state = {
-      num: 0,
+      num: 1,
       // delete: false,
     };
   }
 
   componentDidMount = () => {
     const token = localStorage.getItem("token");
-    this.setState({ num: this.props.quantity });
-    console.log(this.props.match);
+    // this.setState({ num: this.props.quantity });
+    // console.log(this.props.match);
   };
 
-  plus = (number) => {
-    this.patchData(number);
-    this.setState({ num: this.state.num + number });
-  };
+  // plus = (id) => {
+  //   this.patchData("plus");
+  //   this.setState({ num: this.state.num + 1 });
+  // };
 
-  minus = (number) => {
-    console.log(number);
-    this.patchData(number);
-    if (this.state.num === 1) {
-      return;
-    } else if (this.state.num > 1) {
-      this.setState({ num: this.state.num + number });
-    }
-  };
+  // minus = (id) => {
+  //   this.patchData("minus");
+  //   if (this.state.num === 1) {
+  //     alert("1보다 커야해");
+  //   } else if (this.state.num >= 2) {
+  //     this.setState({ num: this.state.num - 1 });
+  //   }
+  // };
 
-  patchData = (number) => {
-    // const token = localStorage.getItem("token");
+  patchData = (which) => {
+    // console.log(this.props.product_id);
+    // console.log("number >>> ");
+    const token = localStorage.getItem("token");
     console.log("patchData 실행");
-    fetch(url + "/order/cart", {
+    fetch(`${url}/order/cart`, {
       method: "PATCH",
       headers: {
-        Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZGVudGlmaWVyIjoiaGo4ODUzIn0.cr4C6pb_2iCz2Pty08WV5S9McGKbk1MY1zoqe6xF0Ms",
+        Authorization: token,
       },
       body: JSON.stringify({
         product_id: this.props.product_id,
-        delta: number,
+        changed_quantity: which,
       }),
     }).then((res) => {
       if (res.status === 200) {
@@ -54,17 +53,16 @@ class BasketFeeds extends Component {
     });
   };
 
-  deleteData = () => {
-    // const token = localStorage.getItem("token");
+  deleteData = (product_id) => {
+    const token = localStorage.getItem("token");
     console.log("deleteData 실행");
     fetch(`${url}/order/cart`, {
       method: "DELETE",
       headers: {
-        Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZGVudGlmaWVyIjoiaGo4ODUzIn0.cr4C6pb_2iCz2Pty08WV5S9McGKbk1MY1zoqe6xF0Ms",
+        Authorization: token,
       },
       body: JSON.stringify({
-        product_id: 2,
+        product_id,
       }),
     }).then((res) => {
       console.log(res);
@@ -113,13 +111,13 @@ class BasketFeeds extends Component {
             <input
               className="qtyInput"
               type="number"
-              value={this.props.quantity}
+              value={this.state.num}
             ></input>
             <button
               className="qtySubtract"
               onClick={() => {
-                this.minus();
-                this.patchData();
+                // this.minus(this.props.id);
+                this.props.minus(this.props.id);
               }}
             >
               -
@@ -127,8 +125,8 @@ class BasketFeeds extends Component {
             <button
               className="qtyAdd"
               onClick={() => {
-                this.plus();
-                this.patchData();
+                // this.plus(this.props.id);
+                this.props.plus(this.props.id);
               }}
             >
               +
@@ -137,12 +135,18 @@ class BasketFeeds extends Component {
         </td>
         <td className="priceContainer">
           <span className="price">
-            <span className="num">{this.props.price.toLocaleString()}</span> 원
+            <span className="num">
+              {Number(this.props.price * this.state.num).toLocaleString()}
+            </span>
+            원
           </span>
         </td>
         <td className="funcContainer">
           <div className="btnGroup">
-            <button className="remove" onClick={() => this.deleteData()}>
+            <button
+              className="remove"
+              onClick={() => this.deleteData(this.props.id)}
+            >
               취소
             </button>
           </div>

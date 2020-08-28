@@ -221,10 +221,10 @@ button {
                   }
                 }
                 tbody {
-                  // empty_body (display: none) -> 없애기
                   .emptyBody {
                     td {
                       display: none;
+                      width: 100%;
                       color: #727272;
                       border-top: 1px solid #ccc;
                       text-align: center;

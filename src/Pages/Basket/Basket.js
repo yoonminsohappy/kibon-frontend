@@ -16,6 +16,7 @@ class Basket extends Component {
       checked_each: 0,
       itemsArr: [],
       emptyFeed: false,
+      total: 0,
     };
   }
 
@@ -25,13 +26,12 @@ class Basket extends Component {
   };
 
   getData = () => {
-    // const token = localStorage.getItem("token");
+    const token = localStorage.getItem("token");
     console.log("getData 실행");
     fetch(urlBasket + "/order/cart", {
       method: "GET",
       headers: {
-        Authorization:
-          "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZGVudGlmaWVyIjoiaGo4ODUzIn0.cr4C6pb_2iCz2Pty08WV5S9McGKbk1MY1zoqe6xF0Ms",
+        Authorization: token,
       },
     })
       .then((res) => res.json())
@@ -39,8 +39,10 @@ class Basket extends Component {
         this.setState({
           itemsArr: res.cart_list,
           emptyFeed: true,
+          price_arr: res.cart_list,
         })
       );
+    // console.log(res.cart_list.price);
   };
 
   checkboxAllChecked = () => {
@@ -59,20 +61,56 @@ class Basket extends Component {
     }
   };
 
+  // totalPrice = () => {
+  //   if ("price" in this.state.price_arr) {
+  //     let str = this.state.price_arr.total;
+  //     return str.toLocaleString();
+  //   }
+  // };
+
+  plus = (id) => {
+    const selectedObj = this.state.itemsArr.find((el) => el.ID === id);
+    console.log("selectedObj.quantity", selectedObj.quantity);
+    selectedObj.quantity++;
+    const arrCopy = [...this.state.itemsArr];
+    console.log("arrCopy", arrCopy);
+    arrCopy[id] = selectedObj;
+    console.log("arrCopy[id]", arrCopy[id]);
+    this.setState({
+      itemsArr: arrCopy,
+      total: arrCopy.reduce(
+        (total, el) => (total += el.quantity * el.price),
+        0
+      ),
+    });
+    // console.log(arrCopy);
+  };
+
+  minus = (id) => {
+    if (this.state.num === 1) {
+      alert("1개 이상 선택하셔야 합니다");
+    } else if (this.state.num >= 2) {
+      this.setState({ num: this.state.num - 1 });
+    }
+  };
+
   render() {
-    // console.log();
+    // console.log(this.state.itemsArr);
     const basketFeeds = this.state.itemsArr.map((el, idx) => {
       return (
         <BasketFeeds
           handleData={this.getData}
-          product_id={el.product_id}
-          // id={el.id}
+          product_id={el.ID}
+          id={el.ID}
           name={el.name}
           price={el.price}
           image={el.image_url}
+          changed_quantity={el.changed_quantity}
           checkboxEach={this.state.checkbox_each}
           checkboxEachChecked={this.checkboxEachChecked}
           key={idx}
+          plus={this.plus}
+          minus={this.minus}
         />
       );
     });
@@ -155,7 +193,7 @@ class Basket extends Component {
                         </div>
                         <div className="totalPrice">
                           <span>합계</span>
-                          <span>0원</span>
+                          <span>원</span>
                         </div>
                         <div className="payBtn">결제하기</div>
                       </div>
