@@ -39,7 +39,10 @@ class MenuFooter extends Component {
           !this.state.noFix ? "btnBrandOrder" : "btnBrandOrderFix"
         }`}
       >
-        <Link to="/" className="orderText">
+        <Link
+          to={window.localStorage.token ? "/basket" : "/login"}
+          className="orderText"
+        >
           지금 바로 주문하기
         </Link>
       </div>
