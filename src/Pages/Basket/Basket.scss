@@ -6,7 +6,9 @@ button {
 }
 
 .Basket {
+  position: relative;
   width: 100%;
+  top: 96px;
   .mainContainer {
     .sectionWrap {
       padding-bottom: 60px;
@@ -27,17 +29,6 @@ button {
             font-weight: 400;
             text-align: center;
             line-height: 96px;
-          }
-          a {
-            position: absolute;
-            display: block;
-            right: 0;
-            top: 25px;
-            width: 49px;
-            height: 49px;
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            text-indent: -999em;
-            background: url("/Images/ico_x.png") -31px top no-repeat;
           }
         }
       }

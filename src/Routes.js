@@ -10,6 +10,7 @@ import SignUp from "./Pages/SignUp/SignUp";
 import MyPage from "./Pages/MyPage/MyPage";
 import Store from "./Pages/Store/Store";
 import SearchResult from "./Pages/SearchResult/SearchResult";
+import Basket from "./Pages/Basket/Basket";
 
 class Routes extends React.Component {
   render() {
@@ -24,6 +25,7 @@ class Routes extends React.Component {
           <Route exact path="/menu" component={Menu} />
           <Route exact path="/menu/menu-detail/:id" component={MenuDetail} />
           <Route exact path="/store" component={Store} />
+          <Route exact path="/basket" component={Basket} />
           <Route exact path="/" component={Main} />
           <Route exact path="/:text" component={SearchResult} />
         </Switch>
