@@ -29,7 +29,6 @@ class Basket extends Component {
 
   getData = () => {
     const token = localStorage.getItem("token");
-    console.log("getData 실행");
     fetch(urlBasket + "/order/cart", {
       method: "GET",
       headers: {
@@ -44,7 +43,6 @@ class Basket extends Component {
           price_arr: res.cart_list,
         })
       );
-    // console.log(res.cart_list.price);
   };
 
   checkboxAllChecked = () => {
